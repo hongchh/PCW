@@ -78,3 +78,24 @@ git branch -d mydev
 4. 更新Resources：添加/删除视频、课件、教案、习题；对教材信息、专业词汇进行编辑修改
 5. 更新Achievement：添加/删除荣誉奖项、论文条目、评价信息
 6. Interaction：查看/删除/回复学生评论
+
+## 三、界面原型
+#### A、网站首页
+![demo-home](images-for-readme/demo-home.png)
+
+**备注：**hover顶部4个项时候弹出菜单，菜单中包含相应模块的各部分内容的链接；主页中间为轮播图，展示教研室以及课程的特色；下面为3个主要的简介，最后的"more"是一个链接，可以跳转到相应的详细介绍的界面；
+
+#### B、主体界面
+![demo-main](images-for-readme/demo-main.png)
+
+**备注：**Course、Resources等4部分内容都在主体界面中展示，初步想法为根据不同的URL渲染不同的组件即可。每个组件的UI具体如何，待进一步完善设计。
+
+#### C、管理界面
+![demo-management](images-for-readme/demo-management.png)
+
+**备注：**管理界面的基本结构如上，左边是一个侧拉菜单，根据菜单中不同的选项，在主体界面中展示不同的内容。菜单底部显示管理员的基本信息，以及提供退出的操作；各部分内容具体如何展示待进一步设计。
+
+#### D、登录界面
+![demo-signin](images-for-readme/demo-signin.png)
+
+**备注：**登录界面，管理员或者普通成员都通过此界面登录，然后根据身份跳转到相应的界面。
