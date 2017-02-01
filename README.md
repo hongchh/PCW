@@ -118,16 +118,16 @@ git branch -d mydev
 **备注：**登录界面，管理员或者普通成员都通过此界面登录，然后根据身份跳转到相应的界面。
 
 ## 5、数据模型
-#### 5.1、轮播图
+#### 5.1、轮播图（rotary-images）
 轮播图使用多张图片，每张图片都有个description对图片进行简要描述，url则是图片的链接。
 ```json
-{
+[{
   "description": "string",
   "url": "string"
-}
+}]
 ```
 
-#### 5.2、首页的简介
+#### 5.2、首页的简介（abstract）
 首页的3部分简介分别是3个不同内容的字符串。
 ```json
 {
@@ -137,7 +137,7 @@ git branch -d mydev
 }
 ```
 
-#### 5.3、课程介绍
+#### 5.3、课程介绍（course-introduction）
 课程介绍包括4部分内容，课程介绍/历史沿革/课程内容/课程特色，都是字符串。
 ```json
 {
@@ -148,20 +148,20 @@ git branch -d mydev
 }
 ```
 
-#### 5.4、教学大纲/教学方法/教学要求
+#### 5.4、教学大纲/教学方法/教学要求（course-sundry）
 教学大纲/教学方法/教学要求这3部分内容的数据格式都一样，所以合并到一起，加个type字段用于区分。title表示标题，比如教学大纲的章节题目、教学方法的标题等。content可以是对标题进行的简要介绍或者文字描述，例如教学大纲里面某些章节标题下面还会标注重难点，教学方法每个要点后面都有相应的文字介绍。
 ```json
-{
+[{
   "type": "string",
   "title": "string",
   "content": "string"
-}
+}]
 ```
 
-#### 5.5、教学团队/管理员账号信息
-教学团队成员默认也是网站的管理员，所以两者用到是同一份数据。每个成员包括姓名、性别、职称、角色、头像、学历、研究方向这几部分信息，然后还有用于登录的账号密码。职称：教授/副教授/讲师/教员。角色：课程负责人/主讲教师/助理。
+#### 5.5、教学团队/管理员账号信息（team-memebers）
+教学团队成员默认也是网站的管理员，所以两者用到是同一份数据。每个成员包括姓名、性别、职称、角色、头像、学历、研究方向这几部分信息，然后还有用于登录的账号密码。职称：教授/副教授/讲师/教员。角色：课程负责人/主讲教师/助理。另外管理员分为超级管理员和普通管理员，用auth字段区分。
 ```json
-{
+[{
   "name": "string",
   "sex": "string",
   "title": "string",
@@ -170,65 +170,66 @@ git branch -d mydev
   "education": "string",
   "direction": "string",
   "username": "string",
-  "password": "string"
-}
+  "password": "string",
+  "auth": "string"
+}]
 ```
 
-#### 5.6、课程安排
+#### 5.6、课程安排（course-arrangement）
 课程安排即每周的理论课或者实验课的安排，用type字段区分理论课和实验课，week表示第几周，content表示对应那周的上课内容。
 ```json
-{
+[{
   "week": "number",
   "type": "string",
   "content": "string"
-}
+}]
 ```
 
-#### 5.7、视频、课件、习题等资源
+#### 5.7、视频、课件、习题等资源（course-resource）
 视频、课件资源则是提供1个url用于下载即可，另外需要用type字段区分类型，name字段对响应的资源进行简要描述。
 ```json
-{
+[{
   "type": "string",
   "name": "string",
   "url": "string"
-}
+}]
 ```
 
-#### 5.8、教材信息
+#### 5.8、教材信息（teaching-material）
 教材分为现用教材/主编教材/主审教材/参考教材这几种类型，用type字段区分，description则描述教材名称、作者、出版社、年份等信息。
 ```json
-{
+[{
   "type": "string",
   "description": "string"
-}
+}]
 ```
 
-#### 5.9、荣誉和评价
+#### 5.9、荣誉和评价（honor-evaluation）
 荣誉和评价基本都是图片，所以只需要提供url下载到浏览器展示即可。description对图片进行简要描述，type则是区分类型（荣誉/评价）。
 ```json
-{
+[{
   "type": "string",
   "description": "string",
   "url": "string"
-}
+}]
 ```
 
-#### 5.10、论文
+#### 5.10、论文（papers）
 论文分为教学论文/科研论文两部分，用type字段区分。name为论文名称，time为发布时间，author为论文作者，publication为收录论文的刊物。
 ```json
-{
+[{
   "type": "string",
   "name": "string",
   "time": "string",
   "author": "string",
   "publication": "string"
-}
+}]
 ```
 
-#### 5.11、互动
+#### 5.11、互动（interactive-messages）
 互动区发布的消息内容存在content字段，time描述发布的时间，例如：2017-02-01 21:58。comment则是一个数组，里面收集其他用户对评论的回复，包括回复者、回复时间、回复内容3部分信息。
 ```json
-{
+[{
   "content": "string",
   "time": "string",
   "comment": [{
@@ -236,10 +237,10 @@ git branch -d mydev
     "user": "string",
     "time": "string"
   }]
-}
+}]
 ```
 
-#### 5.12、student账号
+#### 5.12、学生账号（student）
 student账号比较简单，只有用于登录的账号密码以及头像的url。
 ```json
 {
