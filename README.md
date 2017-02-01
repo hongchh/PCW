@@ -101,9 +101,11 @@ git branch -d mydev
 **备注：**hover顶部4个项时候弹出菜单，菜单中包含相应模块的各部分内容的链接；主页中间为轮播图，展示教研室以及课程的特色；下面为3个主要的简介，最后的"more"是一个链接，可以跳转到相应的详细介绍的界面；
 
 #### B、主体界面
-![demo-main](images-for-readme/demo-main.png)
+![demo-main-1](images-for-readme/demo-main-1.png)
+![demo-main-2](images-for-readme/demo-main-2.png)
+![demo-main-3](images-for-readme/demo-main-3.png)
 
-**备注：**Course、Resources等4部分内容都在主体界面中展示，初步想法为根据不同的URL渲染不同的组件即可。每个组件的UI具体如何，待进一步完善设计。
+**备注：**Course、Resources等4部分内容都在主体界面中展示，初步想法为根据不同的URL渲染不同的组件即可，上面是简单的示例。每个组件的UI具体如何，信息如何呈现，需要待开发过程中进一步完善，整体上需要保持风格一致。
 
 #### C、管理界面
 ![demo-management](images-for-readme/demo-management.png)
