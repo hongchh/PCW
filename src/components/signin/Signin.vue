@@ -1,10 +1,10 @@
 <template lang="pug">
-div#app
-  router-view
+div#signin
+  h1 Signin Page
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'signin'
 }
 </script>

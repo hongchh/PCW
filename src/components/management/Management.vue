@@ -1,10 +1,10 @@
 <template lang="pug">
-div#app
-  router-view
+div#management
+  h1 Management Page
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'management'
 }
 </script>
