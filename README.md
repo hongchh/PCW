@@ -249,3 +249,24 @@ student账号比较简单，只有用于登录的账号密码以及头像的url�
   "url": "string"
 }
 ```
+
+## 6、项目结构
+```txt
+└─build：存放构建用到的相关文件
+├─config：存放配置文件
+├─data：存放伪数据以及数据生成器供前端开发使用
+├─server：服务端开发的源码
+│   ├─controller：服务端业务逻辑
+│   ├─model：数据存储访问
+│   ├─static：前端静态文件
+│   ├─views：应用的视图文件
+│   ├─app.js：express服务器配置文件
+│   └─server.js：服务器启动文件
+└─src：前端开发的源码
+    ├─assets：图片等静态资源
+    ├─components：前端组件
+    ├─router：前端路由
+    ├─store：应用的全局状态
+    ├─App.vue：应用的外层结构
+    └─entry.js：应用的入口文件
+```
