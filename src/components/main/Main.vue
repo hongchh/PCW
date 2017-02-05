@@ -26,14 +26,14 @@ div#main
       span 教学成果
       div.link-list
         router-link.link-list-item(to="/main/achievements") 教学荣誉
-        router-link.link-list-item(to="/main/evaluation") 科研成就
-        router-link.link-list-item(to="/main/honor") 课程评价
+        router-link.link-list-item(to="/main/honor") 科研成就
+        router-link.link-list-item(to="/main/evaluation") 课程评价
     div.nav-item#nav-item-3
       router-link.nav-link(to="/main/interaction") 互动专区
   div#main-body
     router-view
   div#main-footer
-    span 联系电话: 020-87330028 | Copyright © 2017 中山大学中山医学院病理生理学教研室 All Right Reserved.
+    span 联系电话: 020-87330028 | Copyright © 2017 中山大学中山医学院病理生理学教研室 All Rights Reserved.
 </template>
 
 <script>
