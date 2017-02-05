@@ -53,7 +53,7 @@ export default {
   height: 100%
 #main-header
   height: 120px
-  background: #3b8e06
+  background: #489e6b
   #header-logo
     height: 100px
     padding: 10px
@@ -67,14 +67,14 @@ export default {
     right: 10px
 #main-nav
   height: 60px
-  background: #348811
+  background: #35904d
   .nav-item
     position: absolute
     width: 15%
     height: 60px
     color: white
     line-height: 60px
-    font-size: 30px
+    font-size: 25px
     text-align: center
     .link-list
       position: absolute
@@ -112,10 +112,11 @@ export default {
   min-height: calc(100% - 280px)
   margin: 0 auto
   background: white
-  padding: 10px
+  padding: 10px 20px 10px 20px
+  box-shadow: 0 0 5px black
 #main-footer
   height: 100px
-  background: #3b8e06
+  background: #489e6b
   text-align: center
   line-height: 100px
   color: white
