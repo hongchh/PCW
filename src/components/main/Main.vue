@@ -33,7 +33,7 @@ div#main
   div#main-body
     router-view
   div#main-footer
-    span 联系电话: 020-87330028 | Copyright 2016 中山大学中山医学院病理生理学教研室 All Right Reserved.
+    span 联系电话: 020-87330028 | Copyright © 2017 中山大学中山医学院病理生理学教研室 All Right Reserved.
 </template>
 
 <script>
