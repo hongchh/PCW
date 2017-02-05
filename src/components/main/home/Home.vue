@@ -22,19 +22,19 @@ div#main-home
         div(slot="header")
           span.info-card-header 课程简介
           router-link.info-card-link(to="/main/course-introduction") more
-        p.info-card-content &emsp;&emsp;{{ abstract.course }}
+        p.info-card-content {{ abstract.course }}
     el-col(:span="8")
       el-card.info-card
         div(slot="header")
           span.info-card-header 科室团队
           router-link.info-card-link(to="/main/teaching-team") more
-        p.info-card-content &emsp;&emsp;{{ abstract.team }}
+        p.info-card-content {{ abstract.team }}
     el-col(:span="8")
       el-card.info-card
         div(slot="header")
           span.info-card-header 教学成果
           router-link.info-card-link(to="/main/achievements") more
-        p.info-card-content &emsp;&emsp;{{ abstract.achievement }}
+        p.info-card-content {{ abstract.achievement }}
 </template>
 
 <script>
@@ -65,8 +65,12 @@ export default {
 #main-home
   width: 100%
   .slide-holder
-    width: 100%
-    height: 100%
+    width: calc(100% - 20px)
+    height: calc(100% - 20px)
+    margin: 10px
+    border: 1px solid rgba(0, 0, 0, 0.2)
+    border-radius: 12px
+    overflow: hidden
     .slide
       width: 100%
       height: 100%
@@ -86,7 +90,9 @@ export default {
     .info-card-content
       font-size: 20px
       margin: 10px
-      padding: 10px
+      padding: 15px
       border: 1px solid rgba(0, 0, 0, 0.2)
       border-radius: 8px
+      color: grey
+      white-space: pre-wrap
 </style>
