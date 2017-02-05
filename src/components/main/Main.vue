@@ -112,7 +112,7 @@ export default {
   min-height: calc(100% - 280px)
   margin: 0 auto
   background: white
-  padding: 10px 20px 10px 20px
+  padding: 10px 20px 20px 20px
   box-shadow: 0 0 5px black
 #main-footer
   height: 100px
