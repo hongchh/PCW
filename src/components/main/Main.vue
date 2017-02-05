@@ -55,8 +55,7 @@ export default {
   height: 120px
   background: #489e6b
   #header-logo
-    height: 100px
-    padding: 10px
+    height: 120px
     margin-left: 100px
   #header-auth
     font-size: 15px
