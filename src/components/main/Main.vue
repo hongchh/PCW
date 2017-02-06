@@ -46,9 +46,6 @@ export default {
 #main, #main-header, #main-nav, #main-body, #main-footer
   width: 100%
   position: relative
-#main-header *, #main-nav *, #main-body *, #main-footer *
-  margin: 0
-  padding: 0
 #main
   height: 100%
 #main-header
