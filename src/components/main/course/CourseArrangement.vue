@@ -47,6 +47,9 @@ export default {
 </script>
 
 <style lang="sass">
+#course-arrangement *
+  margin: 0
+  padding: 0
 #course-arrangement .el-row
   margin-bottom: 20px
   .info-card

@@ -40,6 +40,9 @@ export default {
 </script>
 
 <style lang="sass">
+#course-introduction *
+  margin: 0
+  padding: 0
 #course-introduction .el-row
   margin-bottom: 20px
   .info-card

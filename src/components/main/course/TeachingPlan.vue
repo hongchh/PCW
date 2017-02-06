@@ -31,6 +31,9 @@ export default {
 </script>
 
 <style lang="sass">
+#teaching-plan *
+  margin: 0
+  padding: 0
 #teaching-plan .el-row
   margin-bottom: 20px
   .info-card

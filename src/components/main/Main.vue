@@ -25,8 +25,8 @@ div#main
     div.nav-item#nav-item-2
       span 教学成果
       div.link-list
-        router-link.link-list-item(to="/main/achievements") 教学荣誉
-        router-link.link-list-item(to="/main/honor") 科研成就
+        router-link.link-list-item(to="/main/honor") 教学荣誉
+        router-link.link-list-item(to="/main/achievements") 科研成就
         router-link.link-list-item(to="/main/evaluation") 课程评价
     div.nav-item#nav-item-3
       router-link.nav-link(to="/main/interaction") 互动专区
@@ -46,9 +46,6 @@ export default {
 #main, #main-header, #main-nav, #main-body, #main-footer
   width: 100%
   position: relative
-#main-header *, #main-nav *, #main-body *, #main-footer *
-  margin: 0
-  padding: 0
 #main
   height: 100%
 #main-header
