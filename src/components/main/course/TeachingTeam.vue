@@ -15,6 +15,9 @@ export default {
 </script>
 
 <style lang="sass">
+#teaching-team *
+  margin: 0
+  padding: 0
 #teaching-team .el-row
   margin-bottom: 20px
   .info-card
