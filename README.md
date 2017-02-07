@@ -159,11 +159,10 @@ git branch -d mydev
 ```
 
 #### 5.5、教学大纲/教学方法（course-sundry）
-教学大纲/教学方法这两部分内容的数据格式都一样，所以合并到一起，加个type字段用于区分。title表示标题，比如教学大纲的章节题目、教学方法的标题等。content可以是对标题进行的简要介绍或者文字描述，例如教学大纲里面某些章节标题下面还会标注重难点，教学方法每个要点后面都有相应的文字介绍。
+教学大纲/教学方法这两部分内容的数据格式都一样，所以合并到一起，加个type字段用于区分。
 ```json
 [{
   "type": "string",
-  "title": "string",
   "content": "string"
 }]
 ```
@@ -178,6 +177,7 @@ git branch -d mydev
   "role": "string",
   "url": "string",
   "education": "string",
+  "major": "string",
   "direction": "string",
   "username": "string",
   "password": "string",
