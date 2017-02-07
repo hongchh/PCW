@@ -1,5 +1,5 @@
 <template lang="pug">
-div#teaching-plan
+div.course-module#teaching-plan
   el-row(:gutter="25")
     el-col(:span="24")
       el-card.info-card
@@ -31,24 +31,5 @@ export default {
 </script>
 
 <style lang="sass">
-#teaching-plan *
-  margin: 0
-  padding: 0
-#teaching-plan .el-row
-  margin-bottom: 20px
-  .info-card
-    width: 100%
-    .info-card-header
-      display: block
-      font-size: 36px
-      padding: 5px
-      margin-left: 15px
-    .info-card-content
-      font-size: 20px
-      margin: 10px
-      padding: 15px
-      border: 1px solid rgba(0, 0, 0, 0.2)
-      border-radius: 8px
-      color: grey
-      white-space: pre-wrap
+@import "./style/common.sass"
 </style>

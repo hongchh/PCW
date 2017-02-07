@@ -1,5 +1,5 @@
 <template lang="pug">
-div#course-arrangement
+div.course-module#course-arrangement
   el-row(:gutter="25")
     el-col(:span="24")
       el-card.info-card
@@ -47,30 +47,20 @@ export default {
 </script>
 
 <style lang="sass">
-#course-arrangement *
-  margin: 0
-  padding: 0
-#course-arrangement .el-row
-  margin-bottom: 20px
-  .info-card
-    width: 100%
-    .info-card-header
-      display: block
-      font-size: 36px
-      padding: 5px
-      margin-left: 15px
-    .info-card-content, #course-table
-      font-size: 20px
-      margin: 10px
-      padding: 15px
-      border: 1px solid rgba(0, 0, 0, 0.2)
-      border-radius: 8px
-      color: grey
-      white-space: pre-wrap
-    #course-table
-      padding: 0
-      .el-table
-        border: none
-        .el-table_1_column_1
-          padding-left: 25px
+@import "./style/common.sass"
+
+#course-arrangement .info-card
+  #course-table
+    font-size: 20px
+    margin: 10px
+    padding: 15px
+    border: 1px solid rgba(0, 0, 0, 0.2)
+    border-radius: 8px
+    color: grey
+    white-space: pre-wrap
+    padding: 0
+    .el-table
+      border: none
+      .el-table_1_column_1
+        padding-left: 25px
 </style>
