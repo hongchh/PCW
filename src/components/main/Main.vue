@@ -7,7 +7,7 @@ div#main
   div#main-nav
     div.nav-item#nav-item-0
       span 课程信息
-      div.link-list
+      div.link-list#list-0
         router-link.link-list-item(to="/main/course-introduction") 课程介绍
         router-link.link-list-item(to="/main/course-requirements") 课程要求
         router-link.link-list-item(to="/main/course-arrangement") 课程安排
@@ -76,10 +76,12 @@ export default {
       position: absolute
       width: 100%
       top: 60px
-      background: rgba(0, 0, 0, 0.5)
+      background: rgba(0, 0, 0, 0.6)
       z-index: -1
       line-height: 40px
       height: 0
+      transition: all .2s ease-in
+      overflow: hidden
       .link-list-item
         display: block
         width: 100%
@@ -88,13 +90,19 @@ export default {
         color: white
         text-decoration: none
       .link-list-item:hover
-        background: rgba(0, 0, 0, 0.2)
+        background: rgba(0, 0, 0, 0.3)
     .nav-link
       color: white
       text-decoration: none
   .nav-item:hover .link-list
-    height: auto
     z-index: 99
+    transition: all .2s ease-out
+  #nav-item-0:hover .link-list
+    height: 240px
+  #nav-item-1:hover .link-list
+    height: 200px
+  #nav-item-2:hover .link-list
+    height: 120px
   #nav-item-0
     left: 15%
   #nav-item-1
