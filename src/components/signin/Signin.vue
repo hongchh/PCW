@@ -6,7 +6,7 @@ div#signin
     el-form#signin-form(:model="form", ref="form")
       el-form-item(prop="username", :rules="[{ required: true, message: '请输入用户名' }]")
         el-input(v-model="form.username", placeholder="用户名")
-      el-form-item(prop="password", :rules="[{ required: true, message: '请输入用户名' }]")
+      el-form-item(prop="password", :rules="[{ required: true, message: '请输入密码' }]")
         el-input(type="password", v-model="form.password", placeholder="密码")
       el-form-item
         el-row(:gutter="25")
