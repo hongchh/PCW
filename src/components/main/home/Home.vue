@@ -62,9 +62,10 @@ export default {
 </script>
 
 <style lang="sass">
-#main-home *
-  margin: 0
-  padding: 0
+#main-home
+  .el-card, .el-card__header, .el-card__body, p
+    margin: 0
+    padding: 0
 #main-home
   width: 100%
   .slide-holder
