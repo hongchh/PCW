@@ -3,13 +3,17 @@ div#management
   div#side-nav
     el-menu(theme="dark")
       el-menu-item#menu-header
-        i.el-icon-menu &emsp;管理系统
+        i.el-icon-menu &emsp;病理生理学
       el-menu-item(index="1")
-        i.el-icon-setting &emsp;导航1
+        i.el-icon-date &emsp;课程管理
       el-menu-item(index="2")
-        i.el-icon-picture &emsp;导航2
+        i.el-icon-picture &emsp;资源管理
       el-menu-item(index="3")
-        i.el-icon-document &emsp;导航3
+        i.el-icon-document &emsp;成就管理
+      el-menu-item(index="4")
+        i.el-icon-share &emsp;互动管理
+      el-menu-item(index="5")
+        i.el-icon-setting &emsp;账号管理
       el-menu-item#menu-footer
         img#head-img(src="../../assets/default-head-img.jpg")
         div#username 某某某教授
@@ -57,22 +61,23 @@ export default {
         position: absolute
         width: 100%
         height: 100px
-        bottom: 20px
+        bottom: 30px
         cursor: default
         #head-img
           display: block
           width: 60px
           height: 60px
           border-radius: 50%
+          border: 3px solid white
           position: absolute
           top: 20px
-          left: 20px
+          left: 30px
         #username, #signout
           position: absolute
           height: 30px
-          width: 160px
+          width: 180px
           line-height: 30px
-          left: 80px
+          left: 90px
           text-align: center
           color: white
         #username
