@@ -6,7 +6,8 @@ div#main
     router-link#header-auth(to="/signin") 登录
   div#main-nav
     div.nav-item#nav-item-0
-      span 课程信息
+      span 课程信息&nbsp;
+      i.el-icon-caret-bottom
       div.link-list#list-0
         router-link.link-list-item(to="/main/course-introduction") 课程介绍
         router-link.link-list-item(to="/main/course-requirements") 课程要求
@@ -15,7 +16,8 @@ div#main
         router-link.link-list-item(to="/main/teaching-method") 教学方法
         router-link.link-list-item(to="/main/teaching-team") 教学团队
     div.nav-item#nav-item-1
-      span 课程资源
+      span 课程资源&nbsp;
+      i.el-icon-caret-bottom
       div.link-list
         router-link.link-list-item(to="/main/teaching-video") 教学视频
         router-link.link-list-item(to="/main/courseware") 教案课件
@@ -23,7 +25,8 @@ div#main
         router-link.link-list-item(to="/main/teaching-material") 教材信息
         router-link.link-list-item(to="/main/vocabulary") 专业词汇
     div.nav-item#nav-item-2
-      span 教学成果
+      span 教学成果&nbsp;
+      i.el-icon-caret-bottom
       div.link-list
         router-link.link-list-item(to="/main/honor") 教学荣誉
         router-link.link-list-item(to="/main/achievements") 科研成就
