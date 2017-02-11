@@ -1,10 +1,72 @@
 <template lang="pug">
 div#vocabulary
   h1 Vocabulary（专业词汇）
+  el-row(type="flex", justify="center")
+    el-col(:span="20")
+      h2 附件
+      ul
+        li 
+          a(href='http://jpkc.sysu.edu.cn/pathophysiology/vocabulary/病理生理学专业词汇.pdf',
+          target="_blank") 病理生理学专业词汇.pdf
+        li
+          a(href='http://jpkc.sysu.edu.cn/pathophysiology/vocabulary/病理生理学专业词汇.doc',
+          target="_blank") 病理生理学专业词汇.doc
+      h2.vocabulary 词汇表（中英文对照）
+      el-table(:data="vocabulary", stripe, border)
+        el-table-column(min-width="120", label="英文", header-align="center", align="left", prop="English")
+        el-table-column(min-width="120", label="中文", header-align="center", align="left", prop="Chinese")
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-  name: 'vocabulary'
+  name: 'vocabulary',
+  data () {
+    return {
+      vocabulary: []
+    }
+  },
+  created () {
+    axios.get('/data/vocabulary.json')
+      .then(res => {
+        if (res.status === 200) {
+          this.vocabulary = res.data
+        }
+      })
+  }
 }
 </script>
+
+<style lang="sass">
+#vocabulary
+  h2
+    padding-bottom: 10px
+    border-bottom: 1px solid #eeeeee
+    font-weight: 400
+    font-size: 28px
+    color: #1f2f3d
+  
+  .vocabulary
+    margin-top: 30px
+
+  a
+    color: #5e6d82
+    font-size: 18px
+    text-decoration: none
+    transition: all 0.3s
+    &:hover
+      color: #005FA9
+
+  ul
+    margin-top: 10px
+    margin-bottom: 10px
+  
+  li
+    padding-top: 5px
+    padding-bottom: 5px
+  
+  .el-table
+    margin: 30px 0
+
+</style>
