@@ -58,7 +58,8 @@ export default new Router({
     children: [
       { path: 'account', component: Account },
       { path: 'course', component: Course },
-      { path: 'home-management', component: HomeManagement }
+      { path: 'home-management', component: HomeManagement },
+      { path: '', redirect: 'home-management' }
     ]
   }, {
     path: '/signin',
