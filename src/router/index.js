@@ -22,8 +22,8 @@ import Honor from '../components/main/achievement/Honor'
 import Interaction from '../components/main/interaction/Interaction'
 
 import Management from '../components/management/Management'
-import Account from '../components/management/account/Account'
-import Course from '../components/management/course/Course'
+import AccountManagement from '../components/management/account/AccountManagement'
+import CourseManagement from '../components/management/course/CourseManagement'
 import HomeManagement from '../components/management/home/HomeManagement'
 
 import Signin from '../components/signin/Signin'
@@ -56,10 +56,10 @@ export default new Router({
     path: '/management',
     component: Management,
     children: [
-      { path: 'account', component: Account },
-      { path: 'course', component: Course },
-      { path: 'home-management', component: HomeManagement },
-      { path: '', redirect: 'home-management' }
+      { path: 'account', component: AccountManagement },
+      { path: 'course', component: CourseManagement },
+      { path: 'home', component: HomeManagement },
+      { path: '', redirect: 'home' }
     ]
   }, {
     path: '/signin',
