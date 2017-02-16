@@ -4,7 +4,7 @@ div#management
     el-menu(theme="dark", router)
       el-menu-item#menu-header(index="#")
         i.el-icon-menu &emsp;病理生理学
-      el-menu-item(index="/management/home-management")
+      el-menu-item(index="/management/home")
         i.el-icon-message &emsp;首页信息
       el-menu-item(index="/management/course")
         i.el-icon-date &emsp;课程管理
