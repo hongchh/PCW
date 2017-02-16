@@ -1,10 +1,63 @@
 <template lang="pug">
 div#course-introduction-management
-  h1 课程介绍管理模块
+  el-row(:gutter="25", v-for="(val, key) in introductionItems")
+    el-col(:span="24")
+      el-card
+        div.clearfix(slot="header")
+          span.header-text {{ key }}
+          el-button(style="float: right;" type="primary") 保存
+        el-input(type="textarea", autosize, v-model="introductionContent[val]")
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-  name: 'course-introduction-management'
+  name: 'course-introduction-management',
+  data () {
+    return {
+      introductionItems: {
+        '课程简介': 'introduction',
+        '历史沿革': 'history',
+        '课程内容': 'content',
+        '课程特色': 'feature'
+      },
+      introductionContent: {
+        introduction: 'loading',
+        history: 'loading',
+        content: 'loading',
+        feature: 'loading'
+      }
+    }
+  },
+  created () {
+    axios.get('/data/course-introduction.json').then((res) => {
+      if (res.status === 200) {
+        this.introductionContent = res.data
+      }
+    })
+  }
 }
 </script>
+
+<style lang="sass">
+#course-introduction-management
+  .el-card
+    margin-bottom: 20px
+    .clearfix:before, .clearfix:after
+      display: table
+      content: ""
+    .clearfix:after
+      clear: both
+    .header-text
+      line-height: 36px
+      font-size: 24px
+  .el-upload
+    width: 100%
+    height: 240px
+    .el-dragger
+      width: 100%
+      height: 100%
+  .el-col
+    margin-bottom: 15px
+</style>
