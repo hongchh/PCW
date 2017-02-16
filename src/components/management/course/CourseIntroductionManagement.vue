@@ -37,17 +37,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass">
-#course-introduction-management
-  .el-card
-    margin-bottom: 20px
-    .clearfix:before, .clearfix:after
-      display: table
-      content: ""
-    .clearfix:after
-      clear: both
-    .header-text
-      line-height: 36px
-      font-size: 24px
-</style>

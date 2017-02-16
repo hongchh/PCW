@@ -18,11 +18,11 @@ div#management
         i.el-icon-setting &emsp;账号管理
       el-menu-item#menu-footer(index="#")
         img#head-img(src="../../assets/default-head-img.jpg")
-        div#username 某某某教授
+        div#username 爪哇·斯克瑞
         div#signout(@click="signout") 退出
   div#toolbar
     div#info
-      i.el-icon-arrow-right &nbsp;课程管理
+      i.el-icon-arrow-right &nbsp;您好，爪哇·斯克瑞！
     div.tool
       i.el-icon-star-off
     div.tool

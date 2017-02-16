@@ -35,4 +35,14 @@ export default {
 <style lang="sass">
 #course-management
   padding: 20px
+  .el-card
+    margin-bottom: 20px
+    .clearfix:before, .clearfix:after
+      display: table
+      content: ""
+    .clearfix:after
+      clear: both
+    .header-text
+      line-height: 36px
+      font-size: 24px
 </style>
