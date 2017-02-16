@@ -4,8 +4,8 @@ div#home-management
     divclearfix(slot="header")
       span.header-text 展示图片
     el-row(:gutter="25")
-      el-col(:span="12", v-for="i in 4")
-        el-upload(action="//jsonplaceholder.typicode.com/posts/", type="drag", :thumbnail-mode="true", :on-preview="handlePreview", :on-remove="handleRemove", :default-file-list="fileList")
+      el-col(:span="12", v-for="img in imgList")
+        el-upload(action="//jsonplaceholder.typicode.com/posts/", type="drag", :thumbnail-mode="true", :on-preview="handlePreview", :on-remove="handleRemove", :default-file-list="img")
           i.el-icon-upload
           div.el-dragger__text 将文件拖到此处，或<em>点击上传</em>
           div.el-upload__tip 只能上传jpg/png文件，且不超过500kb
@@ -37,10 +37,19 @@ export default {
   name: 'home-management',
   data () {
     return {
-      fileList: [{
+      imgList: [[{
         name: '0.png',
-        url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-      }],
+        url: '/data/img/0.png'
+      }], [{
+        name: '1.png',
+        url: '/data/img/1.png'
+      }], [{
+        name: '2.png',
+        url: '/data/img/2.png'
+      }], [{
+        name: '3.png',
+        url: '/data/img/3.png'
+      }]],
       abstract: {
         course: 'loading',
         team: 'loading',
