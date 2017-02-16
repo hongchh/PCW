@@ -1,12 +1,10 @@
 <template lang="pug">
 div#course-introduction-management
-  el-row(:gutter="25", v-for="(val, key) in introductionItems")
-    el-col(:span="24")
-      el-card
-        div.clearfix(slot="header")
-          span.header-text {{ key }}
-          el-button(style="float: right;" type="primary") 保存
-        el-input(type="textarea", autosize, v-model="introductionContent[val]")
+  el-card(v-for="(val, key) in introductionItems")
+    div.clearfix(slot="header")
+      span.header-text {{ key }}
+      el-button(style="float: right;" type="primary") 保存
+    el-input(type="textarea", autosize, v-model="introductionContent[val]")
 </template>
 
 <script>
@@ -52,12 +50,4 @@ export default {
     .header-text
       line-height: 36px
       font-size: 24px
-  .el-upload
-    width: 100%
-    height: 240px
-    .el-dragger
-      width: 100%
-      height: 100%
-  .el-col
-    margin-bottom: 15px
 </style>
