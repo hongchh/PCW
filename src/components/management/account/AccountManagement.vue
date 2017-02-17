@@ -15,7 +15,7 @@ import StudentAccountManagement from './StudentAccountManagement'
 import TeachingTeamManagement from './TeachingTeamManagement'
 
 export default {
-  name: 'account',
+  name: 'account-management',
   components: {
     UserProfileManagement,
     StudentAccountManagement,
