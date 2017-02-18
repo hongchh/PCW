@@ -36,7 +36,6 @@ div#user-profile-management
       el-card
         div.clearfix(slot="header")
           span.header-text 用户头像
-          el-button(style="float: right;", type="primary") 保存
         img.head-img(src="../../../assets/default-head-img.jpg")
         el-upload(action="//jsonplaceholder.typicode.com/posts/", :default-file-list="headImg")
           el-button(size="small", type="primary") 上传头像
@@ -69,27 +68,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass">
-#user-profile-management
-  .el-card
-    margin-bottom: 20px
-    .clearfix:before, .clearfix:after
-      display: table
-      content: ""
-    .clearfix:after
-      clear: both
-    .header-text
-      line-height: 36px
-      font-size: 24px
-    .head-img
-      display: block
-      width: 300px
-      height: 300px
-      border-radius: 50%
-      border: 10px solid rgba(0, 0, 0, 0.2)
-      margin: 0 auto 25px auto
-    .el-upload
-      margin: 0 auto
-      text-align: center
-</style>
