@@ -7,6 +7,8 @@ div#student-account-management
           span.header-text 账号信息
           el-button(style="float: right;", type="primary") 保存
         el-form(ref="studentInfo", :model="studentInfo", label-width="120px")
+          el-form-item(label="账号 :")
+            el-input(value="student", :disabled="true")
           el-form-item(prop="password", label="密码 :", :rules="[{ required: true, message: '请输入密码' }]")
             el-input(type="password", v-model="studentInfo.password")
           el-form-item(prop="againPassword", label="重复密码 :", :rules="[{ required: true, message: '请确认密码' }]")
