@@ -83,16 +83,16 @@ export default {
     margin-top: 20px
     .info-card-header
       display: inline-block
-      font-size: 36px
+      font-size: 28px
       padding: 5px
       margin-left: 15px
     .info-card-link
       float: right
-      margin: 20px 10px 0 0
+      margin: 15px 15px 0 0
       color: #20a0ff
       text-decoration: none
     .info-card-content
-      font-size: 20px
+      font-size: 18px
       margin: 10px
       padding: 15px
       border: 1px solid rgba(0, 0, 0, 0.2)

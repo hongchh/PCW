@@ -27,4 +27,24 @@ export default {
 <style lang="sass">
 #account-management
   padding: 20px
+  .el-card
+    margin-bottom: 20px
+    .clearfix:before, .clearfix:after
+      display: table
+      content: ""
+    .clearfix:after
+      clear: both
+    .header-text
+      line-height: 36px
+      font-size: 24px
+    .head-img
+      display: block
+      width: 300px
+      height: 300px
+      border-radius: 50%
+      border: 10px solid rgba(0, 0, 0, 0.2)
+      margin: 0 auto 25px auto
+    .el-upload
+      margin: 0 auto
+      text-align: center
 </style>

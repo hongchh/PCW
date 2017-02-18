@@ -73,7 +73,7 @@ export default {
     height: 60px
     color: white
     line-height: 60px
-    font-size: 25px
+    font-size: 20px
     text-align: center
     .link-list
       position: absolute
@@ -89,7 +89,7 @@ export default {
         display: block
         width: 100%
         height: 40px
-        font-size: 20px
+        font-size: 18px
         color: white
         text-decoration: none
       .link-list-item:hover
