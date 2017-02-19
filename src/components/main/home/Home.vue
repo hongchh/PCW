@@ -2,39 +2,61 @@
 div#main-home
   el-row(:gutter="25")
     el-col(:span="24")
-      el-card
-        el-carousel(height="450px", indicator-position="none")
-          el-carousel-item
-            div.slide-holder
-              img.slide(src="../../../assets/slide/0.png")
-          el-carousel-item
-            div.slide-holder
-              img.slide(src="../../../assets/slide/1.png")
-          el-carousel-item
-            div.slide-holder
-              img.slide(src="../../../assets/slide/2.png")
-          el-carousel-item
-            div.slide-holder
-              img.slide(src="../../../assets/slide/3.png")
+      el-carousel(height="500px", indicator-position="none")
+        el-carousel-item
+          div.slide-holder
+            img.slide(src="../../../assets/slide/0.png")
+        el-carousel-item
+          div.slide-holder
+            img.slide(src="../../../assets/slide/1.png")
+        el-carousel-item
+          div.slide-holder
+            img.slide(src="../../../assets/slide/2.png")
+        el-carousel-item
+          div.slide-holder
+            img.slide(src="../../../assets/slide/3.png")
   el-row(:gutter="25")
+    el-col(:span="16")
+      div.info
+        div.info-header
+          span.header-text 课程介绍
+          router-link.heaedr-link(to="/main/course-introduction") more
+        div.info-content
+          img(src="../../../assets/books.jpg")
+          p {{ abstract.course }}
+      div.info
+        div.info-header
+          span.header-text 科室团队
+          router-link.heaedr-link(to="/main/teaching-team") more
+        div.info-content
+          img(src="../../../assets/team.jpg")
+          p {{ abstract.team }}
+      div.info
+        div.info-header
+          span.header-text 教学成果
+          router-link.heaedr-link(to="/main/achievements") more
+        div.info-content
+          img(src="../../../assets/achievement.png")
+          p {{ abstract.achievement }}
     el-col(:span="8")
-      el-card.info-card
-        div(slot="header")
-          span.info-card-header 课程简介
-          router-link.info-card-link(to="/main/course-introduction") more
-        p.info-card-content {{ abstract.course }}
-    el-col(:span="8")
-      el-card.info-card
-        div(slot="header")
-          span.info-card-header 科室团队
-          router-link.info-card-link(to="/main/teaching-team") more
-        p.info-card-content {{ abstract.team }}
-    el-col(:span="8")
-      el-card.info-card
-        div(slot="header")
-          span.info-card-header 教学成果
-          router-link.info-card-link(to="/main/achievements") more
-        p.info-card-content {{ abstract.achievement }}
+      div.info
+        div.info-header
+          span.header-text 其他内容
+        div.info-content
+          h1 待补充合适的首页内容...
+          h1 待补充合适的首页内容...
+          h1 待补充合适的首页内容...
+          h1 待补充合适的首页内容...
+          h1 待补充合适的首页内容...
+      div.info
+        div.info-header
+          span.header-text 其他内容
+        div.info-content
+          h1 待补充合适的首页内容...
+          h1 待补充合适的首页内容...
+          h1 待补充合适的首页内容...
+          h1 待补充合适的首页内容...
+          h1 待补充合适的首页内容...
 </template>
 
 <script>
@@ -63,40 +85,39 @@ export default {
 
 <style lang="sass">
 #main-home
-  .el-card, .el-card__header, .el-card__body, p
-    margin: 0
-    padding: 0
-#main-home
-  width: 100%
   .slide-holder
-    width: calc(100% - 20px)
-    height: calc(100% - 20px)
-    margin: 10px
-    border: 1px solid rgba(0, 0, 0, 0.2)
-    border-radius: 12px
+    width: 100%
+    height: 100%
     overflow: hidden
     .slide
       width: 100%
       height: 100%
-  .info-card
-    width: 100%
-    margin-top: 20px
-    .info-card-header
-      display: inline-block
-      font-size: 28px
-      padding: 5px
-      margin-left: 15px
-    .info-card-link
-      float: right
-      margin: 15px 15px 0 0
-      color: #20a0ff
-      text-decoration: none
-    .info-card-content
-      font-size: 18px
-      margin: 10px
-      padding: 15px
-      border: 1px solid rgba(0, 0, 0, 0.2)
-      border-radius: 8px
+  .info
+    padding: 20px 10px
+    overflow: hidden
+    .info-header
+      border-bottom: 5px solid #35904d
+      margin-bottom: 10px
+      .header-text
+        display: inline-block
+        font-size: 28px
+        padding: 5px
+      .heaedr-link
+        float: right
+        margin: 15px 15px 0 0
+        color: #20a0ff
+        text-decoration: none
+    .info-content
       color: grey
-      white-space: pre-wrap
+      img
+        float: left
+        width: 260px
+        height: 260px
+        margin: 15px
+      p
+        font-size: 18px
+        line-height: 28px
+        margin-left: 300px
+        padding: 15px
+        white-space: pre-wrap
 </style>
