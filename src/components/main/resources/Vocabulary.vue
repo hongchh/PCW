@@ -6,10 +6,10 @@ div#vocabulary
       h2 附件
       ul
         li 
-          a(href='http://jpkc.sysu.edu.cn/pathophysiology/vocabulary/病理生理学专业词汇.pdf',
+          a.link(href='http://jpkc.sysu.edu.cn/pathophysiology/vocabulary/病理生理学专业词汇.pdf',
           target="_blank") 病理生理学专业词汇.pdf
         li
-          a(href='http://jpkc.sysu.edu.cn/pathophysiology/vocabulary/病理生理学专业词汇.doc',
+          a.link(href='http://jpkc.sysu.edu.cn/pathophysiology/vocabulary/病理生理学专业词汇.doc',
           target="_blank") 病理生理学专业词汇.doc
       h2.vocabulary 词汇表（中英文对照）
       el-table(:data="vocabulary", stripe, border)
@@ -39,6 +39,8 @@ export default {
 </script>
 
 <style lang="sass">
+@import './style/common.sass' 
+
 #vocabulary
   h2
     padding-bottom: 10px
@@ -49,14 +51,6 @@ export default {
   
   .vocabulary
     margin-top: 30px
-
-  a
-    color: #5e6d82
-    font-size: 18px
-    text-decoration: none
-    transition: all 0.3s
-    &:hover
-      color: #005FA9
 
   ul
     margin-top: 10px

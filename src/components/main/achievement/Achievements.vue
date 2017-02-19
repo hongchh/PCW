@@ -45,9 +45,9 @@ export default {
       margin-top: 15px
       margin-bottom: 15px
   .el-tag
-    font-size: inherit
-    height: 32px
-    line-height: 32px
+    font-size: 14px
+    height: 30px
+    line-height: 30px
     margin-left: 20px
     margin-bottom: 1em
 
