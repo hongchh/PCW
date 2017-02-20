@@ -1,11 +1,9 @@
 <template lang="pug">
 div.course-module#teaching-method
-  el-row(:gutter="25")
-    el-col(:span="24")
-      el-card.info-card
-        div(slot="header")
-          span.info-card-header 教学方法
-        div.info-card-content {{ teachingMethod.content }}
+  el-card.info-card
+    div(slot="header")
+      span.info-card-header 教学方法
+    div.info-card-content {{ teachingMethod.content }}
 </template>
 
 <script>

@@ -1,20 +1,18 @@
 <template lang="pug">
 div#main-home
-  el-row(:gutter="25")
-    el-col(:span="24")
-      el-carousel(height="500px", indicator-position="none")
-        el-carousel-item
-          div.slide-holder
-            img.slide(src="../../../assets/slide/0.png")
-        el-carousel-item
-          div.slide-holder
-            img.slide(src="../../../assets/slide/1.png")
-        el-carousel-item
-          div.slide-holder
-            img.slide(src="../../../assets/slide/2.png")
-        el-carousel-item
-          div.slide-holder
-            img.slide(src="../../../assets/slide/3.png")
+  el-carousel(height="500px", indicator-position="none")
+    el-carousel-item
+      div.slide-holder
+        img.slide(src="../../../assets/slide/0.png")
+    el-carousel-item
+      div.slide-holder
+        img.slide(src="../../../assets/slide/1.png")
+    el-carousel-item
+      div.slide-holder
+        img.slide(src="../../../assets/slide/2.png")
+    el-carousel-item
+      div.slide-holder
+        img.slide(src="../../../assets/slide/3.png")
   el-row(:gutter="25")
     el-col(:span="16")
       div.info
@@ -85,6 +83,8 @@ export default {
 
 <style lang="sass">
 #main-home
+  .el-carousel
+    margin: 20px auto
   .slide-holder
     width: 100%
     height: 100%

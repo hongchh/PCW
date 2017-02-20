@@ -120,7 +120,6 @@ export default {
   margin: 0 auto
   background: white
   padding: 10px 20px 20px 20px
-  box-shadow: 0 0 5px black
 #main-footer
   height: 100px
   background: #489e6b

@@ -1,11 +1,9 @@
 <template lang="pug">
 div.course-module#course-introduction
-  el-row(:gutter="25", v-for="(item, i) in introductionItems")
-    el-col(:span="24")
-      el-card.info-card
-        div(slot="header")
-          span.info-card-header {{ item }}
-        p.info-card-content {{ Object.values(introductionContent)[i] }}
+  el-card.info-card(v-for="(item, i) in introductionItems")
+    div(slot="header")
+      span.info-card-header {{ item }}
+    p.info-card-content {{ Object.values(introductionContent)[i] }}
 </template>
 
 <script>
