@@ -1,33 +1,30 @@
 <template lang="pug">
 div#home-management
   el-card
-    divclearfix(slot="header")
-      span.header-text 展示图片
+    div.clearfix(slot="header")
+      span.header-text 轮播图片
     el-row(:gutter="25")
-      el-col(:span="12", v-for="img in imgList")
+      el-col(:span="12", v-for="img in slides")
         el-upload(action="//jsonplaceholder.typicode.com/posts/", type="drag", :thumbnail-mode="true", :on-preview="handlePreview", :on-remove="handleRemove", :default-file-list="img")
           i.el-icon-upload
           div.el-dragger__text 将文件拖到此处，或<em>点击上传</em>
           div.el-upload__tip 只能上传jpg/png文件，且不超过500kb
+  el-card
+    div.clearfix(slot="header")
+      span.header-text 版块配图
+    el-row(:gutter="25")
+      el-col(:span="8", v-for="img in subImgs")
+        el-upload(action="//jsonplaceholder.typicode.com/posts/", type="drag", :thumbnail-mode="true", :on-preview="handlePreview", :on-remove="handleRemove", :default-file-list="img", style="height: 300px")
+          i.el-icon-upload
+          div.el-dragger__text 将文件拖到此处，或<em>点击上传</em>
+          div.el-upload__tip 只能上传jpg/png文件，且不超过500kb
   el-row(:gutter="25")
-    el-col(:span="8")
+    el-col(:span="8", v-for="(val, key) in editItems")
       el-card
         div.clearfix(slot="header")
-          span.header-text 课程简介
+          span.header-text {{ key }}
           el-button(style="float: right;" type="primary", @click="saveAbstract") 保存
-        el-input(type="textarea", autosize, v-model="abstract.course")
-    el-col(:span="8")
-      el-card
-        div.clearfix(slot="header")
-          span.header-text 科室团队
-          el-button(style="float: right;" type="primary", @click="saveAbstract") 保存
-        el-input(type="textarea", autosize, v-model="abstract.team")
-    el-col(:span="8")
-      el-card
-        div.clearfix(slot="header")
-          span.header-text 教学成果
-          el-button(style="float: right;" type="primary", @click="saveAbstract") 保存
-        el-input(type="textarea", autosize, v-model="abstract.achievement")
+        el-input(type="textarea", autosize, v-model="abstract[val]")
 </template>
 
 <script>
@@ -37,7 +34,7 @@ export default {
   name: 'home-management',
   data () {
     return {
-      imgList: [[{
+      slides: [[{
         name: '0.png',
         url: '/data/img/0.png'
       }], [{
@@ -50,6 +47,21 @@ export default {
         name: '3.png',
         url: '/data/img/3.png'
       }]],
+      subImgs: [[{
+        name: 'books.jpg',
+        url: '/data/img/books.jpg'
+      }], [{
+        name: 'team.jpg',
+        url: '/data/img/team.jpg'
+      }], [{
+        name: 'achievement.png',
+        url: '/data/img/achievement.png'
+      }]],
+      editItems: {
+        '课程简介': 'course',
+        '科室团队': 'team',
+        '教学成果': 'achievement'
+      },
       abstract: {
         course: 'loading',
         team: 'loading',
