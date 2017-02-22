@@ -55,23 +55,24 @@ export default {
   #side-nav, #toolbar, #manage-body
     position: absolute
   #side-nav
-    width: 280px
+    width: 200px
     height: 100%
     .el-menu
       height: 100%
       text-align: center
+      border-radius: 0px
       .el-menu-item
-        height: 60px
-        line-height: 60px
+        height: 40px
+        line-height: 40px
         padding: 0
       #menu-header
         text-align: left
-        font-size: 20px
-        height: 70px
-        line-height: 70px
+        font-size: 13px
+        height: 46px
+        line-height: 46px
         box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)
         background-color: rgba(255, 255, 255, 0.05)
-        padding: 0 16px 0 24px
+        padding: 0 10px 0 16px
         color: white
         cursor: default
       #menu-footer:hover
@@ -79,37 +80,37 @@ export default {
       #menu-footer
         position: absolute
         width: 100%
-        height: 100px
-        bottom: 30px
+        height: 80px
+        bottom: 10px
         cursor: default
         #head-img
           display: block
-          width: 60px
-          height: 60px
+          width: 40px
+          height: 40px
           border-radius: 50%
-          border: 3px solid white
+          border: 2px solid white
           position: absolute
-          top: 20px
-          left: 30px
+          top: 13px
+          left: 20px
         #username, #signout
           position: absolute
-          height: 30px
-          width: 180px
-          line-height: 30px
-          left: 90px
+          height: 20px
+          width: 120px
+          line-height: 20px
+          left: 60px
           text-align: center
           color: white
         #username
-          font-size: 24px
-          top: 25px
+          font-size: 16px
+          top: 16px
         #signout
-          font-size: 14px
-          bottom: 15px
+          font-size: 10px
+          top: 36px
           cursor: pointer
   #toolbar
     background-color: white
-    width: calc(100% - 280px)
-    height: 70px
+    width: calc(100% - 200px)
+    height: 46px
     right: 0
     color: rgba(0,0,0,0.87)
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)
@@ -117,24 +118,24 @@ export default {
     overflow: hidden
     #info, .tool
       height: 100%
-      line-height: 70px
-      padding-left: 20px
-      font-size: 20px
+      line-height: 46px
+      padding-left: 13px
+      font-size: 13px
       font-weight: bolder
     .tool
       position: absolute
-      width: 60px
+      width: 40px
       top: 0
       border-left: 1px solid rgba(0,0,0,0.87)
     .tool:nth-child(2)
-      right: 120px
+      right: 80px
     .tool:nth-child(3)
-      right: 60px
+      right: 40px
     .tool:nth-child(4)
       right: 0
   #manage-body
-    width: calc(100% - 280px)
-    height: calc(100% - 70px)
+    width: calc(100% - 200px)
+    height: calc(100% - 46px)
     right: 0
     bottom: 0
     background-color: white

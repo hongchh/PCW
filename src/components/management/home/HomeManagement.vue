@@ -14,7 +14,7 @@ div#home-management
       span.header-text 版块配图
     el-row(:gutter="25")
       el-col(:span="8", v-for="img in subImgs")
-        el-upload(action="//jsonplaceholder.typicode.com/posts/", type="drag", :thumbnail-mode="true", :on-preview="handlePreview", :on-remove="handleRemove", :default-file-list="img", style="height: 300px")
+        el-upload(action="//jsonplaceholder.typicode.com/posts/", type="drag", :thumbnail-mode="true", :on-preview="handlePreview", :on-remove="handleRemove", :default-file-list="img", style="height: 200px")
           i.el-icon-upload
           div.el-dragger__text 将文件拖到此处，或<em>点击上传</em>
           div.el-upload__tip 只能上传jpg/png文件，且不超过500kb
@@ -94,9 +94,9 @@ export default {
 <style lang="sass">
 #home-management
   position: relative
-  padding: 20px 20px 0 20px
+  padding: 14px 14px 0 14px
   .el-card
-    margin-bottom: 20px
+    margin-bottom: 14px
     .clearfix:before, .clearfix:after
       display: table
       content: ""
@@ -107,10 +107,10 @@ export default {
       font-size: 24px
   .el-upload
     width: 100%
-    height: 240px
+    height: 160px
     .el-dragger
       width: 100%
       height: 100%
   .el-col
-    margin-bottom: 15px
+    margin-bottom: 14px
 </style>

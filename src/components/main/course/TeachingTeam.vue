@@ -42,22 +42,21 @@ export default {
 
 #teaching-team .info-card .info-card-content
   .el-col
-    height: 600px
+    height: 400px
     overflow: hidden
   .head-img
     display: block
     width: 60%
     border-radius: 50%
-    border: 10px solid rgba(0, 0, 0, 0.1)
+    border: 5px solid rgba(0, 0, 0, 0.1)
     margin: 0 auto 20px auto
   .team-member
     text-align: center
     p
       margin: 10px auto
-      font-size: 14px
+      font-size: 12px
     .name
-      font-size: 28px
+      font-size: 18px
     .el-tag
       margin: 0 5px
-      padding: 0 5px
 </style>

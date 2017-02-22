@@ -1,6 +1,6 @@
 <template lang="pug">
 div#main-home
-  el-carousel(height="500px", indicator-position="none")
+  el-carousel(height="335px", indicator-position="none")
     el-carousel-item
       div.slide-holder
         img.slide(src="../../../assets/slide/0.png")
@@ -96,28 +96,28 @@ export default {
     padding: 20px 10px
     overflow: hidden
     .info-header
-      border-bottom: 5px solid #35904d
+      border-bottom: 3px solid #35904d
       margin-bottom: 10px
       .header-text
         display: inline-block
-        font-size: 28px
+        font-size: 20px
         padding: 5px
       .heaedr-link
         float: right
-        margin: 15px 15px 0 0
+        margin: 10px 10px 0 0
         color: #20a0ff
         text-decoration: none
     .info-content
       color: grey
       img
         float: left
-        width: 260px
-        height: 260px
+        width: 175px
+        height: 175px
         margin: 15px
       p
-        font-size: 18px
-        line-height: 28px
-        margin-left: 300px
+        font-size: 14px
+        line-height: 18px
+        margin-left: 200px
         padding: 15px
         white-space: pre-wrap
 </style>

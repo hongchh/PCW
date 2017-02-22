@@ -52,44 +52,44 @@ export default {
 #main
   height: 100%
 #main-header
-  height: 120px
+  height: 100px
   background: #489e6b
   #header-logo
-    height: 120px
-    margin-left: 100px
+    height: 100px
+    margin-left: 50px
   #header-auth
-    font-size: 15px
+    font-size: 10px
     color: white
     text-decoration: none
     position: absolute
     top: 10px
     right: 10px
 #main-nav
-  height: 60px
+  height: 40px
   background: #35904d
   .nav-item
     position: absolute
     width: 15%
-    height: 60px
+    height: 40px
     color: white
-    line-height: 60px
-    font-size: 20px
+    line-height: 40px
+    font-size: 17px
     text-align: center
     .link-list
       position: absolute
       width: 100%
-      top: 60px
+      top: 40px
       background: rgba(0, 0, 0, 0.6)
       z-index: -1
-      line-height: 40px
+      line-height: 27px
       height: 0
       transition: all .2s ease-in
       overflow: hidden
       .link-list-item
         display: block
         width: 100%
-        height: 40px
-        font-size: 18px
+        height: 28px
+        font-size: 14px
         color: white
         text-decoration: none
       .link-list-item:hover
@@ -101,11 +101,11 @@ export default {
     z-index: 99
     transition: all .2s ease-out
   #nav-item-0:hover .link-list
-    height: 240px
+    height: 168px
   #nav-item-1:hover .link-list
-    height: 200px
+    height: 140px
   #nav-item-2:hover .link-list
-    height: 120px
+    height: 84px
   #nav-item-0
     left: 15%
   #nav-item-1
@@ -116,16 +116,16 @@ export default {
     left: 70%
 #main-body
   width: 90%
-  min-height: calc(100% - 280px)
+  min-height: calc(100% - 200px)
   margin: 0 auto
   background: white
   padding: 10px 20px 20px 20px
 #main-footer
-  height: 100px
+  height: 60px
   background: #489e6b
   text-align: center
-  line-height: 100px
+  line-height: 60px
   color: white
   span
-    font-size: 15px
+    font-size: 10px
 </style>

@@ -57,8 +57,8 @@ export default {
   background-size: 100% 100%
   background-attachment: fixed
   #signin-form-holder
-    width: 500px
-    margin: 0 calc(50% - 250px)
+    width: 350px
+    margin: 0 calc(50% - 175px)
     #logo
       width: 100%
     #signin-form
