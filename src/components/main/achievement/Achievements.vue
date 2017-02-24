@@ -40,15 +40,12 @@ export default {
 #achievements
   .el-table
     margin: 20px auto 0
-    font-size: 16px
-    ul
-      margin-top: 15px
-      margin-bottom: 15px
-  .el-tag
     font-size: 14px
-    height: 30px
-    line-height: 30px
+    ul
+      margin-top: 10px
+      margin-bottom: 10px
+  .el-tag
     margin-left: 20px
-    margin-bottom: 1em
+    margin-bottom: 15px
 
 </style>

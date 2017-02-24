@@ -47,6 +47,6 @@ export default {
     padding: 0 20px
 
   .item
-    padding: 15px 20px
+    padding: 12px 20px
     
 </style>
