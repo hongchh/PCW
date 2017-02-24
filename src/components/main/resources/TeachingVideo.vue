@@ -29,9 +29,9 @@ div#teaching-video
                 a(:href="scope.row.link")
                   el-button(size="small") 下载
 
-      el-dialog(title="在线观看", v-model="dialogVisible", size="large", @close="stop")
+      el-dialog(title="在线观看", v-model="dialogVisible", size="small", @close="stop")
         div.video-container
-          video(width="720", controls, :src="link")
+          video(controls, :src="link")
   
 </template>
 
@@ -89,13 +89,7 @@ export default {
 
   .el-table
     margin-top: 20px
-    font-size: 15px
-    .el-button
-      font-size: 14px
-    .el-tag
-      font-size: 14px
-      height: 28px
-      line-height: 28px
+    font-size: 14px
     th
       height: 50px
       font-size: 16px
@@ -104,10 +98,13 @@ export default {
     a
       margin-left: 10px
   .video-container
-    width: 720px
+    width: 95%
+    height: 100%
     margin: 0 auto
+    video
+      width: 100%
   .el-dialog__header
     text-align: center
   .el-dialog__title
-    font-size: 18px
+    font-size: 20px
 </style>

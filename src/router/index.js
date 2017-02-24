@@ -20,6 +20,7 @@ import Achievements from '../components/main/achievement/Achievements'
 import Evaluation from '../components/main/achievement/Evaluation'
 import Honor from '../components/main/achievement/Honor'
 import Interaction from '../components/main/interaction/Interaction'
+import Comment from '../components/main/interaction/Comment'
 
 import Management from '../components/management/Management'
 import AccountManagement from '../components/management/account/AccountManagement'
@@ -50,6 +51,7 @@ export default new Router({
       { path: 'evaluation', component: Evaluation },
       { path: 'honor', component: Honor },
       { path: 'interaction', component: Interaction },
+      { path: 'interaction/:id', component: Comment },
       { path: '', redirect: 'home' }
     ]
   }, {

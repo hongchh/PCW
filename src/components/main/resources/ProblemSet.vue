@@ -55,7 +55,7 @@ export default {
     padding-bottom: 10px
     border-bottom: 1px solid #eeeeee
     font-weight: 400
-    font-size: 28px
+    font-size: 24px
     color: #1f2f3d
 
   ul
@@ -63,6 +63,6 @@ export default {
     margin-bottom: 10px
   
   li
-    padding-top: 5px
-    padding-bottom: 5px
+    padding-top: 8px
+    padding-bottom: 8x
 </style>
