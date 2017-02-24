@@ -1,6 +1,5 @@
 <template lang="pug">
 div#achievements
-  h1 Achievements（科研成就）
   el-row(type="flex", justify="center")
     el-col(:span="22")
       el-table(:data="achievements", stripe)

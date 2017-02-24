@@ -1,6 +1,5 @@
 <template lang="pug">
 div#honor
-  h1 Honor（教学荣誉）
   el-row(type="flex", justify="center")
     el-col(:span="20")
       h2 个人荣誉

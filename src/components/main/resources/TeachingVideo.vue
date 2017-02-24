@@ -1,6 +1,5 @@
 <template lang="pug">
 div#teaching-video
-  h1 Teaching Video（教学视频）
   el-row(type="flex", justify="center")
     el-col(:span="20")
       el-tabs

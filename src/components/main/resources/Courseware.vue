@@ -1,6 +1,5 @@
 <template lang="pug">
 div#courseware
-  h1 Courseware（教案课件）
   el-row(type="flex", justify="center")
     el-col(:span="20")
       el-tabs(type="border-card")

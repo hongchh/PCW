@@ -1,6 +1,5 @@
 <template lang="pug">
 div#comment
-  h1 互动专区
   el-row(type="flex", justify="center")
     el-col(:span="20")
       el-card

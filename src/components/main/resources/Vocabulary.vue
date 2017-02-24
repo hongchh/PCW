@@ -1,6 +1,5 @@
 <template lang="pug">
 div#vocabulary
-  h1 Vocabulary（专业词汇）
   el-row(type="flex", justify="center")
     el-col(:span="20")
       h2 附件

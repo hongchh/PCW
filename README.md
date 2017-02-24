@@ -1,6 +1,16 @@
 # PCW
 > Pathophysiology Course Website. 病理生理学课程网站。
 
+```bash
+# 项目启动
+# 课程网站 http://localhost:8080/main/home
+# 网站管理 http://localhost:8080/management/home
+npm run dev
+
+# 项目构建
+npm run build
+```
+
 ## 1、协作规范
 本仓库有2个分支，master和dev。主要在dev分支上进行开发和测试，功能完善之后再合并到master。
 ```txt
@@ -304,11 +314,3 @@ student账号比较简单，只有用于登录的账号密码以及头像的url�
 4. 使用pug+sass+es6进行开发
 5. 各个界面在路由中已经引入并写好跳转关系，如果界面中需要用到自定义组件请将组件放置在该界面所在的文件夹里面。例如首页如果把轮播图单独写成1个组件，那么就要将轮播图组件放在/main/home文件夹里面。向/main/course文件夹这种里面组件较多的，如果涉及到比较多自定义子组件可以在/main/course下面继续建立子文件夹。main模块基本已经解耦可以单独进行各个子模块的开发，所以全程需要保持顶层的关系不变避免冲突。
 6. 伪数据程程器和伪数据json文件都放置在data文件夹下面。生成器和json文件的命名格式为"xxx-genertor.js"和"xxx.json"，其实"xxx"为上述各个数据模型的英文名称。
-
-## 8、运行/构建
-```bash
-# 前端开发
-npm run dev
-# 构建产品
-npm run build
-```

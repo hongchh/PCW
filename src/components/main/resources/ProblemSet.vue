@@ -1,6 +1,5 @@
 <template lang="pug">
 div#problem-set
-  h1 Problem Set（试卷习题）
   el-row(type="flex", justify="center")
     el-col(:span="20")
       h2 本科试卷

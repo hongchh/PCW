@@ -1,6 +1,5 @@
 <template lang="pug">
 div#evaluation
-  h1 Evalucation（教学评价）
   el-row(type="flex", justify="center")
     el-col(:span="20")
       el-tabs(type="border-card")
