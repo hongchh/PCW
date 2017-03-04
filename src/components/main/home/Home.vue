@@ -84,19 +84,15 @@ export default {
 <style lang="sass">
 #main-home
   .el-carousel
-    margin: 20px auto
+    margin: 15px auto
   .slide-holder
-    width: 100%
     height: 100%
-    overflow: hidden
     .slide
       width: 100%
       height: 100%
   .info
-    padding: 20px 10px
-    overflow: hidden
     .info-header
-      border-bottom: 3px solid #35904d
+      border-bottom: 3px solid #20A0FF
       margin-bottom: 10px
       .header-text
         display: inline-block
@@ -105,10 +101,9 @@ export default {
       .heaedr-link
         float: right
         margin: 10px 10px 0 0
-        color: #20a0ff
+        color: #13CE66
         text-decoration: none
     .info-content
-      color: grey
       img
         float: left
         width: 175px
@@ -116,8 +111,8 @@ export default {
         margin: 15px
       p
         font-size: 14px
-        line-height: 18px
+        line-height: 20px
         margin-left: 200px
-        padding: 15px
+        padding: 10px
         white-space: pre-wrap
 </style>

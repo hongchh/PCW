@@ -2,7 +2,7 @@
 div#evaluation
   el-row(type="flex", justify="center")
     el-col(:span="20")
-      el-tabs(type="border-card")
+      el-tabs
         el-tab-pane(label="同行及校内监督组评价")
           h2 校内专家评价
           ul

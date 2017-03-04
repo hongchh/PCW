@@ -47,13 +47,12 @@ export default {
 
 <style lang="sass">
 #main, #main-header, #main-nav, #main-body, #main-footer
-  width: 100%
   position: relative
 #main
   height: 100%
 #main-header
   height: 100px
-  background: #489e6b
+  background: #1D8CE0
   #header-logo
     height: 100px
     margin-left: 50px
@@ -66,7 +65,7 @@ export default {
     right: 10px
 #main-nav
   height: 40px
-  background: #35904d
+  background: #20A0FF
   .nav-item
     position: absolute
     width: 15%
@@ -87,7 +86,6 @@ export default {
       overflow: hidden
       .link-list-item
         display: block
-        width: 100%
         height: 28px
         font-size: 14px
         color: white
@@ -115,17 +113,18 @@ export default {
   #nav-item-3
     left: 70%
 #main-body
+  box-sizing: border-box
   width: 90%
   min-height: calc(100% - 200px)
   margin: 0 auto
   background: white
-  padding: 10px 20px 20px 20px
+  padding: 15px 0
 #main-footer
   height: 60px
-  background: #489e6b
+  background: #1D8CE0
   text-align: center
   line-height: 60px
   color: white
   span
-    font-size: 10px
+    font-size: 14px
 </style>

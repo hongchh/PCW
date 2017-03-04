@@ -1,6 +1,5 @@
 <template lang="pug">
 div#interaction
-  h1 Interaction（互动区）
   el-row(type="flex", justify="center")
     el-col(:span="22")
       ul

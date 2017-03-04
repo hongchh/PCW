@@ -2,7 +2,7 @@
 div#courseware
   el-row(type="flex", justify="center")
     el-col(:span="20")
-      el-tabs(type="border-card")
+      el-tabs
         el-tab-pane(label="临床医学专业五年制")
           div.item(v-for="item in coursewares")
             span(v-if="!item.link") {{ item.content }}
