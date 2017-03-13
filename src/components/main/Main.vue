@@ -52,7 +52,7 @@ export default {
   height: 100%
 #main-header
   height: 100px
-  background: #1D8CE0
+  background: #489e6b
   #header-logo
     height: 100px
     margin-left: 50px
@@ -65,7 +65,7 @@ export default {
     right: 10px
 #main-nav
   height: 40px
-  background: #20A0FF
+  background: #35904d
   .nav-item
     position: absolute
     width: 15%
@@ -121,7 +121,7 @@ export default {
   padding: 15px 0
 #main-footer
   height: 60px
-  background: #1D8CE0
+  background: #489e6b
   text-align: center
   line-height: 60px
   color: white

@@ -92,7 +92,7 @@ export default {
       height: 100%
   .info
     .info-header
-      border-bottom: 3px solid #20A0FF
+      border-bottom: 3px solid #35904d
       margin-bottom: 10px
       .header-text
         display: inline-block
@@ -101,7 +101,7 @@ export default {
       .heaedr-link
         float: right
         margin: 10px 10px 0 0
-        color: #13CE66
+        color: #20A0FF
         text-decoration: none
     .info-content
       img

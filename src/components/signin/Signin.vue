@@ -32,7 +32,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           // TODO: 登录操作
-          this.$router.replace('/main/interaction')
+          this.$router.replace('/management')
         } else {
           return false
         }
