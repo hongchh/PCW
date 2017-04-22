@@ -1,19 +1,19 @@
 <template lang="pug">
 div#signin
-  el-card#signin-form-holder
-    div(slot="header")
-      img#logo(src="../../assets/logo.png")
-    el-form#signin-form(:model="form", ref="form")
-      el-form-item(prop="username", :rules="[{ required: true, message: '请输入用户名' }]")
-        el-input(v-model="form.username", placeholder="用户名")
-      el-form-item(prop="password", :rules="[{ required: true, message: '请输入密码' }]")
-        el-input(type="password", v-model="form.password", placeholder="密码")
-      el-form-item
-        el-row(:gutter="25")
-          el-col(:span="12")
-            el-button(type="primary", @click="signin('form')") 登陆
-          el-col(:span="12")
-            el-button(@click="reset('form')") 重置
+  div#mask
+    img#logo(src="../../assets/logo.png")
+    div#signin-form
+      el-form(ref="account", :model="account")
+        el-form-item(prop="username", :rules="[{ required: true, message: '请输入用户名' }]")
+          el-input(v-model="account.username", placeholder="用户名")
+        el-form-item(prop="password", :rules="[{ required: true, message: '请输入密码' }]")
+          el-input(v-model="account.password", placeholder="密码", type="password")
+        el-form-item
+          el-row(:gutter="25")
+            el-col(:span="12")
+              el-button(type="primary", @click="signin('account')") 登陆
+            el-col(:span="12")
+              el-button(@click="reset('account')") 重置
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
   name: 'signin',
   data () {
     return {
-      form: {
+      account: {
         username: '',
         password: ''
       }
@@ -46,21 +46,32 @@ export default {
 </script>
 
 <style lang="sass">
-#signin
-  height: 100%
+#signin, #mask
   position: relative
-  display: flex
-  flex-direction: column
-  justify-content: center
-  background-image: url(../../assets/signin-bg.jpg)
+  height: 100%
   background-size: 100% 100%
-  background-attachment: fixed
-  #signin-form-holder
-    width: 350px
-    margin: 0 calc(50% - 175px)
-    #logo
-      width: 100%
-    #signin-form
+#signin
+  background-image: url(../../assets/signin-bg.jpg)
+#mask
+  background-image: url(../../assets/line.png)
+  #logo
+    width: 300px
+    height: 70px
+    position: absolute
+    top: 80px
+    left: 100px
+    span
+      display: block
+    #logo-header
+      font-size: 45px
+  #signin-form
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    .el-form
+      width: 400px
+      margin: 0 calc(50% - 200px)
       .el-button
         width: 100%
 </style>
