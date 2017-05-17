@@ -2,13 +2,65 @@
 > Pathophysiology Course Website. 病理生理学课程网站。
 
 ```bash
-# 项目启动
-# 课程网站 http://localhost:8080/main/home
-# 网站管理 http://localhost:8080/management/home
-npm run dev
-
-# 项目构建
-npm run build
+# 项目启动和构建相关介绍
+# 项目启动和构建包含3个部分，主网站、管理系统，以及服务器
+# 启动主网站开发 http://localhost:8081/main/home
+npm run dev-main
+# 启动管理系统开发 http://localhost:8082/management/home
+npm run dev-management
+# 构建主网站和管理系统产品文件
+npm run build-main
+npm run build-management
+# 运行服务器，在启动服务器需要确保先构建好前端的产品文件
+# http://localhost:8080/main/home
+# http://localhost:8080/management/home
+npm run server
+# 代码风格检测
+npm run lint-main
+npm run lint-management
+npm run lint-server
+```
+# 项目结构
+```txt
+├─FE-main: 课程网站前端代码
+│    ├─build: 存放webpack开发和构建相关配置文件
+│    ├─config: 存放webpack配置文件
+│    ├─data: 项目开发过程中需要用到的伪数据或其他静态资源
+│    ├─src: 源代码
+│    │   ├─assets: 图片等资源文件
+│    │   ├─components: 页面组件
+│    │   ├─router: 前端路由
+│    │   ├─store: 全局状态管理
+│    │   ├─App.vue: 顶层组件
+│    │   └─entry.js: 应用入口文件
+│    └─index.html
+├─FE-management: 管理系统前端代码
+│    ├─build: 存放webpack开发和构建相关配置文件
+│    ├─config: 存放webpack配置文件
+│    ├─data: 项目开发过程中需要用到的伪数据或其他静态资源
+│    ├─src: 源代码
+│    │   ├─assets: 图片等资源文件
+│    │   ├─components: 页面组件
+│    │   ├─router: 前端路由
+│    │   ├─store: 全局状态管理
+│    │   ├─App.vue: 顶层组件
+│    │   └─entry.js: 应用入口文件
+│    └─index.html
+├─images-for-readme: 存放README用到的图片文件
+├─Server: 服务端代码
+│    ├─api: 服务端api，express路由
+│    ├─model: 数据模型
+│    ├─public: 前端静态资源以及页面文件
+│    │    ├─main: 存放课程网站前端构建产品文件
+│    │    └─management: 存放管理系统的前端构建产品文件
+│    └─index.js: express服务器配置和启动文件
+├─.babelrc: babel配置文件
+├─.editorconfig: 编辑器配置文件
+├─.eslintignore: eslint配置文件
+├─.eslintrc.js: eslint配置文件
+├─.gitignore: git配置文件
+├─package.json: 项目包管理文件
+└─README.md: 项目描述和部分文档
 ```
 
 ## 1、协作规范
@@ -19,36 +71,24 @@ npm run build
 ```
 #### 1.1、准备工作
 在github上fork本仓库到你自己的github，将你自己的远程仓库克隆到本地之后切换分支。
-```txt
-git clone https://github.com/{你的github}/PCW -b dev
+```bash
+git clone https://github.com/{你的github}/PCW
+# 上游的源仓库地址只需添加一次
+git remote add upstream https://github.com/hongchh/PCW
+# 切出 dev 分支
+git checkout -b dev
 ```
 #### 1.2、开发过程
-要开发某个模块的时候，在你的本地仓库创建一个分支，例如mydev。
-```txt
-git checkout -b mydev
-```
-切换之后你的本地仓库上就有3个分支了，如下所示。checkout之后会自动切换到mydev分支。
-```txt
-|----master
-|----dev
-|----mydev
-```
-在mydev分支上进行开发和测试，完成相应的功能或者模块，完成之后再切回到dev分支将mydev的内容合并到dev。
-```txt
-git checkout dev
-```
-由于在你开发过程中，我也可能在开发并且更新了仓库，为了避免冲突，在合并分支之前你还需要更新你本地仓库的dev分支。先在本地仓库上添加上游仓库upstream，上游仓库即我的仓库，然后使用pull命令从上游仓库拉取更新。
-```txt
-git add remote upstream https://github.com/hongchh/PCW dev
-git pull upstream
-```
-更新完dev之后，将mydev分支合并到dev分支并提交到你自己的远程仓库。完成之后，mydev分支就可以删除了，你也可以继续留着。
-```txt
-git merge mydev
+可以直接在你本地仓库的dev分支上面进行开发，然后在发送PR之前先从源仓库拉取更新。
+```bash
+# 提交你的代码
+git add *
+git commit -m "add something"
+# 拉取上游的源仓库 dev 分支上的更新，可能会有冲突需要自行解决
+git pull upstream dev
+# 推送到你自己的远程仓库，注意这里是 push 到 origin dev，不是 upstream dev
 git push origin dev
-git branch -d mydev
 ```
-推送到自己的远程仓库后，就可以到github上面给我发起合并请求了，然后等待我合并你的代码。
 
 ## 2、网站需求（模块分析）
 #### 2.1、Home
@@ -104,31 +144,8 @@ git branch -d mydev
 #### 3.4、超级管理员
 权限：修改更新网站展示内容；修改自己的账号信息；管理student账号；管理普通管理员账号
 
-## 4、界面原型
-#### 4.1、网站首页
-![demo-home](images-for-readme/demo-home.png)
-
-**备注：**hover顶部4个项时候弹出菜单，菜单中包含相应模块的各部分内容的链接；主页中间为轮播图，展示教研室以及课程的特色；下面为3个主要的简介，最后的"more"是一个链接，可以跳转到相应的详细介绍的界面；
-
-#### 4.2、主体界面
-![demo-main-1](images-for-readme/demo-main-1.png)
-![demo-main-2](images-for-readme/demo-main-2.png)
-![demo-main-3](images-for-readme/demo-main-3.png)
-
-**备注：**Course、Resources等4部分内容都在主体界面中展示，初步想法为根据不同的URL渲染不同的组件即可，上面是简单的示例。每个组件的UI具体如何，信息如何呈现，需要待开发过程中进一步完善，整体上需要保持风格一致。
-
-#### 4.3、管理界面
-![demo-management](images-for-readme/demo-management.png)
-
-**备注：**管理界面的基本结构如上，左边是一个侧拉菜单，根据菜单中不同的选项，在主体界面中展示不同的内容。菜单底部显示管理员的基本信息，以及提供退出的操作；各部分内容具体如何展示待进一步设计。
-
-#### 4.4、登录界面
-![demo-signin](images-for-readme/demo-signin.png)
-
-**备注：**登录界面，管理员或者普通成员都通过此界面登录，然后根据身份跳转到相应的界面。
-
-## 5、数据模型
-#### 5.1、轮播图（rotary-images）
+## 4、数据模型
+#### 4.1、轮播图（rotary-images）
 轮播图使用多张图片，每张图片都有个description对图片进行简要描述，url则是图片的链接。
 ```json
 [{
@@ -137,7 +154,7 @@ git branch -d mydev
 }]
 ```
 
-#### 5.2、首页的简介（abstract）
+#### 4.2、首页的简介（abstract）
 首页的3部分简介分别是3个不同内容的字符串。
 ```json
 {
@@ -147,7 +164,7 @@ git branch -d mydev
 }
 ```
 
-#### 5.3、课程介绍（course-introduction）
+#### 4.3、课程介绍（course-introduction）
 课程介绍包括4部分内容，课程介绍/历史沿革/课程内容/课程特色，都是字符串。
 ```json
 {
@@ -158,7 +175,7 @@ git branch -d mydev
 }
 ```
 
-#### 5.4、教学要求（course-requirements）
+#### 4.4、教学要求（course-requirements）
 教学要求包含3项信息：基本理论、基本技能和教学要求。
 ```json
 {
@@ -168,7 +185,7 @@ git branch -d mydev
 }
 ```
 
-#### 5.5、教学大纲/教学方法（course-sundry）
+#### 4.5、教学大纲/教学方法（course-sundry）
 教学大纲/教学方法这两部分内容的数据格式都一样，所以合并到一起，加个type字段用于区分。
 ```json
 [{
@@ -177,7 +194,7 @@ git branch -d mydev
 }]
 ```
 
-#### 5.6、教学团队/管理员账号信息（team-memebers）
+#### 4.6、教学团队/管理员账号信息（team-memebers）
 教学团队成员默认也是网站的管理员，所以两者用到是同一份数据。每个成员包括姓名、性别、职称、角色、头像、学历、研究方向这几部分信息，然后还有用于登录的账号密码。职称：教授/副教授/讲师/教员。角色：课程负责人/主讲教师/助理。另外管理员分为超级管理员和普通管理员，用auth字段区分。
 ```json
 [{
@@ -195,7 +212,7 @@ git branch -d mydev
 }]
 ```
 
-#### 5.7、课程安排（course-arrangement）
+#### 4.7、课程安排（course-arrangement）
 课程安排包括阶段安排、考核安排、教学安排3项信息，其中前两项都是文本描述，最后一项教学安排为表格描述，表格的每一项表示每一周的上课内容。
 ```json
 {
@@ -208,7 +225,7 @@ git branch -d mydev
 }
 ```
 
-#### 5.8、视频、课件、习题等资源（course-resource）
+#### 4.8、视频、课件、习题等资源（course-resource）
 视频、课件资源则是提供1个url用于下载即可，另外需要用type字段区分类型，name字段对响应的资源进行简要描述。
 ```json
 [{
@@ -218,7 +235,7 @@ git branch -d mydev
 }]
 ```
 
-#### 5.9、教材信息（teaching-material）
+#### 4.9、教材信息（teaching-material）
 教材分为现用教材/主编教材/主审教材/参考教材这几种类型，用type字段区分，description则描述教材名称、作者、出版社、年份等信息。
 ```json
 [{
@@ -227,7 +244,7 @@ git branch -d mydev
 }]
 ```
 
-#### 5.10、荣誉和评价（honor-evaluation）
+#### 4.10、荣誉和评价（honor-evaluation）
 荣誉和评价基本都是图片，所以只需要提供url下载到浏览器展示即可。description对图片进行简要描述，type则是区分类型（荣誉/评价）。
 ```json
 [{
@@ -237,7 +254,7 @@ git branch -d mydev
 }]
 ```
 
-#### 5.11、论文（papers）
+#### 4.11、论文（papers）
 论文分为教学论文/科研论文两部分，用type字段区分。name为论文名称，time为发布时间，author为论文作者，publication为收录论文的刊物。
 ```json
 [{
@@ -249,7 +266,7 @@ git branch -d mydev
 }]
 ```
 
-#### 5.12、互动（interactive-messages）
+#### 4.12、互动（interactive-messages）
 互动区发布的消息内容存在content字段，time描述发布的时间，例如：2017-02-01 21:58。comment则是一个数组，里面收集其他用户对评论的回复，包括回复者、回复时间、回复内容3部分信息。
 ```json
 [{
@@ -263,7 +280,7 @@ git branch -d mydev
 }]
 ```
 
-#### 5.13、学生账号（student）
+#### 4.13、学生账号（student）
 student账号比较简单，只有用于登录的账号密码以及头像的url。
 ```json
 {
@@ -273,44 +290,10 @@ student账号比较简单，只有用于登录的账号密码以及头像的url�
 }
 ```
 
-## 6、项目结构
-```txt
-├─build：存放构建用到的相关文件
-├─config：存放配置文件
-├─data：存放伪数据以及数据生成器供前端开发使用
-├─server：服务端开发的源码
-│   ├─controller：服务端业务逻辑
-│   ├─model：数据存储访问
-│   ├─static：前端静态文件
-│   ├─views：应用的视图文件
-│   ├─app.js：express服务器配置文件
-│   └─server.js：服务器启动文件
-└─src：前端开发的源码
-    ├─assets：图片等静态资源
-    ├─components：前端组件
-    │     ├─main：应用主体界面（首页/课程/资源/成就/互动 5大板块）
-    │     │   ├─achievement：成就相关界面及其用到的组件
-    │     │   ├─course：课程相关界面及其用到的组件
-    │     │   ├─home：首页及其用到的组件
-    │     │   ├─interaction：互动界面及其用到的组件
-    │     │   └─resources：资源相关界面及其用到的组件
-    │     ├─management：管理员界面
-    │     │   ├─account：账号管理界面及其用到的组件
-    │     │   ├─achievement：成就管理界面及其用到的组件
-    │     │   ├─course：课程管理界面及其用到的组件
-    │     │   ├─interaction：互动管理界面及其用到的组件
-    │     │   └─resources：资源管理界面及其用到的组件
-    │     └─signin：登录界面
-    ├─router：前端路由
-    ├─store：应用的全局状态
-    ├─App.vue：应用的外层结构
-    └─entry.js：应用的入口文件
-```
-
-## 7、开发规范
+## 5、开发规范
 1. Vue组件文件名使用首字母大写驼峰形式命名，例如"CourseIntroduction.vue"；name属性采取小写形式，例如"course-introduction"
 2. 文件夹采用小写短线形式命名，例如"images-for-readme"
 3. 代码缩进为2个空格；语句末尾全部不写分号；其他代码风格细节参考eslint的提示进行修改
 4. 使用pug+sass+es6进行开发
-5. 各个界面在路由中已经引入并写好跳转关系，如果界面中需要用到自定义组件请将组件放置在该界面所在的文件夹里面。例如首页如果把轮播图单独写成1个组件，那么就要将轮播图组件放在/main/home文件夹里面。向/main/course文件夹这种里面组件较多的，如果涉及到比较多自定义子组件可以在/main/course下面继续建立子文件夹。main模块基本已经解耦可以单独进行各个子模块的开发，所以全程需要保持顶层的关系不变避免冲突。
+5. 各个界面在路由中已经引入并写好跳转关系，如果界面中需要用到自定义组件请将组件放置在该界面所在的文件夹里面。例如首页如果把轮播图单独写成1个组件，那么就要将轮播图组件放在/home文件夹里面。向/course文件夹这种里面组件较多的，如果涉及到比较多自定义子组件可以在/course下面继续建立子文件夹。main模块基本已经解耦可以单独进行各个子模块的开发，所以全程需要保持顶层的关系不变避免冲突。
 6. 伪数据程程器和伪数据json文件都放置在data文件夹下面。生成器和json文件的命名格式为"xxx-genertor.js"和"xxx.json"，其实"xxx"为上述各个数据模型的英文名称。
