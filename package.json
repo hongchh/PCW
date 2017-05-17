@@ -5,10 +5,14 @@
   "author": "hongchh <hongchh_sysu@qq.com>",
   "private": true,
   "scripts": {
-    "dev": "node build/dev-server.js",
-    "build": "node build/build.js",
-    "lint": "eslint --ext .js,.vue src",
-    "server": "node server/server.js"
+    "dev-main": "node FE-main/build/dev-server.js",
+    "dev-management": "node FE-management/build/dev-server.js",
+    "build-main": "node FE-main/build/build.js",
+    "build-management": "node FE-management/build/build.js",
+    "lint-main": "eslint --ext .js,.vue FE-main/src",
+    "lint-management": "eslint --ext .js,.vue FE-management/src",
+    "lint-server": "eslint --ext .js Server",
+    "server": "node Server/index.js"
   },
   "dependencies": {
     "axios": "^0.15.3",
