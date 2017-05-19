@@ -3,3 +3,5 @@ node_modules/
 npm-debug.log
 sessions/
 .idea/
+Server/public/main/
+Server/public/management/
