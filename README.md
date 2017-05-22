@@ -88,7 +88,7 @@ git pull upstream dev
 # 切换到 dev 分支
 git checkout dev
 # 进行开发，开发完某个功能后提交你的代码
-git add *
+git add -A
 git commit -m "add something"
 # 拉取上游的源仓库 dev 分支上的更新，可能会有冲突需要自行解决
 git pull upstream dev
