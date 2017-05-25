@@ -5,15 +5,15 @@ div.course-module#teaching-team
       span.info-card-header 教学团队
     div.info-card-content
       div.info-holder(v-for="member in teachingTeam")
-        img.head-img(src="../../assets/default-head-img.jpg")
+        img.head-img(:src="member.avatar")
         div.team-member
-          p.name {{ member.name + member.title }}
+          p.name {{ member.name }}
           div
-            el-tag(type="primary") {{ member.role }}
-            el-tag(type="success") {{ member.education }}
-            el-tag(type="warning") {{ member.sex }}
-          p 学科专业：{{ member.major }}
-          p 研究方向：{{ member.direction }}
+            el-tag(type="primary", v-if="member.title.length > 0") {{ member.title }}
+            el-tag(type="success", v-if="member.role.length > 0") {{ member.role }}
+          div
+            el-tag(type="warning", v-if="member.education.length > 0") {{ member.education }}
+            el-tag(type="danger", v-if="member.sex.length > 0") {{ member.sex }}
 </template>
 
 <script>
@@ -47,6 +47,7 @@ export default {
     .head-img
       display: block
       width: 60%
+      height: 300px
       border-radius: 50%
       border: 5px solid rgba(0, 0, 0, 0.1)
       margin: 0 auto 20px auto
@@ -58,5 +59,5 @@ export default {
       .name
         font-size: 18px
       .el-tag
-        margin: 0 5px
+        margin: 5px
 </style>
