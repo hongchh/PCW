@@ -3,7 +3,7 @@ div#main
   div#main-header
     router-link(to="/main/home")
       img#header-logo(src="../assets/logo.png")
-    router-link#header-auth(to="/signin") 登录
+    a#header-auth(href="http://localhost:8082/signin") 登录
   div#main-nav
     div.nav-item#nav-item-0
       span 课程信息&nbsp;

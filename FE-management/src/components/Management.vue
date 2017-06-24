@@ -40,7 +40,7 @@ export default {
   methods: {
     signout () {
       // TODO: 退出登录
-      window.location.replace('http://localhost:8081/main/home')
+      this.$router.replace('/signin')
     }
   }
 }

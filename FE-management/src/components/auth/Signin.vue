@@ -32,7 +32,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           // TODO: 登录操作
-          window.location.replace('http://localhost:8082/management')
+          this.$router.replace('/management')
         } else {
           return false
         }

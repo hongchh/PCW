@@ -7,6 +7,7 @@ import Management from '../components/Management'
 import AccountManagement from '../components/account/AccountManagement'
 import CourseManagement from '../components/course/CourseManagement'
 import HomeManagement from '../components/home/HomeManagement'
+import Signin from '../components/auth/Signin'
 
 export default new Router({
   mode: 'history',
@@ -19,6 +20,9 @@ export default new Router({
       { path: 'home', component: HomeManagement },
       { path: '*', redirect: 'home' }
     ]
+  }, {
+    path: '/signin',
+    component: Signin
   }, {
     path: '*',
     redirect: '/management'
