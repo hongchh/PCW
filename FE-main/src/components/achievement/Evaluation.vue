@@ -67,7 +67,7 @@ export default {
     height: 50px
     line-height: 50px
     padding: 0 20px
-    
+
   .el-tab-pane
     padding-left: 20px
     padding-right: 20px

@@ -1,6 +1,6 @@
 <template lang="pug">
 div#course-requirement-management
-  el-card(v-for="(val, key) in requirementItems")
+  el-card(v-for="(val, key) in requirementItems", :key="key")
     div.clearfix(slot="header")
       span.header-text {{ key }}
       el-button(style="float: right;" type="primary") 保存

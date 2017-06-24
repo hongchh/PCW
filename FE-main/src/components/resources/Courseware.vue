@@ -11,7 +11,6 @@ div#courseware
           div.item(v-for="item in coursewares")
             span(v-if="!item.link") {{ item.content }}
             a.link(v-if="item.link", :href="item.link", target="_blank") {{ item.content }}
-
 </template>
 
 <script>
@@ -47,5 +46,4 @@ export default {
 
   .item
     padding: 12px 20px
-    
 </style>

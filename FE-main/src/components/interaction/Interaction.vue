@@ -14,7 +14,6 @@ div#interaction
             div.discussion-detail
               span.user {{ discussion.user }}
               span.time 创建于 {{ discussion.time}}
-
 </template>
 
 <script>
@@ -98,5 +97,4 @@ export default {
       .time
         margin-left: 10px
         color: #aaaaaa
-
 </style>

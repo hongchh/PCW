@@ -7,7 +7,7 @@ div#achievements
           template(scope="scope")
             ul
               li {{ scope.row.researchProject }}
-            el-tag(v-for="award in scope.row.awards", :type="scope.row.type") {{ award }}
+            el-tag(v-for="(award, i) in scope.row.awards", :key="i", :type="scope.row.type") {{ award }}
         el-table-column(min-width="120", label="授予单位", header-align="center", align="center", prop="grantingUnit")
         el-table-column(min-width="120", label="署名", header-align="center", align="center", prop="signature")
         el-table-column(min-width="120", label="时间", header-align="center", align="center", prop="time")
@@ -46,5 +46,4 @@ export default {
   .el-tag
     margin-left: 20px
     margin-bottom: 15px
-
 </style>

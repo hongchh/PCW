@@ -4,7 +4,7 @@ div#home-management
     div.clearfix(slot="header")
       span.header-text 轮播图片
     el-row(:gutter="25")
-      el-col(:span="12", v-for="img in slides")
+      el-col(:span="12", v-for="(img, i) in slides", :key="i")
         el-upload(action="//jsonplaceholder.typicode.com/posts/", type="drag", :thumbnail-mode="true", :on-preview="handlePreview", :on-remove="handleRemove", :default-file-list="img")
           i.el-icon-upload
           div.el-dragger__text 将文件拖到此处，或<em>点击上传</em>
@@ -13,13 +13,13 @@ div#home-management
     div.clearfix(slot="header")
       span.header-text 版块配图
     el-row(:gutter="25")
-      el-col(:span="8", v-for="img in subImgs")
+      el-col(:span="8",  v-for="(img, i) in subImgs", :key="i")
         el-upload(action="//jsonplaceholder.typicode.com/posts/", type="drag", :thumbnail-mode="true", :on-preview="handlePreview", :on-remove="handleRemove", :default-file-list="img", style="height: 200px")
           i.el-icon-upload
           div.el-dragger__text 将文件拖到此处，或<em>点击上传</em>
           div.el-upload__tip 只能上传jpg/png文件，且不超过500kb
   el-row(:gutter="25")
-    el-col(:span="8", v-for="(val, key) in editItems")
+    el-col(:span="8", v-for="(val, key) in editItems", :key="key")
       el-card
         div.clearfix(slot="header")
           span.header-text {{ key }}

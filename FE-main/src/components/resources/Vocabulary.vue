@@ -4,7 +4,7 @@ div#vocabulary
     el-col(:span="20")
       h2 附件
       ul
-        li 
+        li
           a.link(href='http://jpkc.sysu.edu.cn/pathophysiology/vocabulary/病理生理学专业词汇.pdf',
           target="_blank") 病理生理学专业词汇.pdf
         li
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style lang="sass">
-@import './style/common.sass' 
+@import './style/common.sass'
 
 #vocabulary
   h2
@@ -47,19 +47,18 @@ export default {
     font-weight: 400
     font-size: 28px
     color: #1f2f3d
-  
+
   .vocabulary
     margin-top: 30px
 
   ul
     margin-top: 10px
     margin-bottom: 10px
-  
+
   li
     padding-top: 5px
     padding-bottom: 5px
-  
+
   .el-table
     margin: 30px 0
-
 </style>

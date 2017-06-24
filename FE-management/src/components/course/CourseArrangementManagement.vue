@@ -21,7 +21,7 @@ div#course-arrangement-management
         el-input(value="上课内容", :disabled="true")
       el-col(:span="3")
         el-input(value="操作", :disabled="true")
-    el-row(:gutter="20", v-for="(item, index) in arrangement.course")
+    el-row(:gutter="20", v-for="(item, index) in arrangement.course", :key="index")
       el-col(:span="3")
         el-input(v-model="item.week")
       el-col(:span="18")

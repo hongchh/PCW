@@ -110,6 +110,4 @@ export default {
         background-color: #009a61
       &:active
         background-color: #008151
-
-        
 </style>

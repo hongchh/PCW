@@ -1,6 +1,6 @@
 <template lang="pug">
 div.course-module#course-requirements
-  el-card.info-card(v-for="(item, i) in requirementItems")
+  el-card.info-card(v-for="(item, i) in requirementItems", :key="i")
     div(slot="header")
       span.info-card-header {{ item }}
     p.info-card-content {{ Object.values(requirementContent)[i] }}

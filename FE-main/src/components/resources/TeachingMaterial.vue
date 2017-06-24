@@ -71,7 +71,7 @@ export default {
   ol
     margin-top: 10px
     margin-bottom: 10px
-  
+
   li
     padding-top: 8px
     padding-bottom: 8px

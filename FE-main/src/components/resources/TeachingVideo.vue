@@ -31,7 +31,7 @@ div#teaching-video
       el-dialog(title="在线观看", v-model="dialogVisible", size="small", @close="stop")
         div.video-container
           video(controls, :src="link")
-  
+
 </template>
 
 <script>
