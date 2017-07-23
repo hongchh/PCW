@@ -42,11 +42,10 @@ export default {
   flex-wrap: wrap
   justify-content: space-around
   .info-holder
-    width: 32%
     margin-bottom: 15px
     .head-img
       display: block
-      width: 60%
+      width: 300px
       height: 300px
       border-radius: 50%
       border: 5px solid rgba(0, 0, 0, 0.1)
