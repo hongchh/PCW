@@ -10,10 +10,8 @@ div#main
       i.el-icon-caret-bottom
       div.link-list#list-0
         router-link.link-list-item(to="/main/course-introduction") 课程介绍
-        router-link.link-list-item(to="/main/course-requirements") 课程要求
-        router-link.link-list-item(to="/main/course-arrangement") 课程安排
-        router-link.link-list-item(to="/main/teaching-plan") 教学大纲
-        router-link.link-list-item(to="/main/teaching-method") 教学方法
+        router-link.link-list-item(to="/main/teaching-plan") 教学安排
+        router-link.link-list-item(to="/main/second-class") 第二课堂
         router-link.link-list-item(to="/main/teaching-team") 教学团队
     div.nav-item#nav-item-1
       span 课程资源&nbsp;
@@ -99,7 +97,7 @@ export default {
     z-index: 99
     transition: all .2s ease-out
   #nav-item-0:hover .link-list
-    height: 168px
+    height: 112px
   #nav-item-1:hover .link-list
     height: 140px
   #nav-item-2:hover .link-list

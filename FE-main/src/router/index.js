@@ -5,10 +5,8 @@ Vue.use(Router)
 
 import Main from '../components/Main'
 import Home from '../components/home/Home'
-import CourseArrangement from '../components/course/CourseArrangement'
 import CourseIntroduction from '../components/course/CourseIntroduction'
-import CourseRequirements from '../components/course/CourseRequirements'
-import TeachingMethod from '../components/course/TeachingMethod'
+import SecondClass from '../components/course/SecondClass'
 import TeachingPlan from '../components/course/TeachingPlan'
 import TeachingTeam from '../components/course/TeachingTeam'
 import Courseware from '../components/resources/Courseware'
@@ -29,10 +27,8 @@ export default new Router({
     component: Main,
     children: [
       { path: 'home', component: Home },
-      { path: 'course-arrangement', component: CourseArrangement },
       { path: 'course-introduction', component: CourseIntroduction },
-      { path: 'course-requirements', component: CourseRequirements },
-      { path: 'teaching-method', component: TeachingMethod },
+      { path: 'second-class', component: SecondClass },
       { path: 'teaching-plan', component: TeachingPlan },
       { path: 'teaching-team', component: TeachingTeam },
       { path: 'courseware', component: Courseware },
