@@ -1,9 +1,9 @@
 <template lang="pug">
-div.course-module#course-introduction
-  el-card.info-card(v-for="(item, i) in introductionItems", :key="i")
+div#course-introduction
+  el-card.info-card(v-for="(item, i) in introduction", :key="i")
     div(slot="header")
-      span.info-card-header {{ item }}
-    p.info-card-content {{ Object.values(introductionContent)[i] }}
+      span.info-card-header {{ item.title }}
+    p.info-card-content {{ item.content }}
 </template>
 
 <script>
@@ -13,24 +13,13 @@ export default {
   name: 'course-introduction',
   data () {
     return {
-      introductionItems: [
-        '课程简介',
-        '历史沿革',
-        '课程内容',
-        '课程特色'
-      ],
-      introductionContent: {
-        introduction: 'loading',
-        history: 'loading',
-        content: 'loading',
-        feature: 'loading'
-      }
+      introduction: []
     }
   },
   created () {
     axios.get('/data/course-introduction.json').then((res) => {
       if (res.status === 200) {
-        this.introductionContent = res.data
+        this.introduction = res.data
       }
     })
   }
@@ -38,5 +27,18 @@ export default {
 </script>
 
 <style lang="sass">
-@import "./style/common.sass"
+#course-introduction .info-card
+  margin: 15px auto
+  .info-card-header
+    display: block
+    font-size: 18px
+    margin-left: 10px
+  .info-card-content
+    font-size: 14px
+    line-height: 18px
+    margin: 0
+    padding: 10px
+    border: 1px solid rgba(0, 0, 0, 0.2)
+    border-radius: 5px
+    white-space: pre-wrap
 </style>

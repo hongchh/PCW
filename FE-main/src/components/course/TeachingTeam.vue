@@ -41,12 +41,13 @@ export default {
   display: flex
   flex-wrap: wrap
   justify-content: space-around
+  padding: 20px
   .info-holder
     margin-bottom: 15px
     .head-img
       display: block
-      width: 300px
-      height: 300px
+      width: 240px
+      height: 240px
       border-radius: 50%
       border: 5px solid rgba(0, 0, 0, 0.1)
       margin: 0 auto 20px auto
