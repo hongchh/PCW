@@ -1,19 +1,15 @@
 <template lang="pug">
-div.course-module#teaching-team
-  el-card.info-card
-    div(slot="header")
-      span.info-card-header 教学团队
-    div.info-card-content
-      div.info-holder(v-for="member in teachingTeam")
-        img.head-img(:src="member.avatar")
-        div.team-member
-          p.name {{ member.name }}
-          div
-            el-tag(type="primary", v-if="member.title.length > 0") {{ member.title }}
-            el-tag(type="success", v-if="member.role.length > 0") {{ member.role }}
-          div
-            el-tag(type="warning", v-if="member.education.length > 0") {{ member.education }}
-            el-tag(type="danger", v-if="member.sex.length > 0") {{ member.sex }}
+div#teaching-team
+  el-card(v-for="(member, i) in teachingTeam", :key="i", :body-style="{ padding: '0px' }")
+    div.card-content
+      img(:src="member.avatar")
+      div.info
+        div.main
+          span.name {{ member.name }}
+          span.title {{ member.title ? '◎ ' + member.title : ' ' }}
+        div
+          el-tag(type="primary", v-if="member.role.length > 0") {{ member.role }}
+          el-tag(type="success", v-if="member.education.length > 0") {{ member.education }}
 </template>
 
 <script>
@@ -37,27 +33,32 @@ export default {
 </script>
 
 <style lang="sass">
-#teaching-team .info-card .info-card-content
+#teaching-team
   display: flex
   flex-wrap: wrap
   justify-content: space-around
   padding: 20px
-  .info-holder
-    margin-bottom: 15px
-    .head-img
-      display: block
-      width: 240px
-      height: 240px
-      border-radius: 50%
-      border: 5px solid rgba(0, 0, 0, 0.1)
-      margin: 0 auto 20px auto
-    .team-member
-      text-align: center
-      p
-        margin: 10px auto
-        font-size: 12px
-      .name
-        font-size: 18px
-      .el-tag
-        margin: 5px
+  .el-card
+    width: 240px
+    margin-bottom: 20px
+    .card-content
+      img
+        width: 100%
+        height: 270px
+        display: block
+      .info
+        padding: 12px
+        .main
+          display: flex
+          justify-content: space-between
+          align-items: flex-end
+          margin-bottom: 4px
+          .name
+            font-size: 18px
+          .title
+            font-size: 12px
+            font-style: italic
+            color: grey
+        .el-tag
+          margin: 4px
 </style>
