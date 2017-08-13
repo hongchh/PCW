@@ -39,13 +39,11 @@ div#main-home
     el-col(:span="8")
       div.info
         div.info-header
-          span.header-text 其他内容
+          span.header-text 公告
         div.info-content
-          h1 待补充合适的首页内容...
-          h1 待补充合适的首页内容...
-          h1 待补充合适的首页内容...
-          h1 待补充合适的首页内容...
-          h1 待补充合适的首页内容...
+          div.notification(v-for="item in abstract.notification")
+            span.title {{ item.title }}
+            span.date {{ item.date }}
       div.info
         div.info-header
           span.header-text 其他内容
@@ -91,19 +89,23 @@ export default {
       width: 100%
       height: 100%
   .info
+    margin-bottom: 20px
     .info-header
       border-bottom: 3px solid #35904d
       margin-bottom: 10px
       .header-text
         display: inline-block
-        font-size: 20px
+        font-size: 24px
+        font-weight: 500
         padding: 5px
       .heaedr-link
         float: right
         margin: 10px 10px 0 0
         color: #20A0FF
         text-decoration: none
+        font-style: italic
     .info-content
+      overflow: hidden
       img
         float: left
         width: 175px
@@ -115,4 +117,13 @@ export default {
         margin-left: 200px
         padding: 10px
         white-space: pre-wrap
+      .notification
+        display: flex
+        justify-content: space-between
+        padding: 3px
+        .title:hover
+          color: #20A0FF
+        .date
+          color: #888
+          font-style: italic
 </style>
