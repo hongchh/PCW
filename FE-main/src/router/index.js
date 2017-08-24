@@ -3,7 +3,6 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import Main from '../components/Main'
 import Home from '../components/home/Home'
 import CourseIntroduction from '../components/course/CourseIntroduction'
 import SecondClass from '../components/course/SecondClass'
@@ -22,28 +21,22 @@ import Comment from '../components/interaction/Comment'
 
 export default new Router({
   mode: 'history',
-  routes: [{
-    path: '/main',
-    component: Main,
-    children: [
-      { path: 'home', component: Home },
-      { path: 'course-introduction', component: CourseIntroduction },
-      { path: 'second-class', component: SecondClass },
-      { path: 'teaching-plan', component: TeachingPlan },
-      { path: 'teaching-team', component: TeachingTeam },
-      { path: 'courseware', component: Courseware },
-      { path: 'problem-set', component: ProblemSet },
-      { path: 'teaching-material', component: TeachingMaterial },
-      { path: 'teaching-video', component: TeachingVideo },
-      { path: 'vocabulary', component: Vocabulary },
-      { path: 'achievements', component: Achievements },
-      { path: 'evaluation', component: Evaluation },
-      { path: 'honor', component: Honor },
-      { path: 'interaction', component: Interaction },
-      { path: 'interaction/:id', component: Comment },
-      { path: '*', redirect: 'home' }
-    ]
-  },
-  { path: '*', redirect: '/main/home' }
+  routes: [
+    { path: '/home', component: Home },
+    { path: '/course-introduction', component: CourseIntroduction },
+    { path: '/second-class', component: SecondClass },
+    { path: '/teaching-plan', component: TeachingPlan },
+    { path: '/teaching-team', component: TeachingTeam },
+    { path: '/courseware', component: Courseware },
+    { path: '/problem-set', component: ProblemSet },
+    { path: '/teaching-material', component: TeachingMaterial },
+    { path: '/teaching-video', component: TeachingVideo },
+    { path: '/vocabulary', component: Vocabulary },
+    { path: '/achievements', component: Achievements },
+    { path: '/evaluation', component: Evaluation },
+    { path: '/honor', component: Honor },
+    { path: '/interaction', component: Interaction },
+    { path: '/interaction/:id', component: Comment },
+    { path: '*', redirect: 'home' }
   ]
 })
