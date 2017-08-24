@@ -46,13 +46,10 @@ div#main-home
             span.date {{ item.date }}
       div.info
         div.info-header
-          span.header-text 其他内容
+          span.header-text 友情链接
         div.info-content
-          h1 待补充合适的首页内容...
-          h1 待补充合适的首页内容...
-          h1 待补充合适的首页内容...
-          h1 待补充合适的首页内容...
-          h1 待补充合适的首页内容...
+          div.useful-link(v-for=" link in abstract.links ")
+            a(:href="link.url") {{ link.title }}
 </template>
 
 <script>
@@ -126,4 +123,12 @@ export default {
         .date
           color: #888
           font-style: italic
+      .useful-link
+        padding: 3px
+        a
+          color: #888
+          font-style: italic
+          text-decoration: none
+        a:hover
+          color: #20A0FF
 </style>
