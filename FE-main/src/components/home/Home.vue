@@ -18,21 +18,21 @@ div#main-home
       div.info
         div.info-header
           span.header-text 课程介绍
-          router-link.heaedr-link(to="/main/course-introduction") more
+          router-link.heaedr-link(to="/course-introduction") more
         div.info-content
           img(src="../../assets/books.jpg")
           p {{ abstract.course }}
       div.info
         div.info-header
           span.header-text 科室团队
-          router-link.heaedr-link(to="/main/teaching-team") more
+          router-link.heaedr-link(to="/teaching-team") more
         div.info-content
           img(src="../../assets/team.jpg")
           p {{ abstract.team }}
       div.info
         div.info-header
           span.header-text 教学成果
-          router-link.heaedr-link(to="/main/achievements") more
+          router-link.heaedr-link(to="/achievements") more
         div.info-content
           img(src="../../assets/achievement.png")
           p {{ abstract.achievement }}
@@ -40,8 +40,9 @@ div#main-home
       div.info
         div.info-header
           span.header-text 公告
+          router-link.heaedr-link(to="/notification-list") more
         div.info-content
-          div.notification(v-for="item in abstract.notification")
+          div.notification(v-for="item in abstract.notification", @click="$router.push('/notification')")
             span.title {{ item.title }}
             span.date {{ item.date }}
       div.info
@@ -118,11 +119,11 @@ export default {
         display: flex
         justify-content: space-between
         padding: 3px
-        .title:hover
-          color: #20A0FF
         .date
           color: #888
           font-style: italic
+      .notification:hover span
+        color: #20A0FF
       .useful-link
         padding: 3px
         a

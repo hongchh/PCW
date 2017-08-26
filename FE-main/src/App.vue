@@ -45,14 +45,13 @@ export default {
 
 <style lang="sass">
 html, body, #app
+  height: 100%
   margin: 0
   padding: 0
   overflow-x: hidden
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif
 #app, #app-header, #app-nav, #app-body, #app-footer
   position: relative
-#app
-  height: 100%
 #app-header
   height: 100px
   background: #489e6b
