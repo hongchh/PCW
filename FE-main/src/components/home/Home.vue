@@ -21,36 +21,38 @@ div#main-home
           router-link.heaedr-link(to="/course-introduction") more
         div.info-content
           img(src="../../assets/books.jpg")
-          p {{ abstract.course }}
+          p {{ course }}
       div.info
         div.info-header
           span.header-text 科室团队
           router-link.heaedr-link(to="/teaching-team") more
         div.info-content
           img(src="../../assets/team.jpg")
-          p {{ abstract.team }}
+          p {{ team }}
       div.info
         div.info-header
           span.header-text 教学成果
           router-link.heaedr-link(to="/achievements") more
         div.info-content
           img(src="../../assets/achievement.png")
-          p {{ abstract.achievement }}
+          p {{ achievement }}
     el-col(:span="8")
       div.info
         div.info-header
           span.header-text 公告
           router-link.heaedr-link(to="/notification-list") more
         div.info-content
-          div.notification(v-for="item in abstract.notification", @click="$router.push('/notification')")
+          div.no-data(v-if="notification.length === 0") 暂无公告
+          div.notification(v-for="item in notification", @click="$router.push('/notification')")
             span.title {{ item.title }}
             span.date {{ item.date }}
       div.info
         div.info-header
           span.header-text 友情链接
         div.info-content
-          div.useful-link(v-for=" link in abstract.links ")
-            a(:href="link.url") {{ link.title }}
+          div.no-data(v-if="notification.length === 0") 暂无链接
+          div.useful-link(v-for=" link in links ")
+            a(:href="link.url" target="_blank") {{ link.title }}
 </template>
 
 <script>
@@ -60,17 +62,21 @@ export default {
   name: 'home',
   data () {
     return {
-      abstract: {
-        course: 'loading',
-        team: 'loading',
-        achievement: 'loading'
-      }
+      course: 'loading...',
+      team: 'loading...',
+      achievement: 'loading...',
+      notification: [],
+      links: []
     }
   },
   created () {
     axios.get('/data/abstract.json').then((res) => {
       if (res.status === 200) {
-        this.abstract = res.data
+        this.course = res.data.course
+        this.team = res.data.team
+        this.achievement = res.data.achievement
+        this.notification = res.data.notification
+        this.links = res.data.links
       }
     })
   }
@@ -104,6 +110,7 @@ export default {
         font-style: italic
     .info-content
       overflow: hidden
+      min-height: 120px
       img
         float: left
         width: 175px
@@ -132,4 +139,6 @@ export default {
           text-decoration: none
         a:hover
           color: #20A0FF
+      .no-data
+        padding: 15px
 </style>
