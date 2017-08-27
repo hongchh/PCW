@@ -16,7 +16,8 @@ div#app
     h2.md-title(style="flex: 1") 病理生理学
     md-icon access_time
     md-button 2017-08-27 15:03
-  router-view
+  div#app-body
+    router-view
 </template>
 
 <script>
@@ -72,4 +73,6 @@ html, body, #app
 #app .md-list-item .md-list-item-container > .md-icon:first-child
   flex: 1
   text-align: right
+#app-body
+  padding: 20px
 </style>

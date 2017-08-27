@@ -1,11 +1,16 @@
 <template lang="pug">
 div#home
-  h1 Home
+  carousel
 </template>
 
 <script>
+import Carousel from './Carousel'
+
 export default {
-  name: 'home'
+  name: 'home',
+  components: {
+    Carousel
+  }
 }
 </script>
 
