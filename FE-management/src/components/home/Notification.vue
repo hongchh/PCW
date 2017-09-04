@@ -29,9 +29,15 @@ md-card#notification
     md-dialog-actions
       md-button.md-primary(@click.native="$refs.detailBoard.close()") 确定
   //- 创建公告
-  md-dialog(ref="creationBoard")
+  md-dialog#creation-board(ref="creationBoard")
     md-dialog-title 发布新公告
-    md-dialog-content Nemo, nobis necessitatibus ut illo, ducimus ex.
+    md-dialog-content
+      md-input-container
+        label 标题
+        md-input(v-model="newNotification.title", required, maxlength="20")
+      md-input-container
+        label 内容
+        md-textarea(v-model="newNotification.content", required)
     md-dialog-actions
       md-button.md-primary(@click.native="$refs.creationBoard.close()") 取消
       md-button.md-primary(@click.native="createNotification") 确定
@@ -52,7 +58,11 @@ export default {
         { title: 'xxxx', createTime: '2017-08-27', author: 'yyyy', selected: false },
         { title: 'xxxx', createTime: '2017-08-27', author: 'yyyy', selected: false }
       ],
-      detailRow: 0
+      detailRow: 0,
+      newNotification: {
+        title: '',
+        content: ''
+      }
     }
   },
   methods: {
@@ -81,3 +91,8 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+#creation-board .md-dialog
+  width: 60%
+</style>
