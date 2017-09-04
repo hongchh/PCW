@@ -1,16 +1,17 @@
 <template lang="pug">
 div#course-introduction
   div.intro-item(v-for="(item, i) in introduction")
-    h2(v-if="i % 2 === 0") {{ '◎ ' + item.title }}
-    h2.right-title(v-else) {{ item.title + ' ◎' }}
-    div(:class="i % 2 !== 0 ? 'line left-line' : 'line right-line'")
+    div(:class="i % 2 === 0 ? 'line top-line left-line' : 'line top-line right-line'")
+    h2(v-if="i % 2 === 0") {{ '☉ ' + item.title }}
+    h2.right-title(v-else) {{ item.title + ' ☉' }}
     div.content
-      template(v-if="i % 2 !== 0")
+      template(v-if="i % 2 === 0")
         p {{ item.content }}
-        img(src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502631462711&di=9b667e21643d8d98b795ad053c05cb60&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F110919%2F2195-11091915362049.jpg")
+        img(:src="item.icon")
       template(v-else)
-        img(src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502631462711&di=9b667e21643d8d98b795ad053c05cb60&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F110919%2F2195-11091915362049.jpg")
+        img(:src="item.icon")
         p {{ item.content }}
+    div(:class="i % 2 === 0 ? 'line bottom-line left-line' : 'line bottom-line right-line'")
 </template>
 
 <script>
@@ -37,11 +38,11 @@ export default {
 #course-introduction
   padding: 20px
   .intro-item
-    margin-bottom: 15px
+    margin-bottom: 20px
     h2
-      border-bottom: none
-      margin-bottom: 8px
-      padding: 0 10px
+      border-bottom: 1px solid #e9e9e9
+      margin: 18px 18px 8px 18px
+      padding: 0 10px 5px 10px
     .right-title
       text-align: right
     .line
@@ -49,29 +50,39 @@ export default {
       background: #35904d
       border-radius: 20px
       position: relative
-      &:after
+      &:before, &:after
         content: ''
         width: 0
         height: 0
-        border-left: 12px solid transparent
-        border-right: 12px solid transparent
-        border-bottom: 25px solid #35904d
+        border-left: 3px solid transparent
+        border-right: 3px solid transparent
         position: absolute
-        top: -21px
-    .left-line:after
+    .top-line:before
+      border-top: 70px solid #35904d
+      bottom: -65px
+    .top-line:after
+      border-top: 190px solid #35904d
+      bottom: -185px
+    .bottom-line:before
+      border-bottom: 190px solid #35904d
+      top: -185px
+    .bottom-line:after
+      border-bottom: 70px solid #35904d
+      top: -65px
+    .left-line:after, .right-line:before
       left: 0
-    .right-line:after
+    .left-line:before, .right-line:after
       right: 0
     .content
       margin-top: 20px
+      padding: 14px
       display: flex
-      align-items: center
       img
         width: 150px
         height: 150px
-        margin: 10px
+        margin: 0 10px
       p
-        flex-grow: 1
-        padding: 10px
         white-space: pre-wrap
+        margin: 0
+        padding: 0 12px
 </style>

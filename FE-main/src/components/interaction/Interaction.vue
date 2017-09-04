@@ -10,7 +10,7 @@ div#interaction
               span 评论
           div.discussion-column
             div.discussion-content
-              router-link(:to="'/main/interaction/' + discussion.id") {{ discussion.content }}
+              router-link(:to="'/interaction/' + discussion.id") {{ discussion.content }}
             div.discussion-detail
               span.user {{ discussion.user }}
               span.time 创建于 {{ discussion.time}}

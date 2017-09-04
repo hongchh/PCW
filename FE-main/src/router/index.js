@@ -18,7 +18,7 @@ import Evaluation from '../components/achievement/Evaluation'
 import Honor from '../components/achievement/Honor'
 import Interaction from '../components/interaction/Interaction'
 import Comment from '../components/interaction/Comment'
-import Notification from '../components/notification/Notification'
+import NotificationContent from '../components/notification/NotificationContent'
 import NotificationList from '../components/notification/NotificationList'
 
 export default new Router({
@@ -39,7 +39,7 @@ export default new Router({
     { path: '/honor', component: Honor },
     { path: '/interaction', component: Interaction },
     { path: '/interaction/:id', component: Comment },
-    { path: '/notification', component: Notification },
+    { path: '/notification', component: NotificationContent },
     { path: '/notification-list', component: NotificationList },
     { path: '*', redirect: 'home' }
   ]

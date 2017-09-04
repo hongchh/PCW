@@ -1,5 +1,5 @@
 <template lang="pug">
-div#notification
+div#notification-content
   h1 xxxxxx通知
   div.info
     span.author 发布人：xxx
@@ -9,12 +9,12 @@ div#notification
 
 <script>
 export default {
-  name: 'notification'
+  name: 'notification-content'
 }
 </script>
 
 <style lang="sass">
-#notification
+#notification-content
   h1
     padding-bottom: 8px
     margin-bottom: 8px
