@@ -10,14 +10,9 @@
   "scripts": {
     "dev": "node FrontEnd/build/dev-server.js",
     "build": "node FrontEnd/build/build.js",
-    "dev-main": "node FE-main/build/dev-server.js",
-    "dev-management": "node FE-management/build/dev-server.js",
-    "build-main": "node FE-main/build/build.js",
-    "build-management": "node FE-management/build/build.js",
-    "lint-main": "eslint --ext .js,.vue FE-main/src",
-    "lint-management": "eslint --ext .js,.vue FE-management/src",
-    "lint-server": "eslint --ext .js Server",
-    "server": "node Server/index.js"
+    "server": "node Server/index.js",
+    "lint-fe": "eslint --ext .js,.vue FrontEnd/src",
+    "lint-server": "eslint --ext .js Server"
   },
   "repository": {
     "type": "git",

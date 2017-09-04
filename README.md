@@ -3,50 +3,28 @@
 
 ```bash
 # 项目启动和构建相关介绍
-# 项目启动和构建包含3个部分，主网站、管理系统，以及服务器
-# 启动主网站开发 http://localhost:8081/main/home
-npm run dev-main
-# 启动管理系统开发 http://localhost:8082/management/home
-npm run dev-management
-# 构建主网站和管理系统产品文件
-npm run build-main
-npm run build-management
+# 主站 http://localhost:8080/main.html
+# 管理系统 http://localhost:8080/management.html
+# 开发
+npm run dev
+# 构建前端产品文件
+npm run build
 # 运行服务器，在启动服务器需要确保先构建好前端的产品文件
-# http://localhost:8080/main/home
-# http://localhost:8080/management/home
 npm run server
 # 代码风格规范检测
-npm run lint-main
-npm run lint-management
+npm run lint-fe
 npm run lint-server
 ```
 
 ## 项目结构
 ```txt
-├─FE-main: 课程网站前端代码
+├─FrontEnd: 课程网站前端代码
 │    ├─build: 存放webpack开发和构建相关配置文件
 │    ├─config: 存放webpack配置文件
 │    ├─data: 项目开发过程中需要用到的伪数据或其他静态资源
-│    ├─src: 源代码
-│    │   ├─assets: 图片等资源文件
-│    │   ├─components: 页面组件
-│    │   ├─router: 前端路由
-│    │   ├─store: 全局状态管理
-│    │   ├─App.vue: 顶层组件
-│    │   └─entry.js: 应用入口文件
-│    └─index.html
-├─FE-management: 管理系统前端代码
-│    ├─build: 存放webpack开发和构建相关配置文件
-│    ├─config: 存放webpack配置文件
-│    ├─data: 项目开发过程中需要用到的伪数据或其他静态资源
-│    ├─src: 源代码
-│    │   ├─assets: 图片等资源文件
-│    │   ├─components: 页面组件
-│    │   ├─router: 前端路由
-│    │   ├─store: 全局状态管理
-│    │   ├─App.vue: 顶层组件
-│    │   └─entry.js: 应用入口文件
-│    └─index.html
+│    └─src: 源代码
+│        ├─main: 主站代码
+│        └─management: 管理系统代码
 ├─images-for-readme: 存放README用到的图片文件
 ├─Server: 服务端代码
 │    ├─api: 服务端api，express路由
