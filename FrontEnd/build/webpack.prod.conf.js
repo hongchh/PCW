@@ -10,8 +10,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 var env = config.build.env
-
-var webpackConfig = merge(baseWebpackConfig, {
+var prodWebpackConfig = {
   module: {
     rules: utils.styleLoaders({
       sourceMap: config.build.productionSourceMap,
@@ -46,35 +45,19 @@ var webpackConfig = merge(baseWebpackConfig, {
         safe: true
       }
     }),
-    // generate dist index.html with correct asset hash for caching.
-    // you can customize output by editing /index.html
-    // see https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: config.build.index,
-      template: path.resolve(__dirname, '../index.html'),
-      inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true
-        // more options:
-        // https://github.com/kangax/html-minifier#options-quick-reference
-      },
-      // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-      chunksSortMode: 'dependency'
-    }),
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: function (module, count) {
-        // any required modules inside node_modules are extracted to vendor
-        return (
-          module.resource &&
-          /\.js$/.test(module.resource) &&
-          module.resource.indexOf(
-            path.join(__dirname, '../../node_modules')
-          ) === 0
-        )
+        // 配置中所指明的公共库都抽取到vendor
+        if (module.resource && /\.js$/.test(module.resource)) {
+          for (let i = 0; i < config.build.commonLibs.length; ++i) {
+            if (module.resource.indexOf(path.join(__dirname, '../../node_modules/', config.build.commonLibs[i] + '/')) === 0) {
+              return true
+            }
+          }
+        }
+        return false
       }
     }),
     // extract webpack runtime and module manifest to its own file in order to
@@ -92,12 +75,44 @@ var webpackConfig = merge(baseWebpackConfig, {
       }
     ])
   ]
-})
+}
+
+// 提取UI库
+for (let i = 0; i < config.entry.length; ++i) {
+  if (!config.entry[i].uiLib) continue
+  let chunkPath = path.join(__dirname, '../../node_modules/', config.entry[i].uiLib + '/')
+  prodWebpackConfig.plugins.push(new webpack.optimize.CommonsChunkPlugin({
+    name: config.entry[i].uiLib,
+    chunks: [config.entry[i].appName], // 指明从应用对应的chunk里面提取UI库
+    minChunks: function (module, count) {
+      return (
+        module.resource && /\.js$/.test(module.resource) &&
+        module.resource.indexOf(chunkPath) === 0
+      )
+    }
+  }))
+}
+
+// 将提取后的manifest、vendor、UI库inject到相应的HTML文件中
+for (let i = 0; i < config.entry.length; ++i) {
+  prodWebpackConfig.plugins.push(new HtmlWebpackPlugin({
+    filename: config.entry[i].appName + '.html',
+    template: config.entry[i].htmlTemplate,
+    chunks: ['manifest', 'vendor', config.entry[i].uiLib, config.entry[i].appName],
+    inject: true,
+    minify: {
+      removeComments: true,
+      collapseWhitespace: true,
+      removeAttributeQuotes: true
+    },
+    chunksSortMode: 'dependency'
+  }))
+}
 
 if (config.build.productionGzip) {
   var CompressionWebpackPlugin = require('compression-webpack-plugin')
 
-  webpackConfig.plugins.push(
+  prodWebpackConfig.plugins.push(
     new CompressionWebpackPlugin({
       asset: '[path].gz[query]',
       algorithm: 'gzip',
@@ -114,7 +129,7 @@ if (config.build.productionGzip) {
 
 if (config.build.bundleAnalyzerReport) {
   var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-  webpackConfig.plugins.push(new BundleAnalyzerPlugin())
+  prodWebpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
 
-module.exports = webpackConfig
+module.exports = merge(baseWebpackConfig, prodWebpackConfig)

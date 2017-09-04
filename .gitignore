@@ -4,5 +4,4 @@ npm-debug.log
 sessions/
 .idea/
 .vscode/
-Server/public/main/
-Server/public/management/
+Server/public/

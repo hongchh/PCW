@@ -22,7 +22,6 @@ import NotificationContent from '../components/notification/NotificationContent'
 import NotificationList from '../components/notification/NotificationList'
 
 export default new Router({
-  mode: 'history',
   routes: [
     { path: '/home', component: Home },
     { path: '/course-introduction', component: CourseIntroduction },

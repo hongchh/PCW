@@ -8,6 +8,8 @@
   ],
   "private": true,
   "scripts": {
+    "dev": "node FrontEnd/build/dev-server.js",
+    "build": "node FrontEnd/build/build.js",
     "dev-main": "node FE-main/build/dev-server.js",
     "dev-management": "node FE-management/build/dev-server.js",
     "build-main": "node FE-main/build/build.js",

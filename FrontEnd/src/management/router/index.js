@@ -8,7 +8,6 @@ import Course from '../components/course/Course'
 import Home from '../components/home/Home'
 
 export default new Router({
-  mode: 'history',
   routes: [
     { path: '/account', component: Account },
     { path: '/course', component: Course },

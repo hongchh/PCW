@@ -7,10 +7,14 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
+// 入口信息
+var entry = {}
+for (var i = 0; i < config.entry.length; ++i) {
+  entry[config.entry[i].appName] = config.entry[i].entryPath
+}
+
 module.exports = {
-  entry: {
-    app: resolve('src/entry.js')
-  },
+  entry: entry,
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -21,8 +25,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      'vue$': 'vue/dist/vue.esm.js'
     }
   },
   module: {

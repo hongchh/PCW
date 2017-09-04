@@ -12,7 +12,7 @@ Object.keys(baseWebpackConfig.entry).forEach(function (name) {
   baseWebpackConfig.entry[name] = [path.resolve(__dirname, './dev-client')].concat(baseWebpackConfig.entry[name])
 })
 
-module.exports = merge(baseWebpackConfig, {
+var devWebpackConfig = {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
   },
@@ -25,12 +25,18 @@ module.exports = merge(baseWebpackConfig, {
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    // https://github.com/ampedandwired/html-webpack-plugin
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: path.resolve(__dirname, '../index.html'),
-      inject: true
-    }),
     new FriendlyErrorsPlugin()
   ]
-})
+}
+
+// 将各应用编译后的js inject到其相应的HTML模板文件
+for (var i = 0; i < config.entry.length; ++i) {
+  devWebpackConfig.plugins.push(new HtmlWebpackPlugin({
+    filename: config.entry[i].appName + '.html',
+    template: config.entry[i].htmlTemplate,
+    chunks: [config.entry[i].appName],
+    inject: true
+  }))
+}
+
+module.exports = merge(baseWebpackConfig,  devWebpackConfig)
