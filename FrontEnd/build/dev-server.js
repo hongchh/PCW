@@ -62,7 +62,7 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static(path.join(__dirname, '../data')))
 
-var uri = 'http://localhost:' + port
+var uri = 'http://localhost:' + port + '/' + config.entry[0].appName + '.html'
 
 var _resolve
 var readyPromise = new Promise(resolve => {

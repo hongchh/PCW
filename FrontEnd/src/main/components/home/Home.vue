@@ -1,18 +1,9 @@
 <template lang="pug">
 div#main-home
-  el-carousel(height="335px", indicator-position="none")
-    el-carousel-item
+  el-carousel(v-if="slides.length !== 0" height="335px", indicator-position="none")
+    el-carousel-item(v-for="(slide, i) in slides", :key="i")
       div.slide-holder
-        img.slide(src="../../assets/slide/0.png")
-    el-carousel-item
-      div.slide-holder
-        img.slide(src="../../assets/slide/1.png")
-    el-carousel-item
-      div.slide-holder
-        img.slide(src="../../assets/slide/2.png")
-    el-carousel-item
-      div.slide-holder
-        img.slide(src="../../assets/slide/3.png")
+        img.slide(:src="slide")
   el-row(:gutter="25")
     el-col(:span="16")
       div.info
@@ -20,22 +11,22 @@ div#main-home
           span.header-text 课程介绍
           router-link.heaedr-link(to="/course-introduction") more
         div.info-content
-          img(src="../../assets/books.jpg")
-          p {{ course }}
+          img(:src="course.photo")
+          p {{ course.description || 'loading ...' }}
       div.info
         div.info-header
           span.header-text 科室团队
           router-link.heaedr-link(to="/teaching-team") more
         div.info-content
-          img(src="../../assets/team.jpg")
-          p {{ team }}
+          img(:src="team.photo")
+          p {{ team.description || 'loading ...' }}
       div.info
         div.info-header
           span.header-text 教学成果
           router-link.heaedr-link(to="/achievements") more
         div.info-content
-          img(src="../../assets/achievement.png")
-          p {{ achievement }}
+          img(:src="achievement.photo")
+          p {{ achievement.description || 'loading ...' }}
     el-col(:span="8")
       div.info
         div.info-header
@@ -62,21 +53,23 @@ export default {
   name: 'home',
   data () {
     return {
-      course: 'loading...',
-      team: 'loading...',
-      achievement: 'loading...',
+      course: { photo: '', description: '' },
+      team: { photo: '', description: '' },
+      achievement: { photo: '', description: '' },
       notification: [],
-      links: []
+      links: [],
+      slides: []
     }
   },
   created () {
-    axios.get('/data/abstract.json').then((res) => {
+    axios.get('/data/home.json').then((res) => {
       if (res.status === 200) {
         this.course = res.data.course
         this.team = res.data.team
         this.achievement = res.data.achievement
         this.notification = res.data.notification
         this.links = res.data.links
+        this.slides = res.data.slides
       }
     })
   }

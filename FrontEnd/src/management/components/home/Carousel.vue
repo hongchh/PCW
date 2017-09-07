@@ -9,20 +9,20 @@ md-card#carousel
         md-layout.carousel-img
           md-card
             md-card-media
-              img(src="../../assets/slide/0.png" alt="轮播图-1")
+              img(:src="slides[0]" alt="轮播图-1")
         md-layout.carousel-img
           md-card
             md-card-media
-              img(src="../../assets/slide/2.png" alt="轮播图-3")
+              img(:src="slides[2]" alt="轮播图-3")
       md-layout(md-column md-gutter)
         md-layout.carousel-img
           md-card
             md-card-media
-              img(src="../../assets/slide/1.png" alt="轮播图-2")
+              img(:src="slides[1]" alt="轮播图-2")
         md-layout.carousel-img
           md-card
             md-card-media
-              img(src="../../assets/slide/3.png" alt="轮播图-4")
+              img(:src="slides[3]" alt="轮播图-4")
     md-layout(md-gutter)
       md-layout(md-column md-gutter)
         md-input-container
@@ -43,12 +43,22 @@ md-card#carousel
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'carousel',
   data () {
     return {
+      slides: ['', '', '', ''],
       files: [null, null, null, null]
     }
+  },
+  created () {
+    axios.get('/data/home.json').then(res => {
+      if (res.status === 200) {
+        this.slides = res.data.slides
+      }
+    })
   }
 }
 </script>
