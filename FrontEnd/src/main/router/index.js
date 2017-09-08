@@ -4,6 +4,8 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import Home from '../components/home/Home'
+import NotificationContent from '../components/home/NotificationContent'
+import NotificationList from '../components/home/NotificationList'
 import CourseIntroduction from '../components/course/CourseIntroduction'
 import SecondClass from '../components/course/SecondClass'
 import TeachingPlan from '../components/course/TeachingPlan'
@@ -18,12 +20,12 @@ import Evaluation from '../components/achievement/Evaluation'
 import Honor from '../components/achievement/Honor'
 import Interaction from '../components/interaction/Interaction'
 import Comment from '../components/interaction/Comment'
-import NotificationContent from '../components/notification/NotificationContent'
-import NotificationList from '../components/notification/NotificationList'
 
 export default new Router({
   routes: [
     { path: '/home', component: Home },
+    { path: '/notification', component: NotificationContent },
+    { path: '/notification-list', component: NotificationList },
     { path: '/course-introduction', component: CourseIntroduction },
     { path: '/second-class', component: SecondClass },
     { path: '/teaching-plan', component: TeachingPlan },
@@ -38,8 +40,6 @@ export default new Router({
     { path: '/honor', component: Honor },
     { path: '/interaction', component: Interaction },
     { path: '/interaction/:id', component: Comment },
-    { path: '/notification', component: NotificationContent },
-    { path: '/notification-list', component: NotificationList },
     { path: '*', redirect: 'home' }
   ]
 })
