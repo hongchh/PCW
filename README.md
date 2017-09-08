@@ -28,9 +28,8 @@ npm run lint-server
 │        │    ├─components: 页面组件
 │        │    │    ├─achievement: 科研、教学成就模块
 │        │    │    ├─course: 课程模块
-│        │    │    ├─home: 网站首页
+│        │    │    ├─home: 网站首页以及公告模块
 │        │    │    ├─interaction: 互动模块
-│        │    │    ├─notification: 公告模块
 │        │    │    └─resource: 课程资源模块
 │        │    ├─router: 前端路由配置
 │        │    ├─App.vue: 应用最外层结构
