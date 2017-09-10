@@ -1,8 +1,20 @@
 import Vue from 'vue'
-import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+import {
+  Input,
+  Button,
+  Form,
+  FormItem,
+  Row,
+  Col
+} from 'element-ui'
 
-Vue.use(ElementUI)
+Vue.use(Input)
+Vue.use(Button)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Row)
+Vue.use(Col)
 
 import App from './App'
 
