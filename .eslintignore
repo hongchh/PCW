@@ -1,6 +1,3 @@
-FE-main/build/*.js
-FE-main/config/*.js
-FE-management/build/*.js
-FE-management/config/*.js
-server/main/static/*.js
-server/management/static/*.js
+FrontEnd/build/*.js
+FrontEnd/config/*.js
+Server/public/static/*.js

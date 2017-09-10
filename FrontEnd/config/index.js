@@ -51,5 +51,10 @@ module.exports = {
     entryPath: path.join(__dirname, '../src/management/index.js'),
     htmlTemplate: path.join(__dirname, '../src/management/index.html'),
     uiLib: 'vue-material'
+  }, {
+    appName: 'signin',
+    entryPath: path.join(__dirname, '../src/signin/index.js'),
+    htmlTemplate: path.join(__dirname, '../src/signin/index.html'),
+    uiLib: 'element-ui'
   }]
 }

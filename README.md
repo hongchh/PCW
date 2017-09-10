@@ -35,20 +35,25 @@ npm run lint-server
 │        │    ├─App.vue: 应用最外层结构
 │        │    ├─index.html: 应用的html网页入口
 │        │    └─index.js: 应用的js模块入口
-│        └─management: 管理系统代码
-│             ├─assets: 网站中引用的字体、图标等静态资源
-│             ├─components: 页面组件
-│             │    ├─account: 账号管理模块
-│             │    ├─achievement: 科研、教学成就管理模块
-│             │    ├─course: 课程信息管理模块
-│             │    ├─home: 网站首页信息管理模块
-│             │    ├─interaction: 互动信息管理模块
-│             │    └─resource: 课程资源管理模块
-│             ├─router: 前端路由配置
-│             ├─store: 管理系统vuex数据状态管理（是否启用还待评估）
-│             ├─App.vue: 应用最外层结构
-│             ├─index.html: 应用的html网页入口
-│             └─index.js: 应用的js模块入口
+│        ├─management: 管理系统代码
+│        │    ├─assets: 网站中引用的字体、图标等静态资源
+│        │    ├─components: 页面组件
+│        │    │    ├─account: 账号管理模块
+│        │    │    ├─achievement: 科研、教学成就管理模块
+│        │    │    ├─course: 课程信息管理模块
+│        │    │    ├─home: 网站首页信息管理模块
+│        │    │    ├─interaction: 互动信息管理模块
+│        │    │    └─resource: 课程资源管理模块
+│        │    ├─router: 前端路由配置
+│        │    ├─store: 管理系统vuex数据状态管理（是否启用还待评估）
+│        │    ├─App.vue: 应用最外层结构
+│        │    ├─index.html: 应用的html网页入口
+│        │    └─index.js: 应用的js模块入口
+│        └─signin: 登录页面
+│             ├─assets: 背景图和logo
+│             ├─App.vue: 登录界面
+│             ├─index.html: 登录页面html入口
+│             └─index.js: 登录页面js入口
 ├─images-for-readme: 存放README用到的图片文件
 ├─Server: 服务端代码
 │    ├─api: 服务端api，express路由

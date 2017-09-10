@@ -3,7 +3,7 @@ div#app
   div#app-header
     router-link(to="/home")
       img#header-logo(src="./assets/logo.png")
-    a#header-auth(href="http://localhost:8082/signin") 登录
+    a#header-auth(href="/signin.html") 登录
   div#app-nav
     div.nav-item#nav-item-0
       span 课程信息&nbsp;
