@@ -93,8 +93,17 @@ for (let i = 0; i < config.entry.length; ++i) {
   }))
 }
 
+// 配置产品js文件的权重，用于确定注入依赖的顺序
+// manifest和vendor需要优先引入，然后是UI库，最后才是应用的业务代码
+var chunkWeight = {
+  manifest: 100,
+  vendor: 99
+}
+
 // 将提取后的manifest、vendor、UI库inject到相应的HTML文件中
 for (let i = 0; i < config.entry.length; ++i) {
+  chunkWeight[config.entry[i].uiLib] = 1
+  chunkWeight[config.entry[i].appName] = 0
   prodWebpackConfig.plugins.push(new HtmlWebpackPlugin({
     filename: config.entry[i].appName + '.html',
     template: config.entry[i].htmlTemplate,
@@ -105,7 +114,17 @@ for (let i = 0; i < config.entry.length; ++i) {
       collapseWhitespace: true,
       removeAttributeQuotes: true
     },
-    chunksSortMode: 'dependency'
+    // 根据chunkWeight确定注入顺序，权重越大的chunk越先注入到html文件中
+    // 这里由于html-webpack-pligin的关系返回±1的方式跟平时在写排序的判断函数刚好相反才能正确注入，否则会反序
+    chunksSortMode: function (chunkA, chunkB) {
+      if (chunkWeight[chunkA.names[0]] < chunkWeight[chunkB.names[0]]) {
+        return 1
+      } else if (chunkWeight[chunkA.names[0]] > chunkWeight[chunkB.names[0]]) {
+        return -1
+      } else {
+        return 0
+      }
+    }
   }))
 }
 
