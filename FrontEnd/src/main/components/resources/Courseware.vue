@@ -3,14 +3,14 @@ div#courseware
   el-row(type="flex", justify="center")
     el-col(:span="20")
       el-tabs
-        el-tab-pane(label="临床医学专业五年制")
-          div.item(v-for="item in coursewares")
-            span(v-if="!item.link") {{ item.content }}
-            a.link(v-if="item.link", :href="item.link", target="_blank") {{ item.content }}
-        el-tab-pane(label="临床医学专业七年制")
-          div.item(v-for="item in coursewares")
-            span(v-if="!item.link") {{ item.content }}
-            a.link(v-if="item.link", :href="item.link", target="_blank") {{ item.content }}
+        el-tab-pane(label="教案")
+          div.item(v-for="(item, i) in courseware")
+            span(v-if="!item.url") {{ item.title }}
+            a.link(v-else, :href="item.url", target="_blank") {{ item.title }}
+        el-tab-pane(label="课件")
+          div.item(v-for="(item, i) in lessonplan")
+            span(v-if="!item.url") {{ item.title }}
+            a.link(v-else, :href="item.url", target="_blank") {{ item.title }}
 </template>
 
 <script>
@@ -20,14 +20,16 @@ export default {
   name: 'courseware',
   data () {
     return {
-      coursewares: []
+      courseware: [],
+      lessonplan: []
     }
   },
   created () {
     axios.get('/data/coursewares.json')
       .then(res => {
         if (res.status === 200) {
-          this.coursewares = res.data
+          this.courseware = res.data.courseware
+          this.lessonplan = res.data.lessonplan
         }
       })
   }

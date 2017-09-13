@@ -5,10 +5,10 @@ div#vocabulary
       h2 附件
       ul
         li
-          a.link(href='http://jpkc.sysu.edu.cn/pathophysiology/vocabulary/病理生理学专业词汇.pdf',
+          a.link(href='http://118.89.35.155:8080/static/resource/vocabulary/病理生理学专业词汇.pdf',
           target="_blank") 病理生理学专业词汇.pdf
         li
-          a.link(href='http://jpkc.sysu.edu.cn/pathophysiology/vocabulary/病理生理学专业词汇.doc',
+          a.link(href='http://118.89.35.155:8080/static/resource/vocabulary/病理生理学专业词汇.doc',
           target="_blank") 病理生理学专业词汇.doc
       h2.vocabulary 词汇表（中英文对照）
       el-table(:data="vocabulary", stripe, border)
