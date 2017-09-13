@@ -58,7 +58,7 @@ html, body
   height: 100%
   background-size: 100% 100%
 #app
-  background-image: url(./assets/signin-bg.png)
+  background-image: url(./assets/signin-bg.jpg)
 #mask
   background-image: url(./assets/line.png)
   #logo
