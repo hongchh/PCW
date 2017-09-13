@@ -1,16 +1,11 @@
 <template lang="pug">
-div#teaching-plan
+div#pbl-teaching
   el-row(type="flex", justify="center")
     el-col(:span="20")
-      h2 教学大纲
+      h2 PBL教学
       p(v-if="loading") loading ...
       ul(v-else)
-        li(v-for="item in syllabus")
-          a.link(:href="item.url", target="_blank") {{ item.title }}
-      h2 教学进度表
-      p(v-if="loading") loading ...
-      ul(v-else)
-        li(v-for="item in schedule")
+        li(v-for="item in pblTeachingItems")
           a.link(:href="item.url", target="_blank") {{ item.title }}
 </template>
 
@@ -18,20 +13,18 @@ div#teaching-plan
 import axios from 'axios'
 
 export default {
-  name: 'teaching-plan',
+  name: 'pbl-teaching',
   data () {
     return {
       loading: true,
-      syllabus: null,
-      schedule: null
+      pblTeachingItems: null
     }
   },
   created () {
-    axios.get('/data/teaching-plan.json').then((res) => {
+    axios.get('/data/pbl-teaching.json').then((res) => {
       if (res.status === 200) {
         this.loading = false
-        this.syllabus = res.data.syllabus
-        this.schedule = res.data.schedule
+        this.pblTeachingItems = res.data
       }
     })
   }
@@ -39,7 +32,7 @@ export default {
 </script>
 
 <style lang="sass">
-#teaching-plan
+#pbl-teaching
   h2
     padding-bottom: 10px
     border-bottom: 1px solid #eeeeee

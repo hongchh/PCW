@@ -7,6 +7,7 @@ import Home from '../components/home/Home'
 import NotificationContent from '../components/home/NotificationContent'
 import NotificationList from '../components/home/NotificationList'
 import CourseIntroduction from '../components/course/CourseIntroduction'
+import PBLTeaching from '../components/course/PBLTeaching'
 import SecondClass from '../components/course/SecondClass'
 import TeachingPlan from '../components/course/TeachingPlan'
 import TeachingTeam from '../components/course/TeachingTeam'
@@ -27,6 +28,7 @@ export default new Router({
     { path: '/notification', component: NotificationContent },
     { path: '/notification-list', component: NotificationList },
     { path: '/course-introduction', component: CourseIntroduction },
+    { path: '/pbl-teaching', component: PBLTeaching },
     { path: '/second-class', component: SecondClass },
     { path: '/teaching-plan', component: TeachingPlan },
     { path: '/teaching-team', component: TeachingTeam },
