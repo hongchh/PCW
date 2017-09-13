@@ -49,10 +49,10 @@ export default {
   },
   methods: {
     getCommentsByDiscussionId () {
-      return axios.get('/data/comments.json?discussionId=' + this.discussionId)
+      return axios.get('/static/data/comments.json?discussionId=' + this.discussionId)
     },
     getDiscussionById () {
-      return axios.get('/data/discussions.json?discussionId=' + this.discussionId)
+      return axios.get('/static/data/discussions.json?discussionId=' + this.discussionId)
     }
   }
 }

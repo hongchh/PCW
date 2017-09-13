@@ -62,7 +62,7 @@ export default {
     }
   },
   created () {
-    axios.get('/data/home.json').then((res) => {
+    axios.get('/static/data/home.json').then((res) => {
       if (res.status === 200) {
         this.course = res.data.course
         this.team = res.data.team

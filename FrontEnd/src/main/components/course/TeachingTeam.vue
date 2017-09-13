@@ -23,7 +23,7 @@ export default {
     }
   },
   created () {
-    axios.get('/data/teaching-team.json').then((res) => {
+    axios.get('/static/data/teaching-team.json').then((res) => {
       if (res.status === 200) {
         this.teachingTeam = res.data
       }

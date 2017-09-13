@@ -26,7 +26,7 @@ export default {
     }
   },
   created () {
-    axios.get('/data/second-class.json').then(res => {
+    axios.get('/static/data/second-class.json').then(res => {
       if (res.status === 200) {
         for (let i = 0, j = 0; i < res.data.length; ++i) {
           this.columnImg[j].push(res.data[i])

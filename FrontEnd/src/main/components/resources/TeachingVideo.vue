@@ -47,7 +47,7 @@ export default {
     }
   },
   created () {
-    axios.get('/data/teaching-video.json')
+    axios.get('/static/data/teaching-video.json')
       .then(res => {
         if (res.status === 200) {
           this.teachingVideos = res.data

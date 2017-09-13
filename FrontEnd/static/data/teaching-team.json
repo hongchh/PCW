@@ -3,69 +3,69 @@
   "sex": "女",
   "title": "教授, 博士生导师",
   "role": "课程负责人, 主任",
-  "avatar": "/data/avatar/谭红梅.jpg",
+  "avatar": "/static/img/avatar/谭红梅.jpg",
   "education": "医学博士"
 }, {
   "name": "陆立鹤",
   "sex": "女",
   "title": "副教授, 硕士生导师",
   "role": "副主任",
-  "avatar": "/data/avatar/陆立鹤.jpg",
+  "avatar": "/static/img/avatar/陆立鹤.jpg",
   "education": "理学博士"
 }, {
   "name": "杨惠玲",
   "sex": "女",
   "title": "教授, 博士生导师",
   "role": "课程主讲教师",
-  "avatar": "/data/avatar/杨惠玲.jpg",
+  "avatar": "/static/img/avatar/杨惠玲.jpg",
   "education": "医学硕士"
 }, {
   "name": "李隽",
   "sex": "男",
   "title": "教授, 博士生导师",
   "role": "课程主讲教师",
-  "avatar": "/data/avatar/李隽.jpg",
+  "avatar": "/static/img/avatar/李隽.jpg",
   "education": "医学博士"
 }, {
   "name": "王蔚东",
   "sex": "男",
   "title": "教授, 博士生导师",
   "role": "课程主讲教师",
-  "avatar": "/data/avatar/王蔚东1.jpg",
+  "avatar": "/static/img/avatar/王蔚东1.jpg",
   "education": "医学博士"
 }, {
   "name": "李春凌",
   "sex": "女",
   "title": "教授, 博士生导师",
   "role": "课程主讲教师",
-  "avatar": "/data/avatar/李春凌.jpg",
+  "avatar": "/static/img/avatar/李春凌.jpg",
   "education": "医学博士"
 }, {
   "name": "那晓东",
   "sex": "女",
   "title": "副教授, 硕士生导师",
   "role": "工会小组长",
-  "avatar": "/data/avatar/那晓东.jpg",
+  "avatar": "/static/img/avatar/那晓东.jpg",
   "education": "医学博士"
 }, {
   "name": "许志威",
   "sex": "女",
   "title": "讲师",
   "role": "课程主讲教师",
-  "avatar": "/data/avatar/许志威.jpg",
+  "avatar": "/static/img/avatar/许志威.jpg",
   "education": "医学博士"
 }, {
   "name": "陈小湧",
   "sex": "男",
   "title": "讲师",
   "role": "教学秘书",
-  "avatar": "/data/avatar/陈小湧.jpg",
+  "avatar": "/static/img/avatar/陈小湧.jpg",
   "education": "医学博士"
 }, {
   "name": "郑文晖",
   "sex": "女",
   "title": "",
   "role": "事务秘书",
-  "avatar": "/data/avatar/郑文晖.jpg",
+  "avatar": "/static/img/avatar/郑文晖.jpg",
   "education": ""
 }]

@@ -21,7 +21,7 @@ export default {
     }
   },
   created () {
-    axios.get('/data/pbl-teaching.json').then((res) => {
+    axios.get('/static/data/pbl-teaching.json').then((res) => {
       if (res.status === 200) {
         this.loading = false
         this.pblTeachingItems = res.data

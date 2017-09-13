@@ -27,7 +27,7 @@ export default {
     }
   },
   created () {
-    axios.get('/data/discussions.json')
+    axios.get('/static/data/discussions.json')
       .then(res => {
         if (res.status === 200) {
           this.discussions = res.data

@@ -30,7 +30,7 @@ export default {
     }
   },
   created () {
-    axios.get('/data/evaluation.json')
+    axios.get('/static/data/evaluation.json')
       .then(res => {
         if (res.status === 200) {
           this.evaluations = res.data

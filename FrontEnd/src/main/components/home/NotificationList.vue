@@ -22,7 +22,7 @@ export default {
     }
   },
   created () {
-    axios.get('/data/home.json').then(res => {
+    axios.get('/static/data/home.json').then(res => {
       if (res.status === 200) {
         this.loading = false
         this.notifications = res.data.notification

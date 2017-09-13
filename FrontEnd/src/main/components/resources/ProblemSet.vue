@@ -37,10 +37,10 @@ export default {
   },
   methods: {
     getExaminationPapers: function () {
-      return axios.get('/data/examination-papers.json')
+      return axios.get('/static/data/examination-papers.json')
     },
     getChapterProblems: function () {
-      return axios.get('/data/chapter-problems.json')
+      return axios.get('/static/data/chapter-problems.json')
     }
   }
 }

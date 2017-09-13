@@ -21,7 +21,9 @@ npm run lint-server
 ├─FrontEnd: 课程网站前端代码
 │    ├─build: 存放webpack开发和构建相关配置文件
 │    ├─config: 存放webpack配置文件
-│    ├─data: 项目开发过程中需要用到的伪数据以及图片等静态资源
+│    ├─static: 项目开发过程中需要用到的伪数据以及图片等静态资源
+│    │   ├─data: 伪数据json文件
+│    │   └─img: 图片文件
 │    └─src: 源代码
 │        ├─main: 主站代码
 │        │    ├─assets: 网站中引用的字体、图标等静态资源

@@ -19,7 +19,7 @@ export default {
     }
   },
   created () {
-    axios.get('/data/honor.json')
+    axios.get('/static/data/honor.json')
       .then(res => {
         if (res.status === 200) {
           this.honors = res.data

@@ -27,7 +27,7 @@ export default {
     }
   },
   created () {
-    axios.get('/data/vocabulary.json')
+    axios.get('/static/data/vocabulary.json')
       .then(res => {
         if (res.status === 200) {
           this.vocabulary = res.data

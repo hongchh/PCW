@@ -25,7 +25,7 @@ export default {
     }
   },
   created () {
-    axios.get('/data/coursewares.json')
+    axios.get('/static/data/coursewares.json')
       .then(res => {
         if (res.status === 200) {
           this.courseware = res.data.courseware
