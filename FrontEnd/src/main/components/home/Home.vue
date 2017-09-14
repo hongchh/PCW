@@ -58,7 +58,8 @@ export default {
       achievement: { photo: '', description: '' },
       notification: [],
       links: [],
-      slides: []
+      slides: [],
+      _slides: []
     }
   },
   created () {
@@ -69,9 +70,26 @@ export default {
         this.achievement = res.data.achievement
         this.notification = res.data.notification
         this.links = res.data.links
-        this.slides = res.data.slides
+        this._slides = res.data.slides
+        this.loadSlides(0)
       }
     })
+  },
+  methods: {
+    /*
+     * 顺序加载轮播图减少首页请求并发量
+     * @param  { Number }  index  当前加载到第几张轮播图
+     */
+    loadSlides (index) {
+      if (index < this._slides.length) {
+        let img = new Image()
+        img.src = this._slides[index]
+        img.onload = () => {
+          this.slides.push(this._slides[index])
+          this.loadSlides(index + 1)
+        }
+      }
+    }
   }
 }
 </script>
