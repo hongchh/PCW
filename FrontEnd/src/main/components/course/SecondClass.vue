@@ -47,15 +47,17 @@ export default {
   methods: {
     /*
      * 图片懒加载
+     * @param  { Number }  index  当前到达第几张图片
      */
     loadImgs (index) {
       let promises = []
       for (let i = 0; index < this.allImgs.length && i < 3; ++i, ++index) {
         let col = Number.parseInt(index % 3)
         let row = Number.parseInt(index / 3)
+        let tmp = index
         promises.push(new Promise((resolve, reject) => {
           let img = new Image()
-          img.src = this.allImgs[index]
+          img.src = this.allImgs[tmp]
           img.onload = () => {
             this.columnImg[col][row].url = img.src
             resolve()
