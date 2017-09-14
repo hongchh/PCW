@@ -55,6 +55,8 @@ export default {
       font-size: 16px
     .date
       font-style: italic
-  .notification:hover span
-    color: #20A0FF
+  .notification:hover
+    cursor: pointer
+    span
+      color: #20A0FF
 </style>

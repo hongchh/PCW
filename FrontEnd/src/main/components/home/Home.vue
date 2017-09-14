@@ -140,8 +140,10 @@ export default {
         .date
           color: #888
           font-style: italic
-      .notification:hover span
-        color: #20A0FF
+      .notification:hover
+        cursor: pointer
+        span
+          color: #20A0FF
       .useful-link
         padding: 3px
         a
