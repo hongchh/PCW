@@ -17,7 +17,7 @@ div#second-class
 
 <script>
 import axios from 'axios'
-import defaultImg from '../../assets/default.jpg'
+import defaultImg from '../../../common/default.jpg'
 
 export default {
   name: 'second-class',

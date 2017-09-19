@@ -2,7 +2,7 @@
 div#app
   div#app-header
     router-link(to="/home")
-      img#header-logo(src="./assets/logo.gif")
+      img#header-logo(src="../common/logo.gif")
     //- a#header-auth(href="/signin.html") 登录
   div#app-nav
     div.nav-item#nav-item-0
@@ -55,11 +55,11 @@ html, body, #app
 #app, #app-header, #app-nav, #app-body, #app-footer
   position: relative
 #app-header
-  height: 100px
+  height: 120px
   background: #489e6b
   #header-logo
-    height: 100px
-    margin-left: 50px
+    height: 110px
+    margin: 5px 0px 5px 50px
   #header-auth
     font-size: 10px
     color: white
@@ -121,7 +121,7 @@ html, body, #app
   box-sizing: border-box
   width: 90%
   max-width: 1200px
-  min-height: calc(100% - 200px)
+  min-height: calc(100% - 220px)
   margin: 0 auto
   background: white
   padding: 15px 0

@@ -14,7 +14,7 @@ div#teaching-team
 
 <script>
 import axios from 'axios'
-import defaultAvatar from '../../assets/default-avatar.jpg'
+import defaultAvatar from '../../../common/default-avatar.jpg'
 
 export default {
   name: 'teaching-team',

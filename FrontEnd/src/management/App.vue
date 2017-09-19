@@ -3,7 +3,7 @@ div#app
   md-sidenav.md-left(ref="sideNav")
     md-toolbar.md-large
       div.md-toolbar-container
-        h2.md-title 病理生理学
+        img#logo(src="../common/logo.gif")
     md-list
       md-list-item(v-for="(item, i) in navItems"
         :key="i" @click="navigateTo(i)"
@@ -75,4 +75,11 @@ html, body, #app
   text-align: right
 #app-body
   padding: 20px
+#app .md-toolbar .md-toolbar-container
+  height: auto
+  align-self: center
+  margin: 0 5px
+  #logo
+    width: 100%
+    height: auto
 </style>

@@ -2,8 +2,7 @@
 div#app
   div#mask
     div#logo
-      span#logo-header 中山大学
-      span#logo-text 病理生理学教研室
+      img(src="../common/logo.gif")
     div#signin-form
       el-form(ref="account", :model="account")
         el-form-item(prop="username", :rules="[{ required: true, message: '请输入用户名' }]")
@@ -61,23 +60,17 @@ html, body
   background-image: url(./assets/signin-bg.jpg)
 #mask
   background-image: url(./assets/line.png)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
   #logo
-    width: 200px
-    height: 100px
-    overflow: hidden
-    position: absolute
-    top: 100px
-    left: 100px
-    color: white
-    span
-      display: block
-    #logo-header
-      font-size: 45px
+    width: 400px
+    margin-bottom: 80px
+    img
+      width: 100%
+      height: auto
   #signin-form
-    height: 100%
-    display: flex
-    flex-direction: column
-    justify-content: center
     .el-form
       width: 400px
       margin: 0 calc(50% - 200px)
