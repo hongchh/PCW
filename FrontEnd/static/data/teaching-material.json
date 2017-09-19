@@ -1,5 +1,44 @@
 [{
   "type": "present",
+  "description": "全国规划教材《病理生理学》第8版, 王建枝、殷莲华主编, 人民卫生出版社, 2013年"
+}, {
+  "type": "editor",
+  "description": "杨惠玲主编《实验生理科学》第一版，高等教育出版社，2014年"
+}, {
+  "type": "editor",
+  "description": "杨惠玲副主编《病理生理学》第三版，北京大学医学出版社，2013年"
+}, {
+  "type": "participated",
+  "description": "谭红梅参编《病理生理学应试指南》第三版，北京大学医学出版社，2016年"
+}, {
+  "type": "participated",
+  "description": "谭红梅参编器官-系统整合教材《消化系统》，人民卫生出版社，2015年"
+}, {
+  "type": "participated",
+  "description": "谭红梅参编《消化系统学习指导及习题集》，人民卫生出版社，2015年"
+}, {
+  "type": "participated",
+  "description": "谭红梅参编《图表病理生理学》第二版，人民卫生出版社，2014年"
+}, {
+  "type": "participated",
+  "description": "王蔚东、李春凌参编《肾脏病学》第四版，人民卫生出版社，2014年"
+}, {
+  "type": "participated",
+  "description": "杨惠玲参编全国统编教材《病理生理学》第八版, 人民卫生出版社, 2013年"
+}, {
+  "type": "participated",
+  "description": "谭红梅参编《病理生理学精编笔记与考研指南》，科学技术文献出版社，2013年"
+}, {
+  "type": "participated",
+  "description": "谭红梅、许志威参编《病理生理学导学与应试指南》，科学技术文献出版社，2011年"
+}, {
+  "type": "participated",
+  "description": "谭红梅参编《图表病理生理学》第一版，人民卫生出版社，2010年"
+}, {
+  "type": "participated",
+  "description": "谭红梅参编《外科病理生理学》第二版，人民卫生出版社，2009年"
+}, {
+  "type": "present",
   "description": "全国规划教材《病理生理学》第7版, 金惠铭、王建枝主编, 人民卫生出版社, 2008年"
 }, {
   "type": "present",

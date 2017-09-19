@@ -13,19 +13,22 @@
     "url": "http://118.89.35.155:8080/static/course/syllabus/新版病理生理学教学大纲-四年制.doc"
   }],
   "schedule": [{
-    "title": "2016年本科病生课程进度表",
-    "url": "http://118.89.35.155:8080/static/course/schedule/2016年本科病生课程进度表.docx"
+    "title": "2017学年病理生理学课程进度表",
+    "url": "http://118.89.35.155:8080/static/course/schedule/2017学年病理生理学课程进度表.xls"
   }, {
-    "title": "2015年本科病生课程进度表",
-    "url": "http://118.89.35.155:8080/static/course/schedule/2015年本科病生课程进度表.docx"
+    "title": "2016学年病理生理学课程进度表",
+    "url": "http://118.89.35.155:8080/static/course/schedule/2016学年病理生理学课程进度表.docx"
   }, {
-    "title": "2014年本科病生课程进度表",
-    "url": "http://118.89.35.155:8080/static/course/schedule/2014年本科病生课程进度表.doc"
+    "title": "2015学年病理生理学课程进度表",
+    "url": "http://118.89.35.155:8080/static/course/schedule/2015学年病理生理学课程进度表.docx"
   }, {
-    "title": "2013年本科病生课程进度表",
-    "url": "http://118.89.35.155:8080/static/course/schedule/2013年本科病生课程进度表.doc"
+    "title": "2014学年病理生理学课程进度表",
+    "url": "http://118.89.35.155:8080/static/course/schedule/2014学年病理生理学课程进度表.doc"
   }, {
-    "title": "2012年本科病生课程进度表",
-    "url": "http://118.89.35.155:8080/static/course/schedule/2012年本科病生课程进度表.doc"
+    "title": "2013学年病理生理学课程进度表",
+    "url": "http://118.89.35.155:8080/static/course/schedule/2013学年病理生理学课程进度表.doc"
+  }, {
+    "title": "2012学年病理生理学课程进度表",
+    "url": "http://118.89.35.155:8080/static/course/schedule/2012学年病理生理学课程进度表.doc"
   }]
 }

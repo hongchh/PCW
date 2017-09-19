@@ -3,11 +3,11 @@ div#courseware
   el-row(type="flex", justify="center")
     el-col(:span="20")
       el-tabs
-        el-tab-pane(label="教案")
+        el-tab-pane(label="课件")
           div.item(v-for="(item, i) in courseware")
             span(v-if="!item.url") {{ item.title }}
             a.link(v-else, :href="item.url", target="_blank") {{ item.title }}
-        el-tab-pane(label="课件")
+        el-tab-pane(label="教案")
           div.item(v-for="(item, i) in lessonplan")
             span(v-if="!item.url") {{ item.title }}
             a.link(v-else, :href="item.url", target="_blank") {{ item.title }}
