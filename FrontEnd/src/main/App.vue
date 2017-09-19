@@ -2,8 +2,8 @@
 div#app
   div#app-header
     router-link(to="/home")
-      img#header-logo(src="./assets/logo.png")
-    a#header-auth(href="/signin.html") 登录
+      img#header-logo(src="./assets/logo.gif")
+    //- a#header-auth(href="/signin.html") 登录
   div#app-nav
     div.nav-item#nav-item-0
       span 课程信息&nbsp;
@@ -30,6 +30,7 @@ div#app
         router-link.link-list-item(to="/honor") 教学荣誉
         router-link.link-list-item(to="/achievements") 科研成就
         router-link.link-list-item(to="/evaluation") 课程评价
+        //- router-link.link-list-item(to="/evaluation") 科研指导
     div.nav-item#nav-item-3
       router-link.nav-link(to="/interaction") 互动专区
   div#app-body
@@ -106,6 +107,7 @@ html, body, #app
   #nav-item-1:hover .link-list
     height: 140px
   #nav-item-2:hover .link-list
+    // height: 112px
     height: 84px
   #nav-item-0
     left: 15%
@@ -118,6 +120,7 @@ html, body, #app
 #app-body
   box-sizing: border-box
   width: 90%
+  max-width: 1200px
   min-height: calc(100% - 200px)
   margin: 0 auto
   background: white

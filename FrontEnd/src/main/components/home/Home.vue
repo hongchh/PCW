@@ -1,6 +1,6 @@
 <template lang="pug">
 div#main-home
-  el-carousel(v-if="slides.length !== 0" height="350px", indicator-position="none")
+  el-carousel(v-if="slides.length !== 0" height="425px", indicator-position="none")
     el-carousel-item(v-for="(slide, i) in slides", :key="i")
       div.slide-holder
         img.slide(:src="slide")
