@@ -5,7 +5,8 @@ div#honor
       h2 个人荣誉
       ul
         li(v-for="honor in honors")
-          a.link(:href="honor.url", target="_blank") {{ honor.description }}
+          a.link(v-if="honor.url", :href="honor.url", target="_blank") {{ honor.description }}
+          span(v-else) {{ honor.description }}
 </template>
 
 <script>
@@ -22,7 +23,7 @@ export default {
     axios.get('/static/data/honor.json')
       .then(res => {
         if (res.status === 200) {
-          this.honors = res.data
+          this.honors = res.data.reverse()
         }
       })
   }
