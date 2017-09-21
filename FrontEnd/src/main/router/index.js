@@ -19,6 +19,7 @@ import Vocabulary from '../components/resources/Vocabulary'
 import Achievements from '../components/achievement/Achievements'
 import Evaluation from '../components/achievement/Evaluation'
 import Honor from '../components/achievement/Honor'
+import ResearchGuidance from '../components/achievement/ResearchGuidance'
 import Interaction from '../components/interaction/Interaction'
 import Comment from '../components/interaction/Comment'
 
@@ -40,6 +41,7 @@ export default new Router({
     { path: '/achievements', component: Achievements },
     { path: '/evaluation', component: Evaluation },
     { path: '/honor', component: Honor },
+    { path: '/research-guidance', component: ResearchGuidance },
     { path: '/interaction', component: Interaction },
     { path: '/interaction/:id', component: Comment },
     { path: '*', redirect: 'home' }

@@ -28,9 +28,9 @@ div#app
       i.el-icon-caret-bottom
       div.link-list
         router-link.link-list-item(to="/honor") 教学荣誉
-        router-link.link-list-item(to="/achievements") 科研成就
+        router-link.link-list-item(to="/achievements") 学术成就
         router-link.link-list-item(to="/evaluation") 课程评价
-        //- router-link.link-list-item(to="/evaluation") 科研指导
+        router-link.link-list-item(to="/research-guidance") 科研指导
     div.nav-item#nav-item-3
       router-link.nav-link(to="/interaction") 互动专区
   div#app-body
@@ -107,8 +107,7 @@ html, body, #app
   #nav-item-1:hover .link-list
     height: 140px
   #nav-item-2:hover .link-list
-    // height: 112px
-    height: 84px
+    height: 112px
   #nav-item-0
     left: 15%
   #nav-item-1
