@@ -37,13 +37,13 @@ export default {
   name: 'links',
   data () {
     return {
-      links: [],
-      editBoardType: 0,
-      currentLinkIndex: 0,
-      editLink: '',
-      editDescription: '',
-      dialogTitle: '',
-      confirmText: ''
+      links: [], // 友情链接列表
+      editBoardType: 0, // 编辑板状态，0表示新增链接，1表示编辑链接
+      currentLinkIndex: 0, // 当前选中的链接，编辑或删除用
+      editLink: '', // 编辑板里面的链接地址
+      editDescription: '', // 编辑板里面的链接描述
+      dialogTitle: '', // 编辑板标题
+      confirmText: '' // 删除确认弹窗的提示语
     }
   },
   created () {
@@ -109,11 +109,13 @@ export default {
     display: flex
     align-item: center
     padding: 5px 10px
-    border-bottom: 1px solid #e9e9e9
+    border-bottom: 1px solid #e0e0e0
     &:first-child
       margin-top: 15px
     &:last-child
       border-bottom: none
+    &:hover
+      background: rgba(0, 0, 0, 0.06)
     span
       flex-grow: 1
       font-size: 18px

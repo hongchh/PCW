@@ -51,6 +51,7 @@ export default {
   name: 'notification',
   data () {
     return {
+      // 公告列表
       rows: [
         { title: 'xxxx', createTime: '2017-08-27', author: 'yyyy', selected: false },
         { title: 'xxxx', createTime: '2017-08-27', author: 'zzzz', selected: false },
@@ -58,7 +59,9 @@ export default {
         { title: 'xxxx', createTime: '2017-08-27', author: 'yyyy', selected: false },
         { title: 'xxxx', createTime: '2017-08-27', author: 'yyyy', selected: false }
       ],
+      // 选中的公告索引，查看详情用
       detailRow: 0,
+      // 新建公告
       newNotification: {
         title: '',
         content: ''

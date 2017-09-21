@@ -49,8 +49,8 @@ export default {
   name: 'carousel',
   data () {
     return {
-      slides: ['', '', '', ''],
-      files: [null, null, null, null]
+      slides: ['', '', '', ''], // 轮播图链接
+      files: [null, null, null, null] // 选中的文件
     }
   },
   created () {

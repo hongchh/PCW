@@ -15,7 +15,7 @@ div#app
       md-icon menu
     h2.md-title(style="flex: 1") 病理生理学
     md-icon access_time
-    md-button 2017-08-27 15:03
+    md-button {{ currentDay }}
   div#app-body
     router-view
 </template>
@@ -24,15 +24,27 @@ div#app
 export default {
   name: 'app',
   data () {
+    let now = new Date()
+    let day = ['一', '二', '三', '四', '五', '六', '日']
     return {
+      // 导航链接、描述与图标配置
       navItems: [
         { link: '/home', text: '主页管理', icon: 'home' },
         { link: '/course', text: '课程管理', icon: 'event_note' },
         { link: '/account', text: '账号管理', icon: 'account_circle' }
-      ]
+      ],
+      // 当前日期
+      currentDay: now.getFullYear() + '年' +
+        (now.getMonth() + 1) + '月' +
+        now.getDate() + '日 星期' +
+        day[now.getDay() - 1]
     }
   },
   methods: {
+    /*
+     * 链接跳转
+     * @param  { Number }  i  第几条链接
+     */
     navigateTo (i) {
       this.$router.push(this.navItems[i].link)
       this.$refs.sideNav.close()
