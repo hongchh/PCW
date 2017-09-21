@@ -29,7 +29,7 @@ md-card#notification
     md-dialog-actions
       md-button.md-primary(@click.native="$refs.detailBoard.close()") 确定
   //- 创建公告
-  md-dialog#creation-board(ref="creationBoard")
+  md-dialog.edit-board(ref="creationBoard")
     md-dialog-title 发布新公告
     md-dialog-content
       md-input-container
@@ -91,8 +91,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass">
-#creation-board .md-dialog
-  width: 60%
-</style>
