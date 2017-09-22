@@ -102,9 +102,9 @@ Vue.use(MdSidenav)
 // import MdSnackbar from 'vue-material/dist/components/mdSnackbar'
 // Vue.use(MdSnackbar)
 
-// import 'vue-material/dist/components/mdSpeedDial/index.css'
-// import MdSpeedDial from 'vue-material/dist/components/mdSpeedDial'
-// Vue.use(MdSpeedDial)
+import 'vue-material/dist/components/mdSpeedDial/index.css'
+import MdSpeedDial from 'vue-material/dist/components/mdSpeedDial'
+Vue.use(MdSpeedDial)
 
 // import 'vue-material/dist/components/mdSpinner/index.css'
 // import MdSpinner from 'vue-material/dist/components/mdSpinner'
@@ -134,9 +134,9 @@ import 'vue-material/dist/components/mdToolbar/index.css'
 import MdToolbar from 'vue-material/dist/components/mdToolbar'
 Vue.use(MdToolbar)
 
-// import 'vue-material/dist/components/mdTooltip/index.css'
-// import MdTooltip from 'vue-material/dist/components/mdTooltip'
-// Vue.use(MdTooltip)
+import 'vue-material/dist/components/mdTooltip/index.css'
+import MdTooltip from 'vue-material/dist/components/mdTooltip'
+Vue.use(MdTooltip)
 
 // import 'vue-material/dist/components/mdWhiteframe/index.css'
 // import MdWhiteframe from 'vue-material/dist/components/mdWhiteframe'

@@ -87,6 +87,7 @@ html, body, #app
   text-align: right
 #app-body
   padding: 20px
+  position: relative
 #app .md-toolbar .md-toolbar-container
   height: auto
   align-self: center
