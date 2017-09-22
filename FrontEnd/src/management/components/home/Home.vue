@@ -6,19 +6,22 @@ div#home
     md-layout(md-flex="35")
       links
   carousel
+  info
 </template>
 
 <script>
 import Carousel from './Carousel'
 import Notification from './Notification'
 import Links from './links'
+import Info from './info'
 
 export default {
   name: 'home',
   components: {
     Carousel,
     Notification,
-    Links
+    Links,
+    Info
   }
 }
 </script>

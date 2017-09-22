@@ -43,7 +43,7 @@ export default {
       editLink: '', // 编辑板里面的链接地址
       editDescription: '', // 编辑板里面的链接描述
       dialogTitle: '', // 编辑板标题
-      confirmText: '' // 删除确认弹窗的提示语
+      confirmText: '确认删除吗?' // 删除确认弹窗的提示语
     }
   },
   created () {
@@ -107,7 +107,7 @@ export default {
 #links
   .link-item
     display: flex
-    align-item: center
+    align-items: center
     padding: 5px 10px
     border-bottom: 1px solid #e0e0e0
     &:first-child
