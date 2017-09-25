@@ -44,15 +44,24 @@ export default {
     loadAvatar (index) {
       let promises = []
       for (let i = 0; index < this.avatars.length && i < 3; ++i, ++index) {
-        let tmp = index
-        promises.push(new Promise((resolve, reject) => {
-          let img = new Image()
-          img.src = this.avatars[tmp]
-          img.onload = () => {
-            this.teachingTeam[tmp].avatar = img.src
-            resolve()
-          }
-        }))
+        // 跳过未添加头像的成员
+        if (!this.avatars[index]) {
+          i -= 1
+        } else {
+          let tmp = index
+          promises.push(new Promise((resolve, reject) => {
+            let img = new Image()
+            img.src = this.avatars[tmp]
+            img.onload = () => {
+              this.teachingTeam[tmp].avatar = img.src
+              resolve()
+            }
+            // 加载失败则使用默认头像，不reject以免影响其他头像的正常加载
+            img.onerror = () => {
+              resolve()
+            }
+          }))
+        }
       }
       Promise.all(promises).then(() => {
         if (index < this.avatars.length) {

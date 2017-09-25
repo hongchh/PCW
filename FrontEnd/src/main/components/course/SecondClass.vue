@@ -62,6 +62,10 @@ export default {
             this.columnImg[col][row].url = img.src
             resolve()
           }
+          // 加载失败则使用默认图片，不reject以免影响其他图片的正常加载
+          img.onerror = () => {
+            resolve()
+          }
         }))
       }
       Promise.all(promises).then(() => {

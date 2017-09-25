@@ -88,6 +88,10 @@ export default {
           this.slides.push(this._slides[index])
           this.loadSlides(index + 1)
         }
+        // 加载失败则继续加载下一张，以免中断后续图片的加载
+        img.onerror = () => {
+          this.loadSlides(index + 1)
+        }
       }
     }
   }
