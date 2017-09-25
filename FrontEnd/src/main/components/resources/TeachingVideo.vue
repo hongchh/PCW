@@ -12,9 +12,8 @@ div#teaching-video
                 span(v-if="!scope.row.presenter") 无
             el-table-column(min-width="240", label="操作")
               template(scope="scope")
-                el-button(type="primary", size="small", @click="play(scope.row.link)") 在线观看
-                a(:href="scope.row.link")
-                  el-button(size="small") 下载
+                a(:href="scope.row.link", target="_blank")
+                  el-button(type="primary", size="small") 在线观看
         el-tab-pane(label="英文教学录像")
           el-table(:data="EnglishTeachingVideos", stripe)
             el-table-column(min-width="360", label="教学录像", prop="title")
@@ -24,14 +23,8 @@ div#teaching-video
                 span(v-if="!scope.row.presenter") 无
             el-table-column(min-width="240", label="操作")
               template(scope="scope")
-                el-button(type="primary", size="small", @click="play(scope.row.link)") 在线观看
-                a(:href="scope.row.link")
-                  el-button(size="small") 下载
-
-      el-dialog(title="在线观看", v-model="dialogVisible", size="small", @close="stop")
-        div.video-container
-          video(controls, :src="link")
-
+                a(:href="scope.row.link", target="_blank")
+                  el-button(type="primary", size="small") 在线观看
 </template>
 
 <script>
@@ -41,9 +34,7 @@ export default {
   name: 'teaching-video',
   data () {
     return {
-      teachingVideos: [],
-      link: '#',
-      dialogVisible: false
+      teachingVideos: []
     }
   },
   created () {
@@ -53,15 +44,6 @@ export default {
           this.teachingVideos = res.data
         }
       })
-  },
-  methods: {
-    play: function (link) {
-      this.link = link
-      this.dialogVisible = true
-    },
-    stop: function () {
-      this.link = '#'
-    }
   },
   computed: {
     ChineseTeachingVideos: function () {
