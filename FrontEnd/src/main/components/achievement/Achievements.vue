@@ -25,7 +25,7 @@ export default {
     }
   },
   created () {
-    axios.get('/static/data/achievements.json')
+    axios.get('./static/data/achievements.json')
       .then((res) => {
         if (res.status === 200) {
           this.achievements = res.data

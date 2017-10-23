@@ -27,7 +27,7 @@ export default {
     }
   },
   created () {
-    axios.get('/static/data/teaching-plan.json').then((res) => {
+    axios.get('./static/data/teaching-plan.json').then((res) => {
       if (res.status === 200) {
         this.loading = false
         this.syllabus = res.data.syllabus

@@ -1,10 +1,10 @@
 [{
   "title": "销售部女经理的困惑--呼吸功能不全",
-  "url": "http://118.89.35.155:8080/static/course/pbl/PBL-呼吸功能不全.pdf"
+  "url": "./static/course/pbl/PBL-呼吸功能不全.pdf"
 }, {
   "title": "方芳的故事--肾功能衰竭",
-  "url": "http://118.89.35.155:8080/static/course/pbl/PBL-肾功能衰竭.pdf"
+  "url": "./static/course/pbl/PBL-肾功能衰竭.pdf"
 }, {
   "title": "失控的血压--心力衰竭",
-  "url": "http://118.89.35.155:8080/static/course/pbl/PBL-心力衰竭.pdf"
+  "url": "./static/course/pbl/PBL-心力衰竭.pdf"
 }]

@@ -23,7 +23,7 @@ export default {
     }
   },
   created () {
-    axios.get('/static/data/research-guidance.json')
+    axios.get('./static/data/research-guidance.json')
       .then((res) => {
         if (res.status === 200) {
           this.guidance = res.data

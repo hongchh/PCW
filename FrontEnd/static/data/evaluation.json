@@ -1,23 +1,23 @@
 [{
   "type": "outsideEvaluation",
   "description": "北京大学医学部吴立玲教授评价",
-  "url": "http://118.89.35.155:8080/static/achievement/evaluation/北京大学医学部吴立玲教授评价.jpg"
+  "url": "./static/achievement/evaluation/北京大学医学部吴立玲教授评价.jpg"
 }, {
   "type": "outsideEvaluation",
   "description": "暨南大学王华东教授评价",
-  "url": "http://118.89.35.155:8080/static/achievement/evaluation/暨南大学王华东教授评价.jpg"
+  "url": "./static/achievement/evaluation/暨南大学王华东教授评价.jpg"
 }, {
   "type": "outsideEvaluation",
   "description": "昆明医科大学李树清教授评价",
-  "url": "http://118.89.35.155:8080/static/achievement/evaluation/昆明医科大学李树清教授评价.jpg"
+  "url": "./static/achievement/evaluation/昆明医科大学李树清教授评价.jpg"
 }, {
   "type": "outsideEvaluation",
   "description": "南方医科大学黄巧冰教授评价",
-  "url": "http://118.89.35.155:8080/static/achievement/evaluation/南方医科大学黄巧冰教授评价.jpg"
+  "url": "./static/achievement/evaluation/南方医科大学黄巧冰教授评价.jpg"
 }, {
   "type": "outsideEvaluation",
   "description": "中南大学涂自智教授评价",
-  "url": "http://118.89.35.155:8080/static/achievement/evaluation/中南大学涂自智教授评价.jpg"
+  "url": "./static/achievement/evaluation/中南大学涂自智教授评价.jpg"
 }, {
   "type": "insideEvaluation",
   "description": "中山大学医学教务处王庭槐处长对早期学生科研的评价1",

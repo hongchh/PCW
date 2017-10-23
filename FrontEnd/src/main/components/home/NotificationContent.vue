@@ -1,10 +1,10 @@
 <template lang="pug">
 div#notification-content
-  h1 xxxxxx通知
+  h1 {{ notification.title }}
   div.info
-    span.author 发布人：xxx
-    span.date 发布时间：2017-08-26
-  div.content {{ content }}
+    span.author {{ '发布人: ' + notification.author }}
+    span.date {{ '发布时间: ' + notification.date }}
+  div.content {{ notification.content }}
 </template>
 
 <script>
@@ -12,7 +12,7 @@ export default {
   name: 'notification-content',
   data () {
     return {
-      content: '这是一条公告，这是一条公告，这是一条公告\n这是一条很长很长的公告，这是一条很长很长的公告，这是一条很长很长的公告\n这是一条公告'
+      notification: JSON.parse(sessionStorage.getItem('notification'))[Number.parseInt(this.$route.query.id)]
     }
   }
 }

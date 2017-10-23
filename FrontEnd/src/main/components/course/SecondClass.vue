@@ -28,7 +28,7 @@ export default {
     }
   },
   created () {
-    axios.get('/static/data/second-class.json').then(res => {
+    axios.get('./static/data/second-class.json').then(res => {
       if (res.status === 200) {
         this.allImgs = []
         this.columnImg = [[], [], []]

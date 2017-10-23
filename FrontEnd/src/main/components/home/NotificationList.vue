@@ -4,10 +4,10 @@ div#notification-list
     el-col(:span="20")
       h2 公告
       p(v-if="loading") loading ...
-      div(v-else @click="toDetail")
-        div.notification(v-for="item in notifications")
-          span.title {{ item.title }}
-          span.date {{ item.date }}
+      div(v-else @click="toDetail($event)")
+        div.notification(v-for="(item, i) in notifications", :id="'div-' + i")
+          span.title(:id="'title-' + i") {{ item.title }}
+          span.date(:id="'date-' + i") {{ item.date }}
 </template>
 
 <script>
@@ -22,16 +22,17 @@ export default {
     }
   },
   created () {
-    axios.get('/static/data/home.json').then(res => {
+    axios.get('./static/data/notification.json').then(res => {
       if (res.status === 200) {
         this.loading = false
-        this.notifications = res.data.notification
+        this.notifications = res.data
+        sessionStorage.setItem('notification', JSON.stringify(res.data))
       }
     })
   },
   methods: {
-    toDetail () {
-      this.$router.push('/notification')
+    toDetail (event) {
+      this.$router.push('/notification?id=' + event.target.id.split('-')[1])
     }
   }
 }

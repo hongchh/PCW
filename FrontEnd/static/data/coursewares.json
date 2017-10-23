@@ -1,94 +1,94 @@
 {
   "courseware": [{
     "title": "绪论与疾病概论",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/绪论与疾病概论.ppt"
+    "url": "./static/resource/courseware/绪论与疾病概论.ppt"
   }, {
     "title": "水、电解质代谢紊乱",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/水,电解质代谢紊乱.ppt"
+    "url": "./static/resource/courseware/水,电解质代谢紊乱.ppt"
   }, {
     "title": "酸碱平衡紊乱",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/酸碱平衡紊乱.ppt"
+    "url": "./static/resource/courseware/酸碱平衡紊乱.ppt"
   }, {
     "title": "缺氧",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/缺氧.ppt"
+    "url": "./static/resource/courseware/缺氧.ppt"
   }, {
     "title": "发热",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/发热.ppt"
+    "url": "./static/resource/courseware/发热.ppt"
   }, {
     "title": "细胞信号转导异常与疾病",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/细胞信号转导异常与疾病.ppt"
+    "url": "./static/resource/courseware/细胞信号转导异常与疾病.ppt"
   }, {
     "title": "细胞增殖和凋亡异常与疾病",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/细胞增殖和凋亡异常与疾病.ppt"
+    "url": "./static/resource/courseware/细胞增殖和凋亡异常与疾病.ppt"
   }, {
     "title": "应激",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/应激.ppt"
+    "url": "./static/resource/courseware/应激.ppt"
   }, {
     "title": "休克",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/休克.ppt"
+    "url": "./static/resource/courseware/休克.ppt"
   }, {
     "title": "缺血-再灌注损伤",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/缺血-再灌注损伤.ppt"
+    "url": "./static/resource/courseware/缺血-再灌注损伤.ppt"
   }, {
     "title": "凝血和抗凝血平衡紊乱",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/凝血和抗凝血平衡紊乱.ppt"
+    "url": "./static/resource/courseware/凝血和抗凝血平衡紊乱.ppt"
   }, {
     "title": "心功能不全",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/心功能不全.ppt"
+    "url": "./static/resource/courseware/心功能不全.ppt"
   }, {
     "title": "肺功能不全",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/肺功能不全.ppt"
+    "url": "./static/resource/courseware/肺功能不全.ppt"
   }, {
     "title": "肝功能不全",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/肝功能不全.ppt"
+    "url": "./static/resource/courseware/肝功能不全.ppt"
   }, {
     "title": "肾功能不全",
-    "url": "http://118.89.35.155:8080/static/resource/courseware/肾功能不全.ppt"
+    "url": "./static/resource/courseware/肾功能不全.ppt"
   }],
   "lessonplan": [{
     "title": "绪论与疾病概论",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/绪论,疾病概论.doc"
+    "url": "./static/resource/lesson-plan/绪论,疾病概论.doc"
   }, {
     "title": "水、电解质平衡紊乱",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/水,电解质平衡紊乱.docx"
+    "url": "./static/resource/lesson-plan/水,电解质平衡紊乱.docx"
   }, {
     "title": "酸碱平衡紊乱",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/酸碱平衡紊乱.doc"
+    "url": "./static/resource/lesson-plan/酸碱平衡紊乱.doc"
   }, {
     "title": "缺氧",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/缺氧.doc"
+    "url": "./static/resource/lesson-plan/缺氧.doc"
   }, {
     "title": "发热",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/发热.doc"
+    "url": "./static/resource/lesson-plan/发热.doc"
   }, {
     "title": "细胞信号转导异常与疾病",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/细胞信号转导异常与疾病.doc"
+    "url": "./static/resource/lesson-plan/细胞信号转导异常与疾病.doc"
   }, {
     "title": "细胞增殖凋亡异常与疾病",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/细胞增殖凋亡异常与疾病.doc"
+    "url": "./static/resource/lesson-plan/细胞增殖凋亡异常与疾病.doc"
   }, {
     "title": "应激",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/应激.doc"
+    "url": "./static/resource/lesson-plan/应激.doc"
   }, {
     "title": "休克",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/休克教案.doc"
+    "url": "./static/resource/lesson-plan/休克教案.doc"
   }, {
     "title": "缺血-再灌注损伤",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/缺血再灌注损伤教案.doc"
+    "url": "./static/resource/lesson-plan/缺血再灌注损伤教案.doc"
   }, {
     "title": "凝血和抗凝血平衡紊乱",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/凝血和抗凝血平衡紊乱.doc"
+    "url": "./static/resource/lesson-plan/凝血和抗凝血平衡紊乱.doc"
   }, {
     "title": "心功能不全",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/心功能不全.docx"
+    "url": "./static/resource/lesson-plan/心功能不全.docx"
   }, {
     "title": "肺功能不全",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/肺功能不全.doc"
+    "url": "./static/resource/lesson-plan/肺功能不全.doc"
   }, {
     "title": "肝功能不全",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/肝功能不全.doc"
+    "url": "./static/resource/lesson-plan/肝功能不全.doc"
   }, {
     "title": "肾功能不全",
-    "url": "http://118.89.35.155:8080/static/resource/lesson-plan/肾功能不全.doc"
+    "url": "./static/resource/lesson-plan/肾功能不全.doc"
   }]
 }

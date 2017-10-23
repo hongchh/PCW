@@ -15,7 +15,7 @@ div#main-home
           p {{ course.description || 'loading ...' }}
       div.info
         div.info-header
-          span.header-text 科室团队
+          span.header-text 教学团队
           router-link.heaedr-link(to="/teaching-team") more
         div.info-content
           img(:src="team.photo")
@@ -34,7 +34,7 @@ div#main-home
           router-link.heaedr-link(to="/notification-list") more
         div.info-content
           div.no-data(v-if="notification.length === 0") 暂无公告
-          div.notification(v-for="item in notification", @click="$router.push('/notification')")
+          div.notification(v-for="(item, i) in notification", @click="$router.push('/notification?id=' + i)")
             span.title {{ item.title }}
             span.date {{ item.date }}
       div.info
@@ -63,15 +63,22 @@ export default {
     }
   },
   created () {
-    axios.get('/static/data/home.json').then((res) => {
+    axios.get('./static/data/home.json').then((res) => {
       if (res.status === 200) {
         this.course = res.data.course
         this.team = res.data.team
         this.achievement = res.data.achievement
-        this.notification = res.data.notification
         this.links = res.data.links
         this._slides = res.data.slides
         this.loadSlides(0)
+      }
+    })
+    axios.get('./static/data/notification.json').then(res => {
+      if (res.status === 200) {
+        sessionStorage.setItem('notification', JSON.stringify(res.data))
+        for (let i = 0; i < 10 && i < res.data.length; ++i) {
+          this.notification.push(res.data[i])
+        }
       }
     })
   },

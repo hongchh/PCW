@@ -25,7 +25,7 @@ export default {
     }
   },
   created () {
-    axios.get('/static/data/teaching-team.json').then((res) => {
+    axios.get('./static/data/teaching-team.json').then((res) => {
       if (res.status === 200) {
         for (let i = 0; i < res.data.length; ++i) {
           this.avatars.push(res.data[i].avatar)
