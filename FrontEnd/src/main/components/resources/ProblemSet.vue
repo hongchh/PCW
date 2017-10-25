@@ -14,35 +14,37 @@ div#problem-set
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data1 from '../../../../static/data/examination-papers.json'
+import data2 from '../../../../static/data/chapter-problems.json'
 
 export default {
   name: 'problem-set',
   data () {
     return {
-      examinationPapers: [],
-      chapterProblems: []
-    }
-  },
-  created () {
-    axios.all([this.getExaminationPapers(), this.getChapterProblems()])
-      .then(axios.spread((papers, problems) => {
-        if (papers.status === 200) {
-          this.examinationPapers = papers.data
-        }
-        if (problems.status === 200) {
-          this.chapterProblems = problems.data
-        }
-      }))
-  },
-  methods: {
-    getExaminationPapers: function () {
-      return axios.get('./static/data/examination-papers.json')
-    },
-    getChapterProblems: function () {
-      return axios.get('./static/data/chapter-problems.json')
+      examinationPapers: data1,
+      chapterProblems: data2
     }
   }
+  // created () {
+  //   axios.all([this.getExaminationPapers(), this.getChapterProblems()])
+  //     .then(axios.spread((papers, problems) => {
+  //       if (papers.status === 200) {
+  //         this.examinationPapers = papers.data
+  //       }
+  //       if (problems.status === 200) {
+  //         this.chapterProblems = problems.data
+  //       }
+  //     }))
+  // },
+  // methods: {
+  //   getExaminationPapers: function () {
+  //     return axios.get('./static/data/examination-papers.json')
+  //   },
+  //   getChapterProblems: function () {
+  //     return axios.get('./static/data/chapter-problems.json')
+  //   }
+  // }
 }
 </script>
 

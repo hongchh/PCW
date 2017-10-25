@@ -15,26 +15,27 @@ div#teaching-plan
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data from '../../../../static/data/teaching-plan.json'
 
 export default {
   name: 'teaching-plan',
   data () {
     return {
-      loading: true,
-      syllabus: null,
-      schedule: null
+      loading: false,
+      syllabus: data.syllabus,
+      schedule: data.schedule
     }
-  },
-  created () {
-    axios.get('./static/data/teaching-plan.json').then((res) => {
-      if (res.status === 200) {
-        this.loading = false
-        this.syllabus = res.data.syllabus
-        this.schedule = res.data.schedule
-      }
-    })
   }
+  // created () {
+  //   axios.get('./static/data/teaching-plan.json').then((res) => {
+  //     if (res.status === 200) {
+  //       this.loading = false
+  //       this.syllabus = res.data.syllabus
+  //       this.schedule = res.data.schedule
+  //     }
+  //   })
+  // }
 }
 </script>
 

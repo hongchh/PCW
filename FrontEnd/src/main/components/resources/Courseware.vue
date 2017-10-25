@@ -14,25 +14,26 @@ div#courseware
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data from '../../../../static/data/coursewares.json'
 
 export default {
   name: 'courseware',
   data () {
     return {
-      courseware: [],
-      lessonplan: []
+      courseware: data.courseware,
+      lessonplan: data.lessonplan
     }
-  },
-  created () {
-    axios.get('./static/data/coursewares.json')
-      .then(res => {
-        if (res.status === 200) {
-          this.courseware = res.data.courseware
-          this.lessonplan = res.data.lessonplan
-        }
-      })
   }
+  // created () {
+  //   axios.get('./static/data/coursewares.json')
+  //     .then(res => {
+  //       if (res.status === 200) {
+  //         this.courseware = res.data.courseware
+  //         this.lessonplan = res.data.lessonplan
+  //       }
+  //     })
+  // }
 }
 </script>
 

@@ -20,23 +20,24 @@ div#evaluation
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data from '../../../../static/data/evaluation.json'
 
 export default {
   name: 'evaluation',
   data () {
     return {
-      evaluations: []
+      evaluations: data
     }
   },
-  created () {
-    axios.get('./static/data/evaluation.json')
-      .then(res => {
-        if (res.status === 200) {
-          this.evaluations = res.data
-        }
-      })
-  },
+  // created () {
+  //   axios.get('./static/data/evaluation.json')
+  //     .then(res => {
+  //       if (res.status === 200) {
+  //         this.evaluations = res.data
+  //       }
+  //     })
+  // },
   methods: {
     getEvaluationsByType: function (type) {
       return this.evaluations.filter((evaluation) => {

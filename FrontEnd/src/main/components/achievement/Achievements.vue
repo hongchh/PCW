@@ -15,23 +15,24 @@ div#achievements
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data from '../../../../static/data/achievements.json'
 
 export default {
   name: 'achievements',
   data () {
     return {
-      achievements: []
+      achievements: data
     }
-  },
-  created () {
-    axios.get('./static/data/achievements.json')
-      .then((res) => {
-        if (res.status === 200) {
-          this.achievements = res.data
-        }
-      })
   }
+  // created () {
+  //   axios.get('./static/data/achievements.json')
+  //     .then((res) => {
+  //       if (res.status === 200) {
+  //         this.achievements = res.data
+  //       }
+  //     })
+  // }
 }
 </script>
 

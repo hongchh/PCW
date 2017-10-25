@@ -13,28 +13,36 @@ div#teaching-team
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 import defaultAvatar from '../../../common/default-avatar.jpg'
+import data from '../../../../static/data/teaching-team.json'
 
 export default {
   name: 'teaching-team',
   data () {
     return {
       teachingTeam: [],
-      avatars: []
+      avatars: [],
+      ajaxCount: 3
     }
   },
   created () {
-    axios.get('./static/data/teaching-team.json').then((res) => {
-      if (res.status === 200) {
-        for (let i = 0; i < res.data.length; ++i) {
-          this.avatars.push(res.data[i].avatar)
-          res.data[i].avatar = defaultAvatar
-          this.teachingTeam.push(res.data[i])
-        }
-        this.loadAvatar(0)
-      }
-    })
+    // axios.get('./static/data/teaching-team.json').then((res) => {
+    //   if (res.status === 200) {
+    //     for (let i = 0; i < res.data.length; ++i) {
+    //       this.avatars.push(res.data[i].avatar)
+    //       res.data[i].avatar = defaultAvatar
+    //       this.teachingTeam.push(res.data[i])
+    //     }
+    //     this.loadAvatar(0)
+    //   }
+    // })
+    for (let i = 0; i < data.length; ++i) {
+      this.avatars.push(data[i].avatar)
+      data[i].avatar = defaultAvatar
+      this.teachingTeam.push(data[i])
+    }
+    this.loadAvatar(0)
   },
   methods: {
     /*
@@ -42,32 +50,51 @@ export default {
      * @param  { Number }  index  当前到达第几个头像
      */
     loadAvatar (index) {
-      let promises = []
+      // let promises = []
       for (let i = 0; index < this.avatars.length && i < 3; ++i, ++index) {
         // 跳过未添加头像的成员
         if (!this.avatars[index]) {
           i -= 1
         } else {
           let tmp = index
-          promises.push(new Promise((resolve, reject) => {
-            let img = new Image()
-            img.src = this.avatars[tmp]
-            img.onload = () => {
-              this.teachingTeam[tmp].avatar = img.src
-              resolve()
+          // promises.push(new Promise((resolve, reject) => {
+          //   let img = new Image()
+          //   img.src = this.avatars[tmp]
+          //   img.onload = () => {
+          //     this.teachingTeam[tmp].avatar = img.src
+          //     resolve()
+          //   }
+          //   // 加载失败则使用默认头像，不reject以免影响其他头像的正常加载
+          //   img.onerror = () => {
+          //     resolve()
+          //   }
+          // }))
+          // 兼容IE，暂不使用promise
+          let img = new Image()
+          img.src = this.avatars[tmp]
+          img.onload = () => {
+            this.teachingTeam[tmp].avatar = img.src
+            this.ajaxCount -= 1
+            if (this.ajaxCount === 0 && index < this.avatars.length) {
+              this.ajaxCount = 3
+              this.loadAvatar(index)
             }
-            // 加载失败则使用默认头像，不reject以免影响其他头像的正常加载
-            img.onerror = () => {
-              resolve()
+          }
+          // 加载失败则使用默认头像，不reject以免影响其他头像的正常加载
+          img.onerror = () => {
+            this.ajaxCount -= 1
+            if (this.ajaxCount === 0 && index < this.avatars.length) {
+              this.ajaxCount = 3
+              this.loadAvatar(index)
             }
-          }))
+          }
         }
       }
-      Promise.all(promises).then(() => {
-        if (index < this.avatars.length) {
-          this.loadAvatar(index)
-        }
-      })
+      // Promise.all(promises).then(() => {
+      //   if (index < this.avatars.length) {
+      //     this.loadAvatar(index)
+      //   }
+      // })
     }
   }
 }

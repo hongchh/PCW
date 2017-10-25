@@ -10,23 +10,24 @@ div#honor
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data from '../../../../static/data/honor.json'
 
 export default {
   name: 'honor',
   data () {
     return {
-      honors: []
+      honors: data.reverse()
     }
-  },
-  created () {
-    axios.get('./static/data/honor.json')
-      .then(res => {
-        if (res.status === 200) {
-          this.honors = res.data.reverse()
-        }
-      })
   }
+  // created () {
+  //   axios.get('./static/data/honor.json')
+  //     .then(res => {
+  //       if (res.status === 200) {
+  //         this.honors = res.data.reverse()
+  //       }
+  //     })
+  // }
 }
 </script>
 

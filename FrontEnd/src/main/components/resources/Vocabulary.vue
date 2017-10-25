@@ -17,23 +17,24 @@ div#vocabulary
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data from '../../../../static/data/vocabulary.json'
 
 export default {
   name: 'vocabulary',
   data () {
     return {
-      vocabulary: []
+      vocabulary: data
     }
-  },
-  created () {
-    axios.get('./static/data/vocabulary.json')
-      .then(res => {
-        if (res.status === 200) {
-          this.vocabulary = res.data
-        }
-      })
   }
+  // created () {
+  //   axios.get('./static/data/vocabulary.json')
+  //     .then(res => {
+  //       if (res.status === 200) {
+  //         this.vocabulary = res.data
+  //       }
+  //     })
+  // }
 }
 </script>
 

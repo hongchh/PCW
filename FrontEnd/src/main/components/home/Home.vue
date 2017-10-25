@@ -47,40 +47,46 @@ div#main-home
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data from '../../../../static/data/home.json'
+import data2 from '../../../../static/data/notification.json'
 
 export default {
   name: 'home',
   data () {
     return {
-      course: { photo: '', description: '' },
-      team: { photo: '', description: '' },
-      achievement: { photo: '', description: '' },
+      course: data.course,
+      team: data.team,
+      achievement: data.achievement,
       notification: [],
-      links: [],
+      links: data.links,
       slides: [],
-      _slides: []
+      tmpSlides: data.slides
     }
   },
   created () {
-    axios.get('./static/data/home.json').then((res) => {
-      if (res.status === 200) {
-        this.course = res.data.course
-        this.team = res.data.team
-        this.achievement = res.data.achievement
-        this.links = res.data.links
-        this._slides = res.data.slides
-        this.loadSlides(0)
-      }
-    })
-    axios.get('./static/data/notification.json').then(res => {
-      if (res.status === 200) {
-        sessionStorage.setItem('notification', JSON.stringify(res.data))
-        for (let i = 0; i < 10 && i < res.data.length; ++i) {
-          this.notification.push(res.data[i])
-        }
-      }
-    })
+    // axios.get('./static/data/home.json').then((res) => {
+    //   if (res.status === 200) {
+    //     this.course = res.data.course
+    //     this.team = res.data.team
+    //     this.achievement = res.data.achievement
+    //     this.links = res.data.links
+    //     this._slides = res.data.slides
+    //     this.loadSlides(0)
+    //   }
+    // })
+    this.loadSlides(0)
+    // axios.get('./static/data/notification.json').then(res => {
+    //   if (res.status === 200) {
+    //     sessionStorage.setItem('notification', JSON.stringify(res.data))
+    //     for (let i = 0; i < 10 && i < res.data.length; ++i) {
+    //       this.notification.push(res.data[i])
+    //     }
+    //   }
+    // })
+    for (let i = 0; i < 10 && i < data2.length; ++i) {
+      this.notification.push(data2[i])
+    }
   },
   methods: {
     /*
@@ -88,11 +94,11 @@ export default {
      * @param  { Number }  index  当前加载到第几张轮播图
      */
     loadSlides (index) {
-      if (index < this._slides.length) {
+      if (index < this.tmpSlides.length) {
         let img = new Image()
-        img.src = this._slides[index]
+        img.src = this.tmpSlides[index]
         img.onload = () => {
-          this.slides.push(this._slides[index])
+          this.slides.push(this.tmpSlides[index])
           this.loadSlides(index + 1)
         }
         // 加载失败则继续加载下一张，以免中断后续图片的加载

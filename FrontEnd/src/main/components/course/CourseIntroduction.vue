@@ -15,22 +15,23 @@ div#course-introduction
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data from '../../../../static/data/course-introduction.json'
 
 export default {
   name: 'course-introduction',
   data () {
     return {
-      introduction: []
+      introduction: data
     }
-  },
-  created () {
-    axios.get('./static/data/course-introduction.json').then((res) => {
-      if (res.status === 200) {
-        this.introduction = res.data
-      }
-    })
   }
+  // created () {
+  //   axios.get('./static/data/course-introduction.json').then((res) => {
+  //     if (res.status === 200) {
+  //       this.introduction = res.data
+  //     }
+  //   })
+  // }
 }
 </script>
 

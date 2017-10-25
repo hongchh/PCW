@@ -28,23 +28,24 @@ div#teaching-video
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data from '../../../../static/data/teaching-video.json'
 
 export default {
   name: 'teaching-video',
   data () {
     return {
-      teachingVideos: []
+      teachingVideos: data
     }
   },
-  created () {
-    axios.get('./static/data/teaching-video.json')
-      .then(res => {
-        if (res.status === 200) {
-          this.teachingVideos = res.data
-        }
-      })
-  },
+  // created () {
+  //   axios.get('./static/data/teaching-video.json')
+  //     .then(res => {
+  //       if (res.status === 200) {
+  //         this.teachingVideos = res.data
+  //       }
+  //     })
+  // },
   computed: {
     ChineseTeachingVideos: function () {
       return this.teachingVideos.filter((video) => {

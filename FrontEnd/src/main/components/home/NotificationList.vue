@@ -11,24 +11,25 @@ div#notification-list
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data from '../../../../static/data/notification.json'
 
 export default {
   name: 'notification-list',
   data () {
     return {
-      loading: true,
-      notifications: []
+      loading: false,
+      notifications: data
     }
   },
   created () {
-    axios.get('./static/data/notification.json').then(res => {
-      if (res.status === 200) {
-        this.loading = false
-        this.notifications = res.data
-        sessionStorage.setItem('notification', JSON.stringify(res.data))
-      }
-    })
+    // axios.get('./static/data/notification.json').then(res => {
+    //   if (res.status === 200) {
+    //     this.loading = false
+    //     this.notifications = res.data
+    //     sessionStorage.setItem('notification', JSON.stringify(res.data))
+    //   }
+    // })
   },
   methods: {
     toDetail (event) {

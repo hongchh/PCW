@@ -10,24 +10,25 @@ div#pbl-teaching
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data from '../../../../static/data/pbl-teaching.json'
 
 export default {
   name: 'pbl-teaching',
   data () {
     return {
-      loading: true,
-      pblTeachingItems: null
+      loading: false,
+      pblTeachingItems: data
     }
-  },
-  created () {
-    axios.get('./static/data/pbl-teaching.json').then((res) => {
-      if (res.status === 200) {
-        this.loading = false
-        this.pblTeachingItems = res.data
-      }
-    })
   }
+  // created () {
+  //   axios.get('./static/data/pbl-teaching.json').then((res) => {
+  //     if (res.status === 200) {
+  //       this.loading = false
+  //       this.pblTeachingItems = res.data
+  //     }
+  //   })
+  // }
 }
 </script>
 

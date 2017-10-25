@@ -8,11 +8,14 @@ div#notification-content
 </template>
 
 <script>
+import data from '../../../../static/data/notification.json'
+
 export default {
   name: 'notification-content',
   data () {
     return {
-      notification: JSON.parse(sessionStorage.getItem('notification'))[Number.parseInt(this.$route.query.id)]
+      // notification: JSON.parse(sessionStorage.getItem('notification'))[Number.parseInt(this.$route.query.id)]
+      notification: data[Number.parseInt(this.$route.query.id)]
     }
   }
 }

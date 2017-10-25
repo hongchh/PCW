@@ -13,23 +13,24 @@ div#research-guidance
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data from '../../../../static/data/research-guidance.json'
 
 export default {
   name: 'research-guidance',
   data () {
     return {
-      guidance: []
+      guidance: data
     }
-  },
-  created () {
-    axios.get('./static/data/research-guidance.json')
-      .then((res) => {
-        if (res.status === 200) {
-          this.guidance = res.data
-        }
-      })
   }
+  // created () {
+  //   axios.get('./static/data/research-guidance.json')
+  //     .then((res) => {
+  //       if (res.status === 200) {
+  //         this.guidance = res.data
+  //       }
+  //     })
+  // }
 }
 </script>
 

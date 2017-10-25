@@ -18,23 +18,24 @@ div#teaching-material
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
+import data from '../../../../static/data/teaching-material.json'
 
 export default {
   name: 'teaching-material',
   data () {
     return {
-      teachingMaterials: []
+      teachingMaterials: data
     }
   },
-  created () {
-    axios.get('./static/data/teaching-material.json')
-      .then(res => {
-        if (res.status === 200) {
-          this.teachingMaterials = res.data
-        }
-      })
-  },
+  // created () {
+  //   axios.get('./static/data/teaching-material.json')
+  //     .then(res => {
+  //       if (res.status === 200) {
+  //         this.teachingMaterials = res.data
+  //       }
+  //     })
+  // },
   computed: {
     presentMaterials: function () {
       return this.getMaterialsByType('present')
