@@ -4,7 +4,7 @@ var path = require('path')
 module.exports = {
   build: {
     env: require('./prod.env'),
-    assetsRoot: path.resolve(__dirname, '../../Server/public'),
+    assetsRoot: path.resolve(__dirname, '../../Server/pathophysiology'),
     assetsSubDirectory: 'static',
     assetsPublicPath: './',
     productionSourceMap: false,
