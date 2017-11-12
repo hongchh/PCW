@@ -9,4 +9,4 @@ app.use(compression())
 app.use('/pathophysiology', express.static(path.join(__dirname, './pathophysiology')))
 app.listen(port)
 
-console.log("http://localhost:" + port)
+console.log('http://localhost:' + port)

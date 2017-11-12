@@ -3,13 +3,12 @@
 
 ```bash
 # 项目启动和构建相关介绍
-# 主站 http://localhost:8080/main.html
-# 管理系统 http://localhost:8080/management.html
-# 开发
+# 开发，http://localhost:8080/main.html
 npm run dev
 # 构建前端产品文件
 npm run build
 # 运行服务器，在启动服务器需要确保先构建好前端的产品文件
+# http://localhost:8080/pathophysiology/main.html
 npm run server
 # 代码风格规范检测
 npm run lint-fe
@@ -25,19 +24,20 @@ npm run lint-server
 │    │   ├─data: 伪数据json文件
 │    │   └─img: 图片文件
 │    └─src: 源代码
+│        ├─common: 各子项目引用的公共资源
 │        ├─main: 主站代码
 │        │    ├─assets: 网站中引用的字体、图标等静态资源
 │        │    ├─components: 页面组件
 │        │    │    ├─achievement: 科研、教学成就模块
 │        │    │    ├─course: 课程模块
 │        │    │    ├─home: 网站首页以及公告模块
-│        │    │    ├─interaction: 互动模块
+│        │    │    ├─interaction: 互动模块（本目录涉及的需求已废弃，无需关注）
 │        │    │    └─resource: 课程资源模块
 │        │    ├─router: 前端路由配置
 │        │    ├─App.vue: 应用最外层结构
 │        │    ├─index.html: 应用的html网页入口
 │        │    └─index.js: 应用的js模块入口
-│        ├─management: 管理系统代码
+│        ├─management: 管理系统代码（本目录涉及的需求已废弃，无需关注）
 │        │    ├─assets: 网站中引用的字体、图标等静态资源
 │        │    ├─components: 页面组件
 │        │    │    ├─account: 账号管理模块
@@ -47,23 +47,20 @@ npm run lint-server
 │        │    │    ├─interaction: 互动信息管理模块
 │        │    │    └─resource: 课程资源管理模块
 │        │    ├─router: 前端路由配置
-│        │    ├─store: 管理系统vuex数据状态管理（是否启用还待评估）
+│        │    ├─store: 管理系统vuex数据状态管理
 │        │    ├─App.vue: 应用最外层结构
 │        │    ├─index.html: 应用的html网页入口
 │        │    └─index.js: 应用的js模块入口
-│        └─signin: 登录页面
+│        └─signin: 登录页面（本目录涉及的需求已废弃，无需关注）
 │             ├─assets: 背景图和logo
 │             ├─App.vue: 登录界面
 │             ├─index.html: 登录页面html入口
 │             └─index.js: 登录页面js入口
 ├─images-for-readme: 存放README用到的图片文件
 ├─Server: 服务端代码
-│    ├─api: 服务端api，express路由
-│    ├─model: 数据模型
-│    ├─public: 前端静态资源以及页面文件
+│    ├─pathophysiology: 前端静态资源以及页面文件
 │    │    ├─static: 前端静态资源
-│    │    ├─main.html: 主站入口页面
-│    │    └─management.html: 管理系统入口页面
+│    │    └─main.html: 主站入口页面
 │    └─index.js: express服务器配置和启动文件
 ├─.babelrc: babel配置文件
 ├─.editorconfig: 编辑器配置文件

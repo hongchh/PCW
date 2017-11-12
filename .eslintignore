@@ -1,3 +1,3 @@
 FrontEnd/build/*.js
 FrontEnd/config/*.js
-Server/public/static/*.js
+Server/pathophysiology/static/*.js
