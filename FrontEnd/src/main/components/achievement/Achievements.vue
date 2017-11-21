@@ -4,7 +4,7 @@ div#achievements
     el-col(:span="22")
       el-table(:data="achievements", stripe)
         el-table-column(min-width="480", label="奖项名称", header-align="center")
-          template(scope="scope")
+          template(slot-scope="scope")
             ul
               li {{ scope.row.researchProject }}
             el-tag(v-for="(award, i) in scope.row.awards", :key="i", :type="scope.row.type") {{ award }}

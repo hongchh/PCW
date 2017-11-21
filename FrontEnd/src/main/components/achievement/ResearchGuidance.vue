@@ -5,7 +5,7 @@ div#research-guidance
       el-table(:data="guidance", stripe)
         el-table-column(min-width="120", label="时间", header-align="center", align="center", prop="time")
         el-table-column(min-width="480", label="指导项目", header-align="center")
-          template(scope="scope")
+          template(slot-scope="scope")
             ul
               li {{ scope.row.description }}
             el-tag(v-for="(achievement, i) in scope.row.achievement", :key="i") {{ achievement }}

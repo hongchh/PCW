@@ -7,22 +7,22 @@ div#teaching-video
           el-table(:data="ChineseTeachingVideos", stripe)
             el-table-column(min-width="360", label="教学录像", prop="title")
             el-table-column(min-width="200", label="主讲")
-              template(scope="scope")
+              template(slot-scope="scope")
                 el-tag(v-if="scope.row.presenter", type="primary") {{ scope.row.presenter }}
                 span(v-if="!scope.row.presenter") 无
             el-table-column(min-width="240", label="操作")
-              template(scope="scope")
+              template(slot-scope="scope")
                 a(:href="scope.row.link", target="_blank")
                   el-button(type="primary", size="small") 在线观看
         el-tab-pane(label="英文教学录像")
           el-table(:data="EnglishTeachingVideos", stripe)
             el-table-column(min-width="360", label="教学录像", prop="title")
             el-table-column(min-width="200", label="主讲")
-              template(scope="scope")
+              template(slot-scope="scope")
                 el-tag(v-if="scope.row.presenter", type="primary") {{ scope.row.presenter }}
                 span(v-if="!scope.row.presenter") 无
             el-table-column(min-width="240", label="操作")
-              template(scope="scope")
+              template(slot-scope="scope")
                 a(:href="scope.row.link", target="_blank")
                   el-button(type="primary", size="small") 在线观看
 </template>
