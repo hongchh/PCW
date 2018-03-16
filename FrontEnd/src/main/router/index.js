@@ -9,6 +9,7 @@ import NotificationList from '../components/home/NotificationList'
 import CourseIntroduction from '../components/course/CourseIntroduction'
 import PBLTeaching from '../components/course/PBLTeaching'
 import SecondClass from '../components/course/SecondClass'
+import SimTeaching from '../components/course/SimTeaching'
 import TeachingPlan from '../components/course/TeachingPlan'
 import TeachingTeam from '../components/course/TeachingTeam'
 import Courseware from '../components/resources/Courseware'
@@ -31,6 +32,7 @@ export default new Router({
     { path: '/course-introduction', component: CourseIntroduction },
     { path: '/pbl-teaching', component: PBLTeaching },
     { path: '/second-class', component: SecondClass },
+    { path: '/sim-teaching', component: SimTeaching },
     { path: '/teaching-plan', component: TeachingPlan },
     { path: '/teaching-team', component: TeachingTeam },
     { path: '/courseware', component: Courseware },

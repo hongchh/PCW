@@ -13,7 +13,7 @@ div#app
         router-link.link-list-item(to="/teaching-plan") 教学安排
         router-link.link-list-item(to="/second-class") 第二课堂
         router-link.link-list-item(to="/pbl-teaching") PBL教学
-        //- router-link.link-list-item(to="/teaching-team") 教学团队
+        router-link.link-list-item(to="/sim-teaching") 情景模拟教学
     div.nav-item#nav-item-1
       span 课程资源&nbsp;
       i.el-icon-caret-bottom
@@ -103,7 +103,7 @@ html, body, #app
     z-index: 99
     transition: all .2s ease-out
   #nav-item-0:hover .link-list
-    height: 112px
+    height: 140px
   #nav-item-1:hover .link-list
     height: 140px
   #nav-item-2:hover .link-list
